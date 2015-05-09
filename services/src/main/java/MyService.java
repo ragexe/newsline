@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ragexe on 09.05.2015.
  */
-public class MyService implements  Service{
+public class MyService implements Service {
     private Dao dao;// = MyDao.getDao();
 
     public MyService() {

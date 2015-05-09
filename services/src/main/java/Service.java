@@ -4,7 +4,7 @@ import data.Users;
 import java.util.List;
 
 /**
- * Created by HappyQ on 10.05.2015.
+ * Created by ragexe on 09.05.2015.
  */
 public interface Service {
     Page getPage(String id);
@@ -15,3 +15,4 @@ public interface Service {
     Users getUser(String email);
     List<Users> getUsers();
 }
+
