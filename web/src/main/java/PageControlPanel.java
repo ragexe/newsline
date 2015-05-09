@@ -82,6 +82,13 @@ public class PageControlPanel extends HttpServlet {
         }
         menutext.append("</ul>");
         request.setAttribute("pagemenu", menutext.toString());
+        StringBuffer auth = new StringBuffer();
+        auth.append("Привет, " + request.getParameter("email"));
+        auth.append("<br>");
+        auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
+        auth.append("<br>");
+
+        request.setAttribute("auth", auth.toString());
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");
         dispatcher.forward(request, response);
     }

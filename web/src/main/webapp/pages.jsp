@@ -27,7 +27,9 @@
                         <a href="PageControlPanel">На главную</a>
                     </td>
                     <td width="60%" align="right">
-                        <a href="mylogin.jsp">Войти</a>
+                        <!--<a href="mylogin.jsp">Войти</a>
+                        <br>Привет, <jsp:getProperty name="User" property="email"/>-->
+                        <br><%= request.getAttribute("auth")%>
                     </td>
                 </tr>
                 <tr>

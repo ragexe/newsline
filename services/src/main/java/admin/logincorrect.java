@@ -52,9 +52,9 @@ public class logincorrect extends HttpServlet {
             if (user != null && (user.getPassword().equals(password) && user.getEmail().equals(email))) {
                 session.setAttribute("login", email);
                 session.setAttribute("loginStatus", "ON");
-                if (user.getRole() > 0){
-                    target = "adminController";
-                } else
+//                if (user.getRole() > 0){
+//                    target = "adminController";
+//                } else
                     target = "PageControlPanel";
                 //LogApp.log(e1);
                 //System.out.println("Идентификация - 2");
