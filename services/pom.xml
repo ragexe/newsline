@@ -11,5 +11,11 @@
 
     <artifactId>services</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>by.newsline</groupId>
+            <artifactId>dao</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
