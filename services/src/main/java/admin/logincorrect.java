@@ -43,7 +43,7 @@ public class logincorrect extends HttpServlet {
         String target;
         Dao dao = MyDao.getDao();
         HttpSession session = request.getSession();
-        if (request.getParameter("email") != "") {
+        if (!request.getParameter("email").equals("")) {
             //LogApp.log(e1);
             //System.out.println("Идентификация - 1");
             String email = request.getParameter("email");

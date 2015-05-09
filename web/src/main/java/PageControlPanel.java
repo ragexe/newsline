@@ -55,19 +55,18 @@ public class PageControlPanel extends HttpServlet {
         StringBuffer menutext = new StringBuffer();
         menutext.append("<ul>");
         List<Page> mpages = dao.getPagesByParent("main");
-        for (int i = 0; i < mpages.size(); i++)
-        {
+        for (data.Page mpage : mpages) {
             menutext.append("<li><a href=\"PageControlPanel?sect=");
-            menutext.append(mpages.get(i).getId());
+            menutext.append(mpage.getId());
             menutext.append("\">");
-            menutext.append(mpages.get(i).getTitle4menu());
+            menutext.append(mpage.getTitle4menu());
             menutext.append("</a>");
-            List<Page> spages = dao.getPagesByParent(mpages.get(i).getId());
+            List<Page> spages = dao.getPagesByParent(mpage.getId());
             menutext.append("<ul>");
-            if (mpages.get(i).getId().equals(section) || section == null){
+            if (mpage.getId().equals(section) || section == null) {
                 for (int j = 0; j < spages.size(); j++) {
                     menutext.append("<li><a href=\"PageControlPanel?sect=");
-                    menutext.append(mpages.get(i).getId());
+                    menutext.append(mpage.getId());
                     menutext.append("&subsect=");
                     menutext.append(spages.get(j).getId());
                     menutext.append("\">");
