@@ -34,9 +34,9 @@ public class PageControlPanel extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        String section = request.getParameter("sect");        //
+        String section = request.getParameter("sect");
 
-        String subsection = request.getParameter("subsect");  //
+        String subsection = request.getParameter("subsect");
         String id;
         if (section == null)
         {

@@ -2,8 +2,11 @@ import dao.Dao;
 import dao.MyDao;
 import data.Page;
 import data.Users;
+import org.junit.Test;
 
 import java.util.List;
+
+import static org.junit.Assert.assertSame;
 
 /**
  * Created by ragexe on 09.05.2015.
@@ -46,7 +49,10 @@ public class MyService implements Service {
     }
 
     @Override
-    public List<Users> getUsers() {
+    public  List<Users> getUsers() {
         return dao.getUsers();
     }
+
+
+
 }
