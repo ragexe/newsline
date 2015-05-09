@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newsline.iws" />
@@ -1015,7 +1014,7 @@
       <workItem from="1431183028156" duration="1658000" />
       <workItem from="1431200458059" duration="5087000" />
       <workItem from="1431207100706" duration="1382000" />
-      <workItem from="1431208521084" duration="1477000" />
+      <workItem from="1431208521084" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="удалил ненужный src&#10;">
       <created>1431125154317</created>
@@ -1101,11 +1100,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431210816356</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="админ фильтр&#10;">
+      <created>1431210909103</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1431210909103</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33104000" />
+    <option name="totallyTimeSpent" value="33107000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
