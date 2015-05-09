@@ -31,6 +31,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/dao" />
     <file type="web" url="file://$PROJECT_DIR$/web" />
   </component>
   <component name="Git.Settings">
@@ -67,7 +68,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="D:/Projects/News" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../News" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />

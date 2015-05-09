@@ -1,9 +1,4 @@
-
-
-import dao.Dao;
-import dao.MyDao;
 import data.Page;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +10,17 @@ import java.util.List;
 
 public class PageControlPanel extends HttpServlet {
     private static final long serialVersionUID = 3L;
-
-    Dao dao;
-
+    //Dao dao;
+    private MyService service;
     public PageControlPanel() {
 
     }
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        dao = MyDao.getDao();
-    }
+//    @Override
+//    public void init() throws ServletException {
+//        super.init();
+//        dao = MyDao.getDao();
+//    }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,29 +44,29 @@ public class PageControlPanel extends HttpServlet {
             id = subsection;
         }
 
-        Page Page = dao.getPage(id);
+        Page Page = service.getPage(id);
         request.setAttribute("Page", Page);
         StringBuffer menutext = new StringBuffer();
         menutext.append("<ul>");
-        List<Page> mpages = dao.getPagesByParent("main");
+        List<Page> mpages = service.getPagesByParent("main");
         for (data.Page mpage : mpages) {
             menutext.append("<li><a href=\"PageControlPanel?sect=");
             menutext.append(mpage.getId());
             menutext.append("\">");
             menutext.append(mpage.getTitle4menu());
             menutext.append("</a>");
-            List<Page> spages = dao.getPagesByParent(mpage.getId());
+            List<Page> spages = service.getPagesByParent(mpage.getId());
             menutext.append("<ul>");
             if (mpage.getId().equals(section) || section == null) {
-                for (int j = 0; j < spages.size(); j++) {
+                for (data.Page spage : spages) {
                     menutext.append("<li><a href=\"PageControlPanel?sect=");
                     menutext.append(mpage.getId());
                     menutext.append("&subsect=");
-                    menutext.append(spages.get(j).getId());
+                    menutext.append(spage.getId());
                     menutext.append("\">");
-                    menutext.append(spages.get(j).getTitle4menu());
+                    menutext.append(spage.getTitle4menu());
                     menutext.append(" - ");
-                    menutext.append(spages.get(j).getDate());
+                    menutext.append(spage.getDate());
                     menutext.append(" - ");
                     menutext.append("</a></li>");
 

@@ -14,16 +14,14 @@ import java.util.Properties;
 
 public class MyDao implements Dao {
     private static final Logger log = Logger.getLogger(MyDao.class);
-    private Connection myConnection;
-
     private static final long serialVersionUID = 4L;
-
     private Connection connection;
     private String url;
     private String user;
     private String password;
     private Properties properties = new Properties();
-    private static final String FILE_PROPERTIES_NAME = "E:\\News\\News\\config.properties";
+    //private static final String FILE_PROPERTIES_NAME = "E:\\News\\News\\config.properties";
+    private static final String FILE_PROPERTIES_NAME = "D:\\Projects\\newsline\\dao\\src\\main\\resources\\config.properties";
 
     private MyDao() {
         try {
@@ -32,8 +30,6 @@ public class MyDao implements Dao {
             log.error("error");
             log.error(e.getMessage());
         }
-
-
         try {
             properties.load(new FileInputStream(FILE_PROPERTIES_NAME));
         } catch (FileNotFoundException e) {
@@ -51,18 +47,13 @@ public class MyDao implements Dao {
             log.error(e.getMessage());
             e.printStackTrace();
         }
-
-
         try {
             connection = DriverManager.getConnection(url, user, password);
-            //connection = DriverManager.getConnection(url,user,"");
             //connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/NewsBase", "root", "");
-
         } catch (SQLException e) {
             e.printStackTrace();
             log.error(e.getMessage());
         }
-
     }
 
     private static MyDao thisDao;
@@ -247,7 +238,6 @@ public class MyDao implements Dao {
         return ussr;
     }
 
-
     @Override
     public List<Users> getUsers() {
         ArrayList<Users> user = new ArrayList<Users>();
@@ -258,7 +248,6 @@ public class MyDao implements Dao {
                 Users usr = new Users();
                 usr.setIdu(rs.getInt("idu"));
                 usr.setName(rs.getString("name"));
-                //usr.setLastname(rs.getString("title"));
                 usr.setEmail(rs.getString("email"));
                 usr.setRole(rs.getInt("role"));
                 user.add(usr);
