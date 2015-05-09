@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public class EditWriteCommand extends Command {
     private static final Logger log = Logger.getLogger(EditWriteCommand.class);
