@@ -11,7 +11,7 @@ import java.util.List;
 public class PageControlPanel extends HttpServlet {
     private static final long serialVersionUID = 3L;
     //Dao dao;
-    private MyService service;
+    private Service service;
     public PageControlPanel() {
 
     }
@@ -21,6 +21,11 @@ public class PageControlPanel extends HttpServlet {
 //        super.init();
 //        dao = MyDao.getDao();
 //    }
+        @Override
+    public void init() throws ServletException {
+        super.init();
+        service = new MyService();
+    }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

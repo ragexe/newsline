@@ -1,4 +1,5 @@
 import dao.Dao;
+import dao.MyDao;
 import data.Page;
 import data.Users;
 
@@ -8,44 +9,44 @@ import java.util.List;
  * Created by ragexe on 09.05.2015.
  */
 public class MyService implements  Service{
-    private Dao MyDao;
+    private Dao dao;// = MyDao.getDao();
 
-    public MyService(Dao myDao) {
-        MyDao = myDao;
+    public MyService() {
+        dao = MyDao.getDao();
     }
 
     @Override
     public Page getPage(String id) {
-        return MyDao.getPage(id);
+        return dao.getPage(id);
     }
 
     @Override
     public List<Page> getPagesByParent(String parentid) {
-        return MyDao.getPagesByParent(parentid);
+        return dao.getPagesByParent(parentid);
     }
 
     @Override
     public int addPage(Page p) {
-        return MyDao.addPage(p);
+        return dao.addPage(p);
     }
 
     @Override
     public int deletePage(Page p) {
-        return MyDao.deletePage(p);
+        return dao.deletePage(p);
     }
 
     @Override
     public int editPage(Page p) {
-        return MyDao.editPage(p);
+        return dao.editPage(p);
     }
 
     @Override
     public Users getUser(String email) {
-        return MyDao.getUser(email);
+        return dao.getUser(email);
     }
 
     @Override
     public List<Users> getUsers() {
-        return MyDao.getUsers();
+        return dao.getUsers();
     }
 }
