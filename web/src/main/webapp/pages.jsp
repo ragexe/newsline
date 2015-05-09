@@ -24,10 +24,10 @@
             <table width="100%">
                 <tr>
                     <td width="40%">
-                        <a href="PageControlPanel">На главную</a>
+                        <br><%= request.getAttribute("onmain")%>
                     </td>
                     <td width="60%" align="right">
-                        <a href="mylogin.jsp">Войти</a>
+                        <br><%= request.getAttribute("auth")%>
                     </td>
                 </tr>
                 <tr>

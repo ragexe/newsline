@@ -34,9 +34,10 @@ public class PageControlPanel extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        String section = request.getParameter("sect");
+        String section = request.getParameter("sect");        //
 
         String subsection = request.getParameter("subsect");
+        String email = request.getParameter("email");
         String id;
         if (section == null)
         {
@@ -51,11 +52,14 @@ public class PageControlPanel extends HttpServlet {
 
         Page Page = service.getPage(id);
         request.setAttribute("Page", Page);
+        String onmain = "<a href=\"PageControlPanel?email=\"" + request.getParameter("email") + "\">На главную</a>";
         StringBuffer menutext = new StringBuffer();
         menutext.append("<ul>");
         List<Page> mpages = service.getPagesByParent("main");
         for (data.Page mpage : mpages) {
-            menutext.append("<li><a href=\"PageControlPanel?sect=");
+            menutext.append("<li><a href=\"PageControlPanel?email=");
+            menutext.append(email);
+            menutext.append("&sect=");
             menutext.append(mpage.getId());
             menutext.append("\">");
             menutext.append(mpage.getTitle4menu());
@@ -64,7 +68,9 @@ public class PageControlPanel extends HttpServlet {
             menutext.append("<ul>");
             if (mpage.getId().equals(section) || section == null) {
                 for (data.Page spage : spages) {
-                    menutext.append("<li><a href=\"PageControlPanel?sect=");
+                    menutext.append("<li><a href=\"PageControlPanel?email=");
+                    menutext.append(email);
+                    menutext.append("&sect=");
                     menutext.append(mpage.getId());
                     menutext.append("&subsect=");
                     menutext.append(spage.getId());
@@ -82,6 +88,14 @@ public class PageControlPanel extends HttpServlet {
         }
         menutext.append("</ul>");
         request.setAttribute("pagemenu", menutext.toString());
+        StringBuffer auth = new StringBuffer();
+        auth.append("Привет, " + email);
+        auth.append("<br>");
+        auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
+        auth.append("<br>");
+
+        request.setAttribute("auth", auth.toString());
+        request.setAttribute("onmain", onmain);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");
         dispatcher.forward(request, response);
     }
