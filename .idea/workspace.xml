@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" afterPath="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/pages.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/pages.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PageControlPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PageControlPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/java/PageControlPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.655172" vertical-offset="1071" max-vertical-offset="1904">
-              <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.7868561" vertical-offset="577" max-vertical-offset="2023">
+              <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/pages.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12662943" vertical-offset="204" max-vertical-offset="1037">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="1003">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -184,8 +183,8 @@
         <option value="$PROJECT_DIR$/services/src/main/java/admin/CharsetFilter.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/AdminFilter.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/pages.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" />
       </list>
     </option>
   </component>
@@ -882,7 +881,7 @@
       <workItem from="1431183028156" duration="1658000" />
       <workItem from="1431200458059" duration="5087000" />
       <workItem from="1431207100706" duration="1382000" />
-      <workItem from="1431208521084" duration="4581000" />
+      <workItem from="1431208521084" duration="6341000" />
     </task>
     <task id="LOCAL-00001" summary="удалил ненужный src&#10;">
       <created>1431125154317</created>
@@ -980,11 +979,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431210912127</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="авторизация&#10;">
+      <created>1431214040758</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1431214040758</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36208000" />
+    <option name="totallyTimeSpent" value="37968000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1008,7 +1013,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1022,7 +1027,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1076759" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1066,7 +1071,8 @@
     <MESSAGE value="&#10;1" />
     <MESSAGE value="дао убрал из web окончательно" />
     <MESSAGE value="админ фильтр&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="админ фильтр&#10;" />
+    <MESSAGE value="авторизация&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="авторизация&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1441,14 +1447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/mylogin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/AdminFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
@@ -1467,21 +1465,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/PageControlPanel.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/mylogin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.655172" vertical-offset="1071" max-vertical-offset="1904">
-          <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/pages.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12662943" vertical-offset="204" max-vertical-offset="1037">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="204" max-vertical-offset="1003">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/PageControlPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7868561" vertical-offset="577" max-vertical-offset="2023">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
