@@ -4,7 +4,6 @@ import admin.commands.*;
 import dao.Dao;
 import dao.MyDao;
 import data.Page;
-import logger.LogApp;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

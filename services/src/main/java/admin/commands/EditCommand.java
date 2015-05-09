@@ -1,7 +1,6 @@
 package admin.commands;
 
-import logger.LogApp;
-import logger.TrueLogger;
+
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -9,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+
 
 public class EditCommand extends Command {
     private static final Logger log = Logger.getLogger(EditCommand.class);

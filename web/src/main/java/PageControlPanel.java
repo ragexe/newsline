@@ -1,3 +1,5 @@
+
+
 import dao.Dao;
 import dao.MyDao;
 import data.Page;
@@ -47,6 +49,7 @@ public class PageControlPanel extends HttpServlet {
         {
             id = subsection;
         }
+
         Page Page = dao.getPage(id);
         request.setAttribute("Page", Page);
         StringBuffer menutext = new StringBuffer();

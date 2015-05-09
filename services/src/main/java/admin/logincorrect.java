@@ -3,8 +3,6 @@ package admin;
 import dao.Dao;
 import dao.MyDao;
 import data.Users;
-import logger.LogApp;
-import logger.TrueLogger;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
