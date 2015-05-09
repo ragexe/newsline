@@ -67,10 +67,10 @@ public class logincorrect extends HttpServlet {
         try {
             dispatcher.include(request, response);
         } catch (IOException e) {
-            log.error("������ � ������ logincorrect. ��� ������� dispatcher.include(request, response);! -- " + e); // ������ � ���-����
+            log.error(e.getMessage());
             e.printStackTrace();
         } catch (Exception e1) {
-            log.error("������ � ������ logincorrect. ��� ������� dispatcher.include(request, response);! -- " + e1); // ������ � ���-����
+            log.error(e1.getMessage());
             e1.printStackTrace();
         }
     }
