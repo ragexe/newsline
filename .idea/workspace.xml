@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/MyService.java" afterPath="$PROJECT_DIR$/services/src/main/java/MyService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newsline.iws" />
@@ -1027,11 +1026,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431178973875</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="getUser(int idu)">
+      <created>1431220017041</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1431220017041</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18381000" />
+    <option name="totallyTimeSpent" value="18398000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1106,7 +1111,8 @@
     <MESSAGE value="удалил ненужный src&#10;" />
     <MESSAGE value="структура" />
     <MESSAGE value="buildable" />
-    <option name="LAST_COMMIT_MESSAGE" value="buildable" />
+    <MESSAGE value="getUser(int idu)" />
+    <option name="LAST_COMMIT_MESSAGE" value="getUser(int idu)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
