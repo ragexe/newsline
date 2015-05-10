@@ -4,35 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!--<filter>
-        <filter-name>filter3</filter-name>
-        <filter-class>admin.CharsetFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>filter3</filter-name>
-        <servlet-name>servlet2</servlet-name>
-    </filter-mapping>-->
-
-    <filter>
-        <filter-name>CharsetFilter</filter-name>
-        <filter-class>admin.CharsetFilter</filter-class>
-        <init-param>
-            <param-name>requestEncoding</param-name>
-            <!--<param-value>Cp1251</param-value>-->
-            <param-value>UTF-8</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>CharsetFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 
     <filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>admin.AdminFilter</filter-class>
         <init-param>
             <param-name>requestEncoding</param-name>
-            <!--<param-value>Cp1251</param-value>-->
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
@@ -41,21 +18,29 @@
         <url-pattern>/adminController</url-pattern>
     </filter-mapping>
 
-    <!--<filter>
+    <filter>
         <filter-name>CharsetFilter</filter-name>
-        <filter-class>
-            admin.CharsetFilter
-        </filter-class>
+        <filter-class>admin.CharsetFilter</filter-class>
         <init-param>
-            <param-name>encoding</param-name>
+            <param-name>requestEncoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
         <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--<filter>
+        <filter-name>f1</filter-name>
+        <filter-class>MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f1</filter-name>
+        <url-pattern>/servlet1</url-pattern>
     </filter-mapping>-->
+
+
 
     <servlet>
         <servlet-name>servlet1</servlet-name>

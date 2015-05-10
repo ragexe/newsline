@@ -81,7 +81,6 @@ public class PageControlPanel extends HttpServlet {
                     menutext.append(spage.getDate());
                     menutext.append(" - ");
                     menutext.append("</a></li>");
-
                 }
             }
             menutext.append("</ul>");
@@ -98,6 +97,7 @@ public class PageControlPanel extends HttpServlet {
         if (user.getRole() > 0) {
             auth.append("<br>");
             auth.append("<a href=\"adminController\">Админка</a>");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("adminController");
         }
         request.setAttribute("auth", auth.toString());
         String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
