@@ -46,6 +46,11 @@ public class MyService implements Service {
     }
 
     @Override
+    public Users getUser(int idu) {
+        return dao.getUser(idu);
+    }
+
+    @Override
     public List<Users> getUsers() {
         return dao.getUsers();
     }

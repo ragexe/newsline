@@ -13,6 +13,7 @@ public interface Service {
     int deletePage(Page p);
     int editPage(Page p);
     Users getUser(String email);
+    Users getUser(int idu);
     List<Users> getUsers();
 }
 

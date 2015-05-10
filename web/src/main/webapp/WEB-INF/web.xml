@@ -22,10 +22,23 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-
     <filter-mapping>
         <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>admin.AdminFilter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <!--<param-value>Cp1251</param-value>-->
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/adminController</url-pattern>
     </filter-mapping>
 
     <!--<filter>

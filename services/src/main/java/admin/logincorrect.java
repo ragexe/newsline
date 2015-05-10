@@ -50,8 +50,8 @@ public class logincorrect extends HttpServlet {
             String password = request.getParameter("password");
             Users user = dao.getUser(email);
             if (user != null && (user.getPassword().equals(password) && user.getEmail().equals(email))) {
-                session.setAttribute("login", email);
-                session.setAttribute("loginStatus", "ON");
+                session.setAttribute("login", user.getIdu());
+                //session.setAttribute("loginStatus", "ON");
 //                if (user.getRole() > 0){
 //                    target = "adminController";
 //                } else
