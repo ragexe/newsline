@@ -52,7 +52,6 @@ public class PageControlPanel extends HttpServlet {
 
         Page Page = service.getPage(id);
         request.setAttribute("Page", Page);
-        String onmain = "<a href=\"PageControlPanel?email=\"" + request.getParameter("email") + "\">На главную</a>";
         StringBuffer menutext = new StringBuffer();
         menutext.append("<ul>");
         List<Page> mpages = service.getPagesByParent("main");
@@ -93,8 +92,10 @@ public class PageControlPanel extends HttpServlet {
         auth.append("<br>");
         auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
         auth.append("<br>");
+        auth.append("<a href=\"adminController\">Админка</a>");
 
         request.setAttribute("auth", auth.toString());
+        String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
         request.setAttribute("onmain", onmain);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");
         dispatcher.forward(request, response);
