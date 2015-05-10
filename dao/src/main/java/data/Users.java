@@ -21,6 +21,7 @@ public class Users implements Serializable {
         this.role = 0;
     }
 
+
     public int getIdu() {
         return idu;
     }

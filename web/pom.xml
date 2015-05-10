@@ -9,8 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>web</artifactId>
+    <groupId>by.newsline</groupId>
     <packaging>war</packaging>
+    <artifactId>newslineWeb</artifactId>
 
     <dependencies>
         <dependency>

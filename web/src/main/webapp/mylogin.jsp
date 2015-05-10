@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-<form action="logincorrect" align="center">
+<form action="servlet1" align="center">
     <p>
         <br>Input your login and password<br>
         login:<br><input name="email" placeholder="email"><br>
