@@ -40,6 +40,7 @@ public class PageControlPanel extends HttpServlet {
 
         String subsection = request.getParameter("subsect");
         String email = request.getParameter("email");
+        String pass = request.getParameter("password");
         String id;
         if (section == null)
         {
@@ -96,8 +97,11 @@ public class PageControlPanel extends HttpServlet {
         auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
         if (user.getRole() > 0) {
             auth.append("<br>");
-            auth.append("<a href=\"adminController\">Админка</a>");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("adminController");
+            auth.append("<a href=\"logincorrect?adm=x&email=\"");
+            auth.append(email);
+            auth.append("&password=");
+            auth.append(pass);
+            auth.append("\">Админка</a>");
         }
         request.setAttribute("auth", auth.toString());
         String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";

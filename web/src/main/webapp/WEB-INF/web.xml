@@ -5,7 +5,7 @@
          version="3.1">
 
 
-    <filter>
+    <!--<filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>admin.AdminFilter</filter-class>
         <init-param>
@@ -16,7 +16,7 @@
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/adminController</url-pattern>
-    </filter-mapping>
+    </filter-mapping>-->
 
     <filter>
         <filter-name>CharsetFilter</filter-name>
@@ -30,17 +30,6 @@
         <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-    <!--<filter>
-        <filter-name>f1</filter-name>
-        <filter-class>MyFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>f1</filter-name>
-        <url-pattern>/servlet1</url-pattern>
-    </filter-mapping>-->
-
-
 
     <servlet>
         <servlet-name>servlet1</servlet-name>
@@ -68,5 +57,14 @@
         <servlet-name>servlet4</servlet-name>
         <url-pattern>/logincorrect</url-pattern>
     </servlet-mapping>
+
+    <!--<servlet>
+        <servlet-name>servlet5</servlet-name>
+        <servlet-class>admin.adminPanel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet5</servlet-name>
+        <url-pattern>/adminPanel</url-pattern>
+    </servlet-mapping>-->
 
 </web-app>

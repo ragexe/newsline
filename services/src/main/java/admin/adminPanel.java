@@ -16,15 +16,15 @@ import java.io.IOException;
 /**
  * Servlet implementation class logincorrect
  */
-public class logincorrect extends HttpServlet {
-    private static final Logger log = Logger.getLogger(logincorrect.class);
+public class adminPanel extends HttpServlet {
+    private static final Logger log = Logger.getLogger(adminPanel.class);
 
     private static final long serialVersionUID = 2L;
 
     /**
-     * @see HttpServlet#HttpServlet()
+     * @see javax.servlet.http.HttpServlet#HttpServlet()
      */
-    public logincorrect() {
+    public adminPanel() {
         super();
     }
 
@@ -34,7 +34,7 @@ public class logincorrect extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //response.setContentType("text/html; charset=cp1251");
@@ -64,7 +64,7 @@ public class logincorrect extends HttpServlet {
             //System.out.println("Идентификация пройдена");
         } else target = "incorrectInfo.html";//else target = "PageContlorPanel"";
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(target);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("adminController");
         try {
             dispatcher.include(request, response);
         } catch (IOException e) {
@@ -77,7 +77,7 @@ public class logincorrect extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

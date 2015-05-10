@@ -28,9 +28,6 @@ public class adminController extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.setContentType("text/html; charset=cp1251");
-//        response.setCharacterEncoding("Cp1251");
-        //request.setCharacterEncoding("cp1251");
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
