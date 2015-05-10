@@ -242,7 +242,7 @@ public class MyDao implements Dao {
         ArrayList<Users> user = new ArrayList<Users>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select idu, name, email from users");
+            ResultSet rs = statement.executeQuery("select idu, name, email,role from users");
             while (rs.next()) {
                 Users usr = new Users();
                 usr.setIdu(rs.getInt("idu"));
