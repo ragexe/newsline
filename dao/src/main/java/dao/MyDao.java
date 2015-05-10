@@ -238,6 +238,29 @@ public class MyDao implements Dao {
     }
 
     @Override
+    public Users getUser(int idu) {
+        Users ussr = new Users();
+        //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
+        String useridu = "select * from users where email ='" + idu + "'";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(useridu);
+            if (result.next()) {
+                ussr.setIdu(result.getInt("idu"));
+                ussr.setName(result.getString("name"));
+                ussr.setLastname(result.getString("lastname"));
+                ussr.setEmail(result.getString("email"));
+                ussr.setPassword(result.getString("password"));
+                ussr.setRole(result.getInt("role"));
+            }
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
+        return ussr;
+    }
+
+    @Override
     public List<Users> getUsers() {
         ArrayList<Users> user = new ArrayList<Users>();
         try {
