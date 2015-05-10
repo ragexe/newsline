@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/src/main/java/dao/Dao.java" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/Dao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/MyService.java" afterPath="$PROJECT_DIR$/services/src/main/java/MyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" afterPath="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/Service.java" afterPath="$PROJECT_DIR$/services/src/main/java/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newsline.iws" />
@@ -120,15 +114,14 @@
       <file leaf-file-name="MyDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3845" max-vertical-offset="4896">
-              <caret line="247" column="50" selection-start-line="247" selection-start-column="50" selection-end-line="247" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3471" max-vertical-offset="4522">
+              <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1431219748907" expanded="true" signature="2375:2416" placeholder="select * fro..pages..." />
-                <marker date="1431219748907" expanded="true" signature="3324:3377" placeholder="select * fro..pages..." />
-                <marker date="1431219748907" expanded="true" signature="7629:7681" placeholder="select * fro..users..." />
-                <marker date="1431219748907" expanded="true" signature="8539:8582" placeholder="select * fro..users..." />
-                <marker date="1431219748907" expanded="true" signature="9500:9540" placeholder="select idu, ..users..." />
+                <element signature="e#3185#3191#0" expanded="false" />
+                <marker date="1431219881186" expanded="true" signature="2375:2416" placeholder="select * fro..pages..." />
+                <marker date="1431219881186" expanded="true" signature="3324:3377" placeholder="select * fro..pages..." />
+                <marker date="1431219881186" expanded="true" signature="7628:7671" placeholder="select * fro..users..." />
               </folding>
             </state>
           </provider>
@@ -137,8 +130,8 @@
       <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/src/main/java/data/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1836">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="1853">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,8 +164,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
-              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1938">
+              <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -191,14 +184,27 @@
       <file leaf-file-name="MyService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/src/main/java/MyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7128378" vertical-offset="224" max-vertical-offset="833">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6554054" vertical-offset="462" max-vertical-offset="1105">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#764#765#0" expanded="true" />
-                <element signature="e#912#913#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#514#515#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#743#744#0" expanded="true" />
+                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#830#831#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1068#1069#0" expanded="true" />
+                <element signature="e#1105#1106#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,15 +213,16 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/dao/pom.xml" />
         <option value="$PROJECT_DIR$/dao/src/main/java/Dao.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/MyDao.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
         <option value="$PROJECT_DIR$/dao/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
         <option value="$PROJECT_DIR$/services/src/main/java/commands/Command.java" />
@@ -227,26 +234,15 @@
         <option value="$PROJECT_DIR$/services/src/main/java/admin/adminController.java" />
         <option value="$PROJECT_DIR$/services/pom.xml" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/ShowCommand.java" />
+        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/ToStartCommand.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
-        <option value="$PROJECT_DIR$/dao/pom.xml" />
-        <option value="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" />
-        <option value="$PROJECT_DIR$/web/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/services/src/main/java/service.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditCommand.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/service.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/Service.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/CharsetFilter.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/AdminFilter.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/pages.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/PageControlPanel.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/Dao.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
-        <option value="$PROJECT_DIR$/services/src/main/java/Service.java" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/services/src/main/java/MyService.java" />
       </list>
     </option>
@@ -264,7 +260,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\maven\" />
+        <option name="mavenHome" value="E:\maven" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -310,7 +306,8 @@
     </treeState>
   </component>
   <component name="MavenRunner">
-    <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=&quot;C:\Program Files\maven&quot;" />
+    <option name="jreName" value="1.7" />
+    <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=&quot;E:\maven&quot;" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -434,12 +431,12 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/target/web-1.0-SNAPSHOT.war" />
-    <property name="options.lastSelected" value="preferences.applicationServers" />
+    <property name="options.lastSelected" value="MavenSettings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -984,13 +981,9 @@
       <workItem from="1431153839994" duration="2763000" />
       <workItem from="1431157247346" duration="14000" />
       <workItem from="1431157274338" duration="3795000" />
-      <workItem from="1431162428159" duration="4280000" />
-      <workItem from="1431167061368" duration="5788000" />
-      <workItem from="1431180556583" duration="2455000" />
-      <workItem from="1431183028156" duration="1658000" />
-      <workItem from="1431200458059" duration="5087000" />
-      <workItem from="1431207100706" duration="1382000" />
-      <workItem from="1431208521084" duration="9711000" />
+      <workItem from="1431162428159" duration="3647000" />
+      <workItem from="1431175748749" duration="943000" />
+      <workItem from="1431176757283" duration="2760000" />
     </task>
     <task id="LOCAL-00001" summary="удалил ненужный src&#10;">
       <created>1431125154317</created>
@@ -1022,95 +1015,23 @@
       <option name="project" value="LOCAL" />
       <updated>1431165516860</updated>
     </task>
-    <task id="LOCAL-00006" summary="удалил lib&#10;">
-      <created>1431166442853</created>
+    <task id="LOCAL-00006" summary="buildable">
+      <created>1431178945261</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1431166442853</updated>
+      <updated>1431178945261</updated>
     </task>
-    <task id="LOCAL-00007" summary="buildable&#10;">
-      <created>1431176291174</created>
+    <task id="LOCAL-00007" summary="buildable">
+      <created>1431178973875</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1431176291174</updated>
+      <updated>1431178973875</updated>
     </task>
-    <task id="LOCAL-00008" summary="buildable&#10;">
-      <created>1431180732975</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1431180732975</updated>
-    </task>
-    <task id="LOCAL-00009" summary="убрал ДАО из web&#10;админка работат, читалка - нет&#10;">
-      <created>1431206854107</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1431206854107</updated>
-    </task>
-    <task id="LOCAL-00010" summary="убрал ДАО из web&#10;админка работат, читалка - нет&#10;">
-      <created>1431206862293</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1431206862293</updated>
-    </task>
-    <task id="LOCAL-00011" summary="дао убрал из web окончательно">
-      <created>1431208478555</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1431208478556</updated>
-    </task>
-    <task id="LOCAL-00012" summary="дао убрал из web окончательно">
-      <created>1431208610970</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1431208610970</updated>
-    </task>
-    <task id="LOCAL-00013" summary="админ фильтр&#10;">
-      <created>1431210803224</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1431210803224</updated>
-    </task>
-    <task id="LOCAL-00014" summary="админ фильтр&#10;">
-      <created>1431210816356</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1431210816356</updated>
-    </task>
-    <task id="LOCAL-00015" summary="админ фильтр&#10;">
-      <created>1431210909103</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1431210909103</updated>
-    </task>
-    <task id="LOCAL-00016" summary="админ фильтр&#10;">
-      <created>1431210912127</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1431210912127</updated>
-    </task>
-    <task id="LOCAL-00017" summary="авторизация&#10;">
-      <created>1431214040758</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1431214040758</updated>
-    </task>
-    <task id="LOCAL-00018" summary="авторизация&#10;">
-      <created>1431215796820</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1431215796820</updated>
-    </task>
-    <task id="LOCAL-00019" summary="авторизация&#10;">
-      <created>1431218074226</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1431218074226</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41338000" />
+    <option name="totallyTimeSpent" value="18381000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1134,7 +1055,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1146,7 +1067,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1076759" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1076759" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1185,15 +1106,7 @@
     <MESSAGE value="удалил ненужный src&#10;" />
     <MESSAGE value="структура" />
     <MESSAGE value="buildable" />
-    <MESSAGE value="удалил lib&#10;" />
-    <MESSAGE value="buildable&#10;" />
-    <MESSAGE value="убрал ДАО из web&#10;" />
-    <MESSAGE value="убрал ДАО из web&#10;админка работат, читалка - нет&#10;" />
-    <MESSAGE value="&#10;1" />
-    <MESSAGE value="дао убрал из web окончательно" />
-    <MESSAGE value="админ фильтр&#10;" />
-    <MESSAGE value="авторизация&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="авторизация&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="buildable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1531,8 +1444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
-          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1938">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1565,8 +1478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/data/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1836">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="1853">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1583,15 +1496,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3845" max-vertical-offset="4896">
-          <caret line="247" column="50" selection-start-line="247" selection-start-column="50" selection-end-line="247" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3471" max-vertical-offset="4522">
+          <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1431219748907" expanded="true" signature="2375:2416" placeholder="select * fro..pages..." />
-            <marker date="1431219748907" expanded="true" signature="3324:3377" placeholder="select * fro..pages..." />
-            <marker date="1431219748907" expanded="true" signature="7629:7681" placeholder="select * fro..users..." />
-            <marker date="1431219748907" expanded="true" signature="8539:8582" placeholder="select * fro..users..." />
-            <marker date="1431219748907" expanded="true" signature="9500:9540" placeholder="select idu, ..users..." />
+            <element signature="e#3185#3191#0" expanded="false" />
+            <marker date="1431219881186" expanded="true" signature="2375:2416" placeholder="select * fro..pages..." />
+            <marker date="1431219881186" expanded="true" signature="3324:3377" placeholder="select * fro..pages..." />
+            <marker date="1431219881186" expanded="true" signature="7628:7671" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -1608,14 +1520,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/src/main/java/MyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7128378" vertical-offset="224" max-vertical-offset="833">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.6554054" vertical-offset="462" max-vertical-offset="1105">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#830#831#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1626,7 +1551,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>web:war</last-edited>
+          <last-edited>newsline</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
