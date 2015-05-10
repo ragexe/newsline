@@ -90,8 +90,9 @@ public class PageControlPanel extends HttpServlet {
         menutext.append("</ul>");
         request.setAttribute("pagemenu", menutext.toString());
         StringBuffer auth = new StringBuffer();
-        Users user = service.getUser(Integer.parseInt(request.getSession().getAttribute("login")+""));
-        auth.append("Привет, " + request.getSession().getAttribute("login"));//получае имя пользователя по idu
+        String idu = request.getSession().getAttribute("login")+"";
+        Users user = service.getUser(Integer.parseInt(request.getSession().getAttribute("login").toString())); //получаем юзера по idu
+        auth.append("Привет, " + user.getName());//получае имя пользователя по idu
         auth.append("<br>");
         auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
         if (user.getRole() > 0) {

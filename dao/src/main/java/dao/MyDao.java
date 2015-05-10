@@ -241,7 +241,7 @@ public class MyDao implements Dao {
     public Users getUser(int idu) {
         Users ussr = new Users();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
-        String useridu = "select * from users where email ='" + idu + "'";
+        String useridu = "select * from users where idu ='" + idu + "'";
         try {
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery(useridu);
