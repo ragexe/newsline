@@ -44,15 +44,15 @@ public class adminController extends HttpServlet {
             if ((request.getParameter("operation") != null)) {
                 String operation = request.getParameter("operation");
 
-                if (operation.equals("add")) {
+                if ("add".equals(operation)) {
                     com = new AddCommand();
-                } else if (operation.equals("addwrite")) {
+                } else if ("addwrite".equals(operation)) {
                     com = new AddWriteCommand();
-                } else if (operation.equals("delete")) {
+                } else if ("delete".equals(operation)) {
                     com = new DeleteCommand();
-                } else if (operation.equals("edit")) {
+                } else if ("edit".equals(operation)) {
                     com = new EditCommand();
-                } else if (operation.equals("editwrite")) {
+                } else if ("editwrite".equals(operation)) {
                     com = new EditWriteCommand();
                 }
             } else {
