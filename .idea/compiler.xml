@@ -22,11 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dao" />
         <module name="newslineWeb" />
-        <module name="services" />
       </profile>
     </annotationProcessing>
   </component>
 </project>
-
