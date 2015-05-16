@@ -97,7 +97,7 @@ public class PageControlPanel extends HttpServlet {
         auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
         if (user.getRole() > 0) {
             auth.append("<br>");
-            auth.append("<a href=\"logincorrect?adm=x&email=\"");
+            auth.append("<a href=\"logincorrect?adm=x&email=");
             auth.append(email);
             auth.append("&password=");
             auth.append(pass);

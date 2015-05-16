@@ -5,7 +5,7 @@
          version="3.1">
 
 
-    <!--<filter>
+    <filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>admin.AdminFilter</filter-class>
         <init-param>
@@ -16,7 +16,7 @@
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/adminController</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
 
     <filter>
         <filter-name>CharsetFilter</filter-name>
