@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
 public class menu extends HttpServlet {
     private static final long serialVersionUID = 3L;
     //Dao dao;
@@ -52,57 +53,58 @@ public class menu extends HttpServlet {
         StringBuffer menutext = new StringBuffer();
         menutext.append("<ul>");
         List<Page> mpages = service.getPagesByParent("main");
-        for (data.Page mpage : mpages) {
-            menutext.append("<li><a href=\"PageControlPanel?email=");
-            menutext.append(email);
-            menutext.append("&sect=");
-            menutext.append(mpage.getId());
-            menutext.append("\">");
-            menutext.append(mpage.getTitle4menu());
-            menutext.append("</a>");
-            List<Page> spages = service.getPagesByParent(mpage.getId());
-            menutext.append("<ul>");
-            if (mpage.getId().equals(section) || section == null) {
-                for (data.Page spage : spages) {
-                    menutext.append("<li><a href=\"PageControlPanel?email=");
-                    menutext.append(email);
-                    menutext.append("&sect=");
-                    menutext.append(mpage.getId());
-                    menutext.append("&subsect=");
-                    menutext.append(spage.getId());
-                    menutext.append("\">");
-                    menutext.append(spage.getTitle4menu());
-                    menutext.append(" - ");
-                    menutext.append(spage.getDate());
-                    menutext.append(" - ");
-                    menutext.append("</a></li>");
-                }
-            }
-            menutext.append("</ul>");
-            menutext.append("</li>");
-        }
-        menutext.append("</ul>");
-        request.setAttribute("pagemenu", menutext.toString());
-        StringBuffer auth = new StringBuffer();
-        String idu = request.getSession().getAttribute("login")+"";
-        Users user = service.getUser(Integer.parseInt(request.getSession().getAttribute("login").toString())); //получаем юзера по idu
-        auth.append("Привет, " + user.getName());//получаем имя пользователя по idu
-        auth.append("<br>");
-        auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
-        if (user.getRole() > 0) {
-            auth.append("<br>");
-            auth.append("<a href=\"adminController\">AdminControl</a>");
-            auth.append("<a href=\"logincorrect?adm=x&email=");
-            auth.append(email);
-            auth.append("&password=");
-            auth.append(pass);
-            auth.append("\">Админк1а</a>");
-        }
-        request.setAttribute("auth", auth.toString());
-        String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
-        request.setAttribute("onmain", onmain);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");
-        dispatcher.forward(request, response);
+
+//        for (data.Page mpage : mpages) {
+//            menutext.append("<li><a href=\"PageControlPanel?email=");
+//            menutext.append(email);
+//            menutext.append("&sect=");
+//            menutext.append(mpage.getId());
+//            menutext.append("\">");
+//            menutext.append(mpage.getTitle4menu());
+//            menutext.append("</a>");
+//            List<Page> spages = service.getPagesByParent(mpage.getId());
+//            menutext.append("<ul>");
+//            if (mpage.getId().equals(section) || section == null) {
+//                for (data.Page spage : spages) {
+//                    menutext.append("<li><a href=\"PageControlPanel?email=");
+//                    menutext.append(email);
+//                    menutext.append("&sect=");
+//                    menutext.append(mpage.getId());
+//                    menutext.append("&subsect=");
+//                    menutext.append(spage.getId());
+//                    menutext.append("\">");
+//                    menutext.append(spage.getTitle4menu());
+//                    menutext.append(" - ");
+//                    menutext.append(spage.getDate());
+//                    menutext.append(" - ");
+//                    menutext.append("</a></li>");
+//                }
+//            }
+//            menutext.append("</ul>");
+//            menutext.append("</li>");
+//        }
+//        menutext.append("</ul>");
+//        request.setAttribute("pagemenu", menutext.toString());
+//        StringBuffer auth = new StringBuffer();
+//        String idu = request.getSession().getAttribute("login")+"";
+//        Users user = service.getUser(Integer.parseInt(request.getSession().getAttribute("login").toString())); //получаем юзера по idu
+//        auth.append("Привет, " + user.getName());//получаем имя пользователя по idu
+//        auth.append("<br>");
+//        auth.append("<a href=\"mylogin.jsp\">Relogin</a>");
+//        if (user.getRole() > 0) {
+//            auth.append("<br>");
+//            auth.append("<a href=\"adminController\">AdminControl</a>");
+//            auth.append("<a href=\"logincorrect?adm=x&email=");
+//            auth.append(email);
+//            auth.append("&password=");
+//            auth.append(pass);
+//            auth.append("\">Админк1а</a>");
+//        }
+//        request.setAttribute("auth", auth.toString());
+//        String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
+//        request.setAttribute("onmain", onmain);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");
+//        dispatcher.forward(request, response);
     }
 
     /**

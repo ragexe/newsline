@@ -58,6 +58,15 @@
         <url-pattern>/logincorrect</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>servlet5</servlet-name>
+        <servlet-class>menu</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet5</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+
     <!--<servlet>
         <servlet-name>servlet5</servlet-name>
         <servlet-class>admin.adminPanel</servlet-class>

@@ -42,8 +42,10 @@
           <td width="40%">
             <!--<%= request.getAttribute("pagemenu") %>-->
             <!-- берем из запроса текстовую переменную созданного меню  -->
+            <jsp:include page="/menu"/>
             <c:forEach var="pag" items="$data.Page">
               <p>${pag}</p>
+              <c:out value="${pag}"/>
             </c:forEach>
             <!--for (data.Page mpage : mpages) {
             menutext.append("<li><a href=\"PageControlPanel?email=");
