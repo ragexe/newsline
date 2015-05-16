@@ -1,3 +1,6 @@
+/**
+ * Created by ragexe on 16.05.2015.
+ */
 import data.Page;
 import data.Users;
 
@@ -9,21 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-public class PageControlPanel extends HttpServlet {
+public class menu extends HttpServlet {
     private static final long serialVersionUID = 3L;
     //Dao dao;
     private Service service;
-    public PageControlPanel() {
+    public menu() {}
 
-    }
-
-//    @Override
-//    public void init() throws ServletException {
-//        super.init();
-//        dao = MyDao.getDao();
-//    }
-        @Override
     public void init() throws ServletException {
         super.init();
         service = new MyService();
@@ -37,8 +31,8 @@ public class PageControlPanel extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String section = request.getParameter("sect");        //
-
         String subsection = request.getParameter("subsect");
+
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
         String id;
@@ -119,6 +113,4 @@ public class PageControlPanel extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         doGet(request, response);
     }
-
 }
-
