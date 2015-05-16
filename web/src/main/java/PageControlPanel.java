@@ -101,7 +101,7 @@ public class PageControlPanel extends HttpServlet {
             auth.append(email);
             auth.append("&password=");
             auth.append(pass);
-            auth.append("\">Админка</a>");
+            auth.append("\">Админк1а</a>");
         }
         request.setAttribute("auth", auth.toString());
         String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
