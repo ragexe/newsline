@@ -18,11 +18,11 @@ public class AdminFilter implements Filter{
         if (session.getAttribute("role").toString().equals("1")){
             chain.doFilter(req, resp);
         }else{
-            out.println("username or password error!");
-            out.println(session.getAttribute("role").toString());
-            out.println("/login.jsp");
-//            RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
-//            rd.include(req, resp);
+//            out.println("username or password error!");
+//            out.println(session.getAttribute("role").toString());
+//            out.println("/login.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
+            rd.include(req, resp);
         }
     }
 
