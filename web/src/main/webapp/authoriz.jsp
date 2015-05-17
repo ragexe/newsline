@@ -21,7 +21,10 @@
   </core:when>
   <core:otherwise>
     Привет, <core:out value="${sessionScope.login}"/>
-    <br><i><a href="logout.jsp">Выйти</a></i>
+    <core:if test="${sessionScope.role == 1}">
+      <br><a href="adminPanel">Капитанская рубка</a>
+    </core:if>
+    <br><i><a href="logout">Выйти</a></i>
   </core:otherwise>
 </core:choose>
 </body>

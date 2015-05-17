@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="login" align="center">
+    <form action="logincorrect" align="center">
         <p>
             <br>Input your login and password<br>
         </p>

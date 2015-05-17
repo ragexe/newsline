@@ -85,13 +85,31 @@
         <url-pattern>/authoriz</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>
-        <servlet-name>servlet5</servlet-name>
-        <servlet-class>admin.adminPanel</servlet-class>
+    <servlet>
+    <servlet-name>servlet8</servlet-name>
+    <servlet-class>admin.adminPanel</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>servlet8</servlet-name>
+        <url-pattern>/adminPanel</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet9</servlet-name>
+        <servlet-class>admin.logout</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>servlet5</servlet-name>
-        <url-pattern>/adminPanel</url-pattern>
-    </servlet-mapping>-->
+        <servlet-name>servlet9</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>servlet5</servlet-name>-->
+        <!--<servlet-class>admin.adminPanel</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>servlet5</servlet-name>-->
+        <!--<url-pattern>/adminPanel</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>

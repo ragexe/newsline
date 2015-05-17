@@ -43,9 +43,7 @@
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
-      <font size="2">
         <jsp:include page="authoriz.jsp"></jsp:include>
-      </font>
     </td>
   </tr>
   <tr>
