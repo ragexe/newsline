@@ -12,9 +12,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html>
 <jsp:include page="/page">
-  <jsp:param name="sect" value="${param.sect}"></jsp:param>
-  <jsp:param name="subsect" value="${param.subsect}"></jsp:param>
+  <jsp:param name="sect" value="${param.sect}"/>
+  <jsp:param name="subsect" value="${param.subsect}"/>
 </jsp:include>
+<%--<fmt:requestEncoding value="UTF-8"/>--%>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <fmt:requestEncoding value="UTF-8"/>
@@ -35,13 +37,15 @@
   </table>
 <table width="100%" cellspacing="0" cellpadding="10" border="0">
   <tr>
-    <td width="25%" valign="top">
+    <td width="25%" valign="bottom">
       <!-- "На главную" -->
       <ul><li><a href=\>На главную</a></li></ul>
     </td>
-    <td width="75%" align="right" valign="top">
+    <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
-      <!--<br><%= request.getAttribute("auth")%>-->
+      <font size="2">
+        <jsp:include page="authoriz.jsp"></jsp:include>
+      </font>
     </td>
   </tr>
   <tr>
@@ -66,13 +70,41 @@
         </core:forEach>
       </ul>
     </td>
-    <td width="75%" align="left" valign="top">
+    <td width="65%" align="left" valign="top">
       <!-- Поле основного текста -->
       <p align="center"><h2><jsp:getProperty name="pageBean" property="title"/></h2></p>
       <p><jsp:getProperty name="pageBean" property="maintext"/></p>
       <br><p align="right"><i><jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="user"/></i></p>
     </td>
+    <td width="10%" align="left" valign="top">
+      <!-- Пустое поле -->
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+      <font size="1">Здесь могла бы быть ваша реклама</font>
+    </td>
   </tr>
 </table>
 </body>
+
 </html>

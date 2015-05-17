@@ -76,6 +76,15 @@
         <url-pattern>/page</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>servlet7</servlet-name>
+        <servlet-class>admin.authoriz</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet7</servlet-name>
+        <url-pattern>/authoriz</url-pattern>
+    </servlet-mapping>
+
     <!--<servlet>
         <servlet-name>servlet5</servlet-name>
         <servlet-class>admin.adminPanel</servlet-class>

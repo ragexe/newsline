@@ -6,15 +6,22 @@
     <title>Login</title>
 </head>
 <body>
-<form action="logincorrect" align="center">
-    <p>
-        <br>Input your login and password<br>
-        login:<br><input name="email" placeholder="email"><br>
-        password:<br><input type="password" name="password" placeholder="password"><br>
+    <form action="login" align="center">
+        <p>
+            <br>Input your login and password<br>
+        </p>
+        <table width="100%">
+            <tr>
+                <td align="right" width="50%">login:</td>
+                <td width="50%"><input name="email" placeholder="email"></td>
+            </tr>
+            <tr>
+                <td align="right" width="50%">password:</td>
+                <td width="50%"><input type="password" name="password" placeholder="password"></td>
+            </tr>
+        </table>
         <br>
         <input type="submit">
-    </p>
-</form>
-
+    </form>
 </body>
 </html>
