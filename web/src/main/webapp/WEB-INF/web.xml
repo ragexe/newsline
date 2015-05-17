@@ -15,7 +15,7 @@
     </filter>
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
-        <url-pattern>/adminController</url-pattern>
+        <url-pattern>/adminPanel</url-pattern>
     </filter-mapping>
 
     <filter>

@@ -64,14 +64,12 @@ public class ShowCommand extends Command {
             st.append("<li><a href=\"adminPanel?operation=add&id=");
             st.append(Page.getId());
             st.append("\">Add page</a></li>");
-
             st.append("</ul>");
             st.append("</li>");
         }
         st.append("<li><a href=\"adminPanel?operation=add&id=main\">");
         st.append("Add page</a></li>");
-        st.append("<li><a href=\"PageControlPanel\">reading all news</a></li>");
-        st.append("</ul>");
+        st.append("<ul><li><a href=\\>На главную</a></li></ul>");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/mainadmin.jsp");
         request.setAttribute("menu", st.toString());
