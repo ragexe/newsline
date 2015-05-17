@@ -6,7 +6,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form action="adminController" accept-charset="utf-8">
+<form action="adminPanel" accept-charset="utf-8">
     <p>
         <input type="hidden" name="operation" value="addwrite">
         <input type="hidden" name="parentid" value="<%= request.getParameter("id") %>">

@@ -26,7 +26,7 @@ public class AddWriteCommand extends Command {
             Page.setDate(request.getParameter("date"));
             Page.setMaintext(request.getParameter("maintext"));
             dao.addPage(Page);
-            response.sendRedirect("adminController");
+            response.sendRedirect("adminPanel");
         } catch (IOException e) {
             log.error("IOException � ������ execute ������ AddWriteCommand! -- " + e); // ������ � ���-����
             e.printStackTrace();

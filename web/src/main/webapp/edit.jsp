@@ -7,7 +7,7 @@
     <title>Редактирование страницы</title>
 </head>
 <body>
-<form action="adminController" accept-charset="utf-8">
+<form action="adminPanel" accept-charset="utf-8">
     <p>
         <input type="hidden" name="operation" value="editwrite">
         <input type="hidden" name="id" value="<%= request.getParameter("id") %>">

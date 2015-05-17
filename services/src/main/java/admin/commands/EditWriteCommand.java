@@ -33,7 +33,7 @@ public class EditWriteCommand extends Command {
             Page.setMaintext(request.getParameter("maintext"));
             dao.editPage(Page);
 
-            response.sendRedirect("adminController");
+            response.sendRedirect("adminPanel");
         } catch (IOException e) {
             log.error("IOException � ������ execute ������ EditWriteCommand! -- " + e); // ������ � ���-����
             e.printStackTrace();
