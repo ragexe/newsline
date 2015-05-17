@@ -15,11 +15,11 @@
   <jsp:param name="sect" value="${param.sect}"/>
   <jsp:param name="subsect" value="${param.subsect}"/>
 </jsp:include>
-<%--<fmt:requestEncoding value="UTF-8"/>--%>
+<fmt:requestEncoding value="UTF-8"/>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <fmt:requestEncoding value="UTF-8"/>
+  <%--<fmt:requestEncoding value="UTF-8"/>--%>
   <!-- Заголовок страницы -->
   <title>
     <jsp:getProperty name="pageBean" property="title"/>

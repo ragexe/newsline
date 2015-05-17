@@ -14,12 +14,9 @@
 <%--</head>--%>
 <fmt:requestEncoding value="UTF-8"/>
 <body>
-<%--<core:out value="1111"></core:out>--%>
-<%--<core:out value="${sessionScope.login}"></core:out>--%>
-<%--<core:if test="${sessionScope.login == null}">условие сработало</core:if>--%>
 <core:choose>
   <core:when test="${sessionScope.login == null}">
-    Привет, гость. Чтобы добавить новость, необходимо <a href="login.jsp">авторизоваться</a>
+    Привет, Гость. Чтобы добавить новость, необходимо <a href="login.jsp">авторизоваться</a>
     <br><i><a href="login.jsp">Регистрация</a></i>
   </core:when>
   <core:otherwise>
