@@ -89,6 +89,7 @@ public class PageControlPanel extends HttpServlet {
         }
         menutext.append("</ul>");
         request.setAttribute("pagemenu", menutext.toString());
+
         StringBuffer auth = new StringBuffer();
         String idu = request.getSession().getAttribute("login")+"";
         Users user = service.getUser(Integer.parseInt(request.getSession().getAttribute("login").toString())); //получаем юзера по idu
@@ -105,6 +106,7 @@ public class PageControlPanel extends HttpServlet {
             auth.append("\">Админк1а</a>");
         }
         request.setAttribute("auth", auth.toString());
+
         String onmain = "<a href=\"PageControlPanel?email=\"" + email + "\">На главную</a>";
         request.setAttribute("onmain", onmain);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages.jsp");

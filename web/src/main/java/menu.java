@@ -15,7 +15,6 @@ import java.util.List;
 
 public class menu extends HttpServlet {
     private static final long serialVersionUID = 3L;
-    //Dao dao;
     private Service service;
     public menu() {}
 
@@ -24,37 +23,14 @@ public class menu extends HttpServlet {
         service = new MyService();
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        String section = request.getParameter("sect");
+        List<Page> pages = service.getPagesByParent(section);
+        request.setAttribute("result", pages);
 
-        String section = request.getParameter("sect");        //
-        String subsection = request.getParameter("subsect");
-
-        //String email = request.getParameter("email");
-        //String pass = request.getParameter("password");
-
-        String id;
-        if (section == null) {
-            id = "main";
-        } else if (subsection == null) {
-            id = section;
-        } else {
-            id = subsection;
-        }
-
-        Page Page = service.getPage(id);
-        //request.setAttribute("Page", Page);
-        //StringBuffer menutext = new StringBuffer();
-        //menutext.append("<ul>");
-        //List<Page> mpages = service.getPagesByParent("main");
-        List<Page> mpages = service.getPagesByParent(id);
-        List<Page> spages = service.getPagesByParent(id);
-        request.setAttribute("result1", mpages);
-        request.setAttribute("result2", spages);
+        //request.setAttribute("result2", spages);
         //this.forward("/index.html", request, response);
         //RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         //dispatcher.forward(request, response);
