@@ -30,29 +30,26 @@ public class adminPanel extends HttpServlet {
         Command com = null;
         Page Page = dao.getPage(request.getParameter("id"));
         request.setAttribute("Page", Page);
-//        if (session.getAttribute("login") == null){
-        if (false){
-            if (session.getAttribute("login") == null){
-                com = new ToStartCommand();
-            } else {
-                if ((request.getParameter("operation") != null)) {
-                    String operation = request.getParameter("operation");
+//        if (false){
+////        if (session.getAttribute("login") == null){
+//            com = new ToStartCommand();
+//        } else {
+        if ((request.getParameter("operation") != null)) {
+            String operation = request.getParameter("operation");
 
-                    if ("add".equals(operation)) {
-                        com = new AddCommand();
-                    } else if ("addwrite".equals(operation)) {
-                        com = new AddWriteCommand();
-                    } else if ("delete".equals(operation)) {
-                        com = new DeleteCommand();
-                    } else if ("edit".equals(operation)) {
-                        com = new EditCommand();
-                    } else if ("editwrite".equals(operation)) {
-                        com = new EditWriteCommand();
-                    }
-                } else {
-                    com = new ShowCommand();
-                }
+            if ("add".equals(operation)) {
+                com = new AddCommand();
+            } else if ("addwrite".equals(operation)) {
+                com = new AddWriteCommand();
+            } else if ("delete".equals(operation)) {
+                com = new DeleteCommand();
+            } else if ("edit".equals(operation)) {
+                com = new EditCommand();
+            } else if ("editwrite".equals(operation)) {
+                com = new EditWriteCommand();
             }
+        } else {
+            com = new ShowCommand();
         }
         com.execute(request, response);
     }
