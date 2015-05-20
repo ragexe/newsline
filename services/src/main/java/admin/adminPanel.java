@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -26,7 +26,7 @@ public class adminPanel extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
+//        HttpSession session = request.getSession();
         Command com = null;
         Page Page = dao.getPage(request.getParameter("id"));
         request.setAttribute("Page", Page);
@@ -34,24 +34,49 @@ public class adminPanel extends HttpServlet {
 ////        if (session.getAttribute("login") == null){
 //            com = new ToStartCommand();
 //        } else {
+//        if ((request.getParameter("operation") != null)) {
+//            String operation = request.getParameter("operation");
+//
+//            if ("add".equals(operation)) {
+//                com = new AddCommand();
+//            } else if ("addwrite".equals(operation)) {
+//                com = new AddWriteCommand();
+//            } else if ("delete".equals(operation)) {
+//                com = new DeleteCommand();
+//            } else if ("edit".equals(operation)) {
+//                com = new EditCommand();
+//            } else if ("editwrite".equals(operation)) {
+//                com = new EditWriteCommand();
+//            }
+//        } else {
+//            com = new ShowCommand();
+//        }
+
         if ((request.getParameter("operation") != null)) {
             String operation = request.getParameter("operation");
+            switch (operation) {
+                case "add":
+                    com = new AddCommand();
+                    break;
+                case "addwrite":
+                    com = new AddCommand();
+                    break;
+                case "delete":
+                    com = new AddWriteCommand();
+                    break;
+                case "edit":
+                    com = new DeleteCommand();
+                    break;
+                case "editwrite":
+                    com = new EditWriteCommand();
+                    break;
+                default:
+                    com = new ShowCommand();
 
-            if ("add".equals(operation)) {
-                com = new AddCommand();
-            } else if ("addwrite".equals(operation)) {
-                com = new AddWriteCommand();
-            } else if ("delete".equals(operation)) {
-                com = new DeleteCommand();
-            } else if ("edit".equals(operation)) {
-                com = new EditCommand();
-            } else if ("editwrite".equals(operation)) {
-                com = new EditWriteCommand();
+
             }
-        } else {
-            com = new ShowCommand();
+            com.execute(request, response);
         }
-        com.execute(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
