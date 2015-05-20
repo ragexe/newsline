@@ -20,7 +20,6 @@ public class AdminFilter implements Filter{
         } else {
             RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
             rd.include(req, resp);
-
         }
     }
     public void destroy() {
