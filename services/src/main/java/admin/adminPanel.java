@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -30,24 +30,20 @@ public class adminPanel extends HttpServlet {
         Command com = null;
         Page Page = dao.getPage(request.getParameter("id"));
         request.setAttribute("Page", Page);
-//        if (false){
-////        if (session.getAttribute("login") == null){
-//            com = new ToStartCommand();
-//        } else {
         if ((request.getParameter("operation") != null)) {
             String operation = request.getParameter("operation");
-            switch (operation) {
+            switch (operation){
                 case "add":
                     com = new AddCommand();
                     break;
                 case "addwrite":
-                    com = new AddCommand();
-                    break;
-                case "delete":
                     com = new AddWriteCommand();
                     break;
-                case "edit":
+                case "delete":
                     com = new DeleteCommand();
+                    break;
+                case "edit":
+                    com = new EditCommand();
                     break;
                 case "editwrite":
                     com = new EditWriteCommand();

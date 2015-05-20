@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class authoriz extends HttpServlet {
-    private static final Logger log = Logger.getLogger(logincorrect.class);
+    private static final Logger log = Logger.getLogger(authoriz.class);
 
     private static final long serialVersionUID = 2L;
 

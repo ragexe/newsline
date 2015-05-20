@@ -22,7 +22,8 @@
   <core:otherwise>
     Привет, <core:out value="${sessionScope.login}"/>
     <core:if test="${sessionScope.role == 1}">
-      <br><a href="adminPanel">Капитанская рубка</a>
+      <%--<br><a href="adminPanel">Капитанская рубка</a>--%>
+      <br><a href="admpanel.jsp">Капитанская рубка</a>
     </core:if>
     <br><i><a href="logout">Выйти</a></i>
   </core:otherwise>
