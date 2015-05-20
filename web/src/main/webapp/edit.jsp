@@ -12,15 +12,37 @@
     <p>
         <input type="hidden" name="operation" value="editwrite">
         <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
-        Parentid(раздел):<input name="parentid" VALUE=<jsp:getProperty name="pageBean" property="parentid"/>><br>
-        user:<input name="user" VALUE=<jsp:getProperty name="pageBean" property="user"/>><br>
-        date:<input name="date" VALUE=<jsp:getProperty name="pageBean" property="date"/>><br>
-        title:<input name="title" VALUE=<jsp:getProperty name="pageBean" property="title"/>><br>
-        title4menu:<input name="title4menu" VALUE=<jsp:getProperty name="pageBean" property="title4menu"/>><br>
-        maintext:<br>
-        <textarea rows="15" cols="80" name="maintext"><jsp:getProperty name="pageBean" property="maintext"/></textarea>
-        <br>
-        <input type="submit">
+    <table>
+        <tr>
+            <td>Parentid(раздел):</td>
+            <td><input name="parentid" VALUE=<jsp:getProperty name="pageBean" property="parentid"/>><br></td>
+        </tr>
+
+        <tr>
+            <td>user:</td>
+            <td><input name="user" VALUE=<jsp:getProperty name="pageBean" property="user"/>></td>
+        </tr>
+
+        <tr>
+            <td>date:</td>
+            <td><input name="date" VALUE=<jsp:getProperty name="pageBean" property="date"/>></td>
+        </tr>
+
+        <tr>
+            <td>title:</td>
+            <td><input name="title" VALUE=<jsp:getProperty name="pageBean" property="title"/>></td>
+        </tr>
+
+        <tr>
+            <td>title4menu:</td>
+            <td><input name="title4menu" VALUE=<jsp:getProperty name="pageBean" property="title4menu"/>></td>
+        </tr>
+        <tr>
+            <td>maintext:</td>
+            <td><textarea rows="15" cols="80" name="maintext"><jsp:getProperty name="pageBean" property="maintext"/></textarea></td>
+        </tr>
+    </table>
+    <input type="submit">
     </p>
 </form>
 </body>
