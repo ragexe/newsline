@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class logout extends HttpServlet {
-    private static final Logger log = Logger.getLogger(logincorrect.class);
+public class Logout extends HttpServlet {
+    private static final Logger log = Logger.getLogger(Logout.class);
 
     private static final long serialVersionUID = 10L;
 
-    public logout() {
+    public Logout() {
         super();
     }
 
