@@ -38,7 +38,7 @@
             <td><input name="title4menu" VALUE=<jsp:getProperty name="pageBean" property="title4menu"/>></td>
         </tr>
         <tr>
-            <td>maintext:</td>
+            <td valign="top">maintext:</td>
             <td><textarea rows="15" cols="80" name="maintext"><jsp:getProperty name="pageBean" property="maintext"/></textarea></td>
         </tr>
     </table>

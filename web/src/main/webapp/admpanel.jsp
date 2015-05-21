@@ -37,8 +37,8 @@
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
-        <%--<jsp:include page="authoriz.jsp"></jsp:include>--%>
-        ROOT ACCEPTED
+      <%--<jsp:include page="authoriz.jsp"></jsp:include>--%>
+      ROOT ACCEPTED
     </td>
   </tr>
 
@@ -50,15 +50,27 @@
       </jsp:include>
       <ul>
         <core:forEach var="page1" items="${result}">
-          <li><a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
-            <jsp:include page="/menu">
-              <jsp:param name="sect" value="${page1.id}"/>
-            </jsp:include>
-            <ul>
-              <core:forEach var="page2" items="${result}">
-                <li><a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a></li>
-              </core:forEach>
-            </ul>
+          <li>
+            <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a>
+            <font size="1">
+              <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&operation=edit>[Edit]</a>
+              <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&operation=delete>[Delete]</a>
+            </font>
+          </li>
+          <jsp:include page="/menu">
+            <jsp:param name="sect" value="${page1.id}"/>
+          </jsp:include>
+          <ul>
+            <core:forEach var="page2" items="${result}">
+              <li>
+                <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a>
+                <font size="1">
+                  <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>&operation=edit>[Edit]</a>
+                  <a href=\admpanel.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>&operation=delete>[Delete]</a>
+                </font>
+              </li>
+            </core:forEach>
+          </ul>
         </core:forEach>
       </ul>
     </td>
