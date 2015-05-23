@@ -14,26 +14,19 @@ public class EditWriteCommand extends Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        Page Page = new Page();
+        Page page = new Page();
         Dao dao = MyDao.getDao();
-//        try {
-//            request.setCharacterEncoding("Cp1251");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-        //response.setCharacterEncoding("Cp1251");
         response.setContentType("text/html; charset=UTF-8");
         try {
-            Page.setId(request.getParameter("id"));
-            Page.setParentid(request.getParameter("parentid"));
-            Page.setTitle(request.getParameter("title"));
-            Page.setTitle4menu(request.getParameter("title4menu"));
-            Page.setUser(Integer.parseInt(request.getParameter("user")));
-            Page.setDate(request.getParameter("date"));
-            Page.setMaintext(request.getParameter("maintext"));
-            dao.editPage(Page);
-
-            response.sendRedirect("adminPanel");
+            page.setId(request.getParameter("id"));
+            page.setParentid(request.getParameter("parentid"));
+            page.setTitle(request.getParameter("title"));
+            page.setTitle4menu(request.getParameter("title4menu"));
+            page.setUser(Integer.parseInt(request.getParameter("user")));
+            page.setDate(request.getParameter("date"));
+            page.setMaintext(request.getParameter("maintext"));
+            dao.editPage(page);
+            response.sendRedirect("admpanel.jsp");
         } catch (IOException e) {
             log.error("IOException � ������ execute ������ EditWriteCommand! -- " + e); // ������ � ���-����
             e.printStackTrace();

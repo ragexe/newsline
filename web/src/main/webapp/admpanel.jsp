@@ -12,7 +12,6 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <%--<fmt:requestEncoding value="UTF-8"/>--%>
   <!-- Заголовок страницы -->
   <title>
     <jsp:getProperty name="pageBean" property="title"/>
@@ -37,7 +36,7 @@
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
-      <%--<jsp:include page="authoriz.jsp"></jsp:include>--%>
+      <jsp:include page="authoriz.jsp"></jsp:include><br>
       ROOT ACCEPTED
     </td>
   </tr>

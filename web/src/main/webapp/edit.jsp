@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="Page" class="data.Page" scope="request"/>
+<%--<jsp:useBean id="Page" class="data.Page" scope="request"/>--%>
 <jsp:useBean id="pageBean" class="data.Page" scope="request"/>
 <html>
 <head>
@@ -11,7 +11,8 @@
 <form action="adminPanel" accept-charset="utf-8">
     <p>
         <input type="hidden" name="operation" value="editwrite">
-        <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
+        <%--<input type="hidden" name="id" value="<%= request.getParameter("id") %>">--%>
+        <input type="hidden" name="id" value=<jsp:getProperty name="pageBean" property="id"/>>
     <table>
         <tr>
             <td>Parentid(раздел):</td>
