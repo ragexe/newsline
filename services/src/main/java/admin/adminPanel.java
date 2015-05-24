@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-public class adminPanel extends HttpServlet {
+public class AdminPanel extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     Dao dao;
 
-    public adminPanel() {
+    public AdminPanel() {
         super();
         dao = MyDao.getDao();
     }
@@ -26,7 +26,7 @@ public class adminPanel extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 //        HttpSession session = request.getSession();
-        String id = null;
+//        String id = null;
         Command com = null;
 //        Page page = dao.getPage(request.getParameter("id"));
 //        request.setAttribute("pageBean", page);

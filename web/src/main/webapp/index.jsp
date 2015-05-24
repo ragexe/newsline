@@ -66,6 +66,9 @@
             </ul>
           </core:if>
         </core:forEach>
+        <core:if test="${sessionScope.login != null}">
+          <li><a href="add.jsp">+ Добавить новость</a></li>
+        </core:if>
       </ul>
     </td>
     <td width="65%" align="left" valign="top">
@@ -76,7 +79,7 @@
     </td>
     <td width="10%" align="left" valign="top">
       <!-- Пустое поле -->
-      <jsp:include page="empty.html"/>
+      <core:import url="empty.html" charEncoding="UTF-8"/>
     </td>
   </tr>
 </table>

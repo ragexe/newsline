@@ -32,10 +32,10 @@ public class ShowCommand extends Command {
             Page Page = pageIterator.next();
             st.append("<li>");
             st.append(Page.getTitle());
-            st.append(" <a href=\"adminPanel?operation=edit&id=");
+            st.append(" <a href=\"AdminPanel?operation=edit&id=");
             st.append(Page.getId());
             st.append("\">Edit</a>");
-            st.append(" <a href=\"adminPanel?operation=delete&id=");
+            st.append(" <a href=\"AdminPanel?operation=delete&id=");
             st.append(Page.getId());
             st.append("\">Delete</a>");
             //st.append("</a>");
@@ -53,21 +53,21 @@ public class ShowCommand extends Command {
                 st.append(" | ");
                 st.append(subPage.getDate());
                 st.append(" | ");
-                st.append(" <a href=\"adminPanel?operation=edit&id=");
+                st.append(" <a href=\"AdminPanel?operation=edit&id=");
                 st.append(subPage.getId());
                 st.append("\">Edit</a>");
-                st.append(" <a href=\"adminPanel?operation=delete&id=");
+                st.append(" <a href=\"AdminPanel?operation=delete&id=");
                 st.append(subPage.getId());
                 st.append("\">Delete</a>");
                 st.append("</li>");
             }
-            st.append("<li><a href=\"adminPanel?operation=add&id=");
+            st.append("<li><a href=\"AdminPanel?operation=add&id=");
             st.append(Page.getId());
             st.append("\">Add page</a></li>");
             st.append("</ul>");
             st.append("</li>");
         }
-        st.append("<li><a href=\"adminPanel?operation=add&id=main\">");
+        st.append("<li><a href=\"AdminPanel?operation=add&id=main\">");
         st.append("Add page</a></li>");
         st.append("<ul><li><a href=\\>На главную</a></li></ul>");
 

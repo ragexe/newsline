@@ -15,18 +15,18 @@ public class AddWriteCommand extends Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        Page Page = new Page();
+        Page page = new Page();
         Dao dao = MyDao.getDao();
         try {
-            Page.setId(request.getParameter("id"));
-            Page.setParentid(request.getParameter("parentid"));
-            Page.setTitle(request.getParameter("title"));
-            Page.setTitle4menu(request.getParameter("title4menu"));
-            Page.setUser(Integer.parseInt(request.getParameter("user")));
-            Page.setDate(request.getParameter("date"));
-            Page.setMaintext(request.getParameter("maintext"));
-            dao.addPage(Page);
-            response.sendRedirect("adminPanel");
+            page.setId(request.getParameter("id"));
+            page.setParentid(request.getParameter("parentid"));
+            page.setTitle(request.getParameter("title"));
+            page.setTitle4menu(request.getParameter("title4menu"));
+            page.setUser(Integer.parseInt(request.getParameter("user")));
+            page.setDate(request.getParameter("date"));
+            page.setMaintext(request.getParameter("maintext"));
+            dao.addPage(page);
+            response.sendRedirect("index.jsp");
         } catch (IOException e) {
             log.error("IOException � ������ execute ������ AddWriteCommand! -- " + e); // ������ � ���-����
             e.printStackTrace();

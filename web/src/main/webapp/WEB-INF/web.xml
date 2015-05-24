@@ -78,7 +78,7 @@
 
     <servlet>
         <servlet-name>servlet7</servlet-name>
-        <servlet-class>admin.authoriz</servlet-class>
+        <servlet-class>admin.Authoriz</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servlet7</servlet-name>
@@ -87,7 +87,7 @@
 
     <servlet>
     <servlet-name>servlet8</servlet-name>
-    <servlet-class>admin.adminPanel</servlet-class>
+    <servlet-class>admin.AdminPanel</servlet-class>
 </servlet>
     <servlet-mapping>
         <servlet-name>servlet8</servlet-name>
@@ -102,14 +102,5 @@
         <servlet-name>servlet9</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-
-    <!--<servlet>-->
-        <!--<servlet-name>servlet5</servlet-name>-->
-        <!--<servlet-class>admin.adminPanel</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet5</servlet-name>-->
-        <!--<url-pattern>/adminPanel</url-pattern>-->
-    <!--</servlet-mapping>-->
 
 </web-app>

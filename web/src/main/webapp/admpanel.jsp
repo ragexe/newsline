@@ -93,7 +93,7 @@
 
     <td width="10%" align="left" valign="top">
       <!-- Пустое поле -->
-      <jsp:include page="empty.html"/>
+      <core:import url="empty.html" charEncoding="UTF-8"/>
     </td>
   </tr>
 </table>

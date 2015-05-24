@@ -4,7 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 public class AdminFilter implements Filter{
 
@@ -13,12 +12,10 @@ public class AdminFilter implements Filter{
         resp.setContentType("text/html;charset=UTF-8");
         req.setCharacterEncoding("UTF-8");
         HttpSession session = ((HttpServletRequest) req).getSession();
-//        PrintWriter out = resp.getWriter();
-//        out.println("атрибут отсутствует");
         if (null != session.getAttribute("role") && session.getAttribute("role").toString().equals("1")) {
-            chain.doFilter(req, resp);
+            chain.doFilter(req, resp);//если роль админская (1) то пропускает
         } else {
-            RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("login.jsp");//если нет - login.jsp
             rd.include(req, resp);
         }
     }

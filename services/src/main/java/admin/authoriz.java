@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class authoriz extends HttpServlet {
-    private static final Logger log = Logger.getLogger(authoriz.class);
+public class Authoriz extends HttpServlet {
+    private static final Logger log = Logger.getLogger(Authoriz.class);
 
     private static final long serialVersionUID = 2L;
 
-    public authoriz() {
+    public Authoriz() {
         super();
     }
 
@@ -32,21 +32,22 @@ public class authoriz extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         Dao dao = MyDao.getDao();
         HttpSession session = request.getSession();
+        RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
         if (!request.getParameter("email").equals("") & !request.getParameter("password").equals("")) {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             Users user = dao.getUser(email);
-            if (user != null && (user.getPassword().equals(password) && user.getEmail().equals(email))) {
+            if (null != user && (user.getPassword().equals(password) && user.getEmail().equals(email))) {
                 session.setAttribute("login", user.getName());
                 session.setAttribute("role", user.getRole());
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-//                response.reset();
-//                dispatcher.forward(request, response);
                 response.sendRedirect("/");
+            } else {
+                request.setAttribute("message", "wrong login or password");
+                dispatcher.forward(request, response);
             }
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("incorrectInfo.html");
-            dispatcher.include(request, response);
+            request.setAttribute("message", "incorrect login or password");
+            dispatcher.forward(request, response);
         }
     }
 
