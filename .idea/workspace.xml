@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
+    <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="админка. Эдит пашет&#10;&#10;&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/web/src/main/resources/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="089c4868-4049-4e18-8ab7-96d7ca7446ca" name="Failed commit: Default" comment="админку на jstl&#10;&#10;" />
@@ -64,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="adminPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59865093" vertical-offset="2" max-vertical-offset="1173">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1309">
+              <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,27 +76,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java">
+      <file leaf-file-name="admpanel.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="4760">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <marker date="1431785177173" expanded="true" signature="2416:2457" placeholder="select * fro..pages..." />
-                <marker date="1431785177173" expanded="true" signature="3365:3418" placeholder="select * fro..pages..." />
-                <marker date="1431785177173" expanded="true" signature="7670:7722" placeholder="select * fro..users..." />
-                <marker date="1431785177173" expanded="true" signature="8594:8638" placeholder="select * fro..users..." />
-                <marker date="1431785177173" expanded="true" signature="9556:9590" placeholder="select idu, ..users..." />
-              </folding>
+            <state vertical-scroll-proportion="0.659612" vertical-offset="612" max-vertical-offset="2261">
+              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditWriteCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java">
+      <file leaf-file-name="menu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="867">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,46 +108,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditCommand.java">
+      <file leaf-file-name="AddCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddWriteCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddWriteCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newsbase.pages" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/cbd0e863/7d8a1440-aab1-4b5a-8895-133347c777d7/newsbase..pages">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="DeleteCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/edit.jsp">
+      <file leaf-file-name="Page.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/src/main/java/data/Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="935">
-              <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="556" max-vertical-offset="1513">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <element signature="e#1178#1179#0" expanded="true" />
+                <element signature="e#1218#1219#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authoriz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/authoriz.java">
+      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="884">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +206,6 @@
         <option value="$PROJECT_DIR$/dao/src/main/Test/TestGetPage.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/AdminServlet.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/pages.jsp" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/adminController.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/WebServlet.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/index1.jsp" />
@@ -201,7 +224,6 @@
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/ShowCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/AdminFilter.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/incorrectInfo.html" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/CharsetFilter.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/logincorrect.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/authoriz.java" />
@@ -211,10 +233,12 @@
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/authoriz.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" />
-        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" />
+        <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
       </list>
     </option>
   </component>
@@ -330,7 +354,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -409,6 +432,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newsline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,6 +597,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1321,7 +1401,8 @@
       <workItem from="1431972152496" duration="5237000" />
       <workItem from="1432137541238" duration="15243000" />
       <workItem from="1432235596137" duration="3419000" />
-      <workItem from="1432372695709" duration="10273000" />
+      <workItem from="1432372695709" duration="10589000" />
+      <workItem from="1432451968643" duration="8905000" />
     </task>
     <task id="LOCAL-00001" summary="удалил ненужный src&#10;">
       <created>1431125154317</created>
@@ -1545,11 +1626,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432239244892</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="админка. Эдит пашет&#10;&#10;&#10;">
+      <created>1432401822978</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1432401822978</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120486000" />
+    <option name="totallyTimeSpent" value="129707000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1572,7 +1659,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1590,7 +1677,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.195629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11567164" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1643,11 +1730,26 @@
     <MESSAGE value="bugfix incorrectInfo&#10;&#10;" />
     <MESSAGE value="админку на jstl&#10;&#10;" />
     <MESSAGE value="админка.не готова&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="админка.не готова&#10;&#10;&#10;" />
+    <MESSAGE value="админка. Эдит пашет&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="админка. Эдит пашет&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="49" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1656,14 +1758,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/pages.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.923077" vertical-offset="359" max-vertical-offset="1003">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
@@ -1723,20 +1817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="897">
@@ -1769,46 +1849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddWriteCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2900506" vertical-offset="206" max-vertical-offset="799">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.060708262" vertical-offset="223" max-vertical-offset="816">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11467116" vertical-offset="0" max-vertical-offset="593">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="510">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2057">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1831,7 +1875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1855,7 +1898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1867,12 +1909,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/Logger.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1474" max-vertical-offset="3315">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/StatementImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6591" max-vertical-offset="46393">
+          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="66006" max-vertical-offset="86836">
+          <caret line="3958" column="0" selection-start-line="3958" selection-start-column="0" selection-end-line="3958" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-juli/8.0.22/tomcat-juli-8.0.22-sources.jar!/org/apache/juli/logging/DirectJDKLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="862" max-vertical-offset="2363">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/javax/servlet/http/HttpServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11504" max-vertical-offset="16983">
+          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/CharsetFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/ConnectionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33268481" vertical-offset="39269" max-vertical-offset="91919">
+          <caret line="2405" column="0" selection-start-line="2405" selection-start-column="0" selection-end-line="2405" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/authoriz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="884">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/cbd0e863/7d8a1440-aab1-4b5a-8895-133347c777d7/newsbase..pages">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/ShowCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17200674" vertical-offset="0" max-vertical-offset="593">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3153457" vertical-offset="0" max-vertical-offset="593">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_75/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6762226" vertical-offset="15103" max-vertical-offset="18377">
+          <caret line="949" column="18" selection-start-line="949" selection-start-column="18" selection-end-line="949" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="833">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="48" />
           <folding>
-            <element signature="e#4003#4004#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1887,6 +2031,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/CategoryKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="697">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/Hierarchy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3310" max-vertical-offset="8942">
+          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+          <folding>
+            <element signature="e#7103#7104#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/LogManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3157" max-vertical-offset="4131">
@@ -1895,192 +2057,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/CategoryKey.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="731">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1474" max-vertical-offset="3315">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding>
-            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#4003#4004#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/Hierarchy.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65464896" vertical-offset="3752" max-vertical-offset="8942">
-          <caret line="282" column="48" selection-start-line="282" selection-start-column="48" selection-end-line="282" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="726" max-vertical-offset="4760">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="e#7055#7056#0" expanded="false" />
-            <element signature="e#7103#7104#0" expanded="false" />
+            <marker date="1432453117115" expanded="true" signature="-1:-1" placeholder="select * fro..pages..." />
+            <marker date="1432453117115" expanded="true" signature="-1:-1" placeholder="select * fro..pages..." />
+            <marker date="1432453117115" expanded="true" signature="-1:-1" placeholder="select * fro..users..." />
+            <marker date="1432453117115" expanded="true" signature="-1:-1" placeholder="select * fro..users..." />
+            <marker date="1432453117115" expanded="true" signature="-1:-1" placeholder="select idu, ..users..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/ShowCommand.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67741936" vertical-offset="476" max-vertical-offset="1428">
-          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/StatementImpl.java">
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddWriteCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6591" max-vertical-offset="46393">
-          <caret line="447" column="0" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/PreparedStatement.java">
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="66006" max-vertical-offset="86836">
-          <caret line="3958" column="0" selection-start-line="3958" selection-start-column="0" selection-end-line="3958" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.059964728" vertical-offset="0" max-vertical-offset="918">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/data/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="556" max-vertical-offset="1513">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#988#989#0" expanded="false" />
-            <element signature="e#1099#1100#0" expanded="false" />
-            <element signature="e#1130#1131#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6467066" vertical-offset="1097" max-vertical-offset="2261">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-juli/8.0.22/tomcat-juli-8.0.22-sources.jar!/org/apache/juli/logging/DirectJDKLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="862" max-vertical-offset="2363">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/javax/servlet/http/HttpServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11504" max-vertical-offset="16983">
-          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/CharsetFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35-sources.jar!/com/mysql/jdbc/ConnectionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33268481" vertical-offset="39269" max-vertical-offset="91919">
-          <caret line="2405" column="0" selection-start-line="2405" selection-start-column="0" selection-end-line="2405" selection-end-column="0" />
-          <folding>
-            <marker date="1426558268000" expanded="true" signature="-1:-1" placeholder="SELECT @@ses..." />
-            <marker date="1426558268000" expanded="true" signature="-1:-1" placeholder="SELECT @@ses..." />
-            <marker date="1426558268000" expanded="true" signature="-1:-1" placeholder="select @@ses..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/authoriz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="884">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/cbd0e863/7d8a1440-aab1-4b5a-8895-133347c777d7/newsbase..pages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="811" max-vertical-offset="4760">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <marker date="1431785177173" expanded="true" signature="2416:2457" placeholder="select * fro..pages..." />
-            <marker date="1431785177173" expanded="true" signature="3365:3418" placeholder="select * fro..pages..." />
-            <marker date="1431785177173" expanded="true" signature="7670:7722" placeholder="select * fro..users..." />
-            <marker date="1431785177173" expanded="true" signature="8594:8638" placeholder="select * fro..users..." />
-            <marker date="1431785177173" expanded="true" signature="9556:9590" placeholder="select idu, ..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="935">
-          <caret line="14" column="94" selection-start-line="14" selection-start-column="94" selection-end-line="14" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59865093" vertical-offset="2" max-vertical-offset="1173">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1309">
+          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="867">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.659612" vertical-offset="612" max-vertical-offset="2261">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

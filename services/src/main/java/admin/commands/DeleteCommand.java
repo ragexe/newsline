@@ -26,7 +26,7 @@ public class DeleteCommand extends Command {
             Page.setMaintext(request.getParameter("maintext"));
             dao.deletePage(Page);
 
-            response.sendRedirect("adminPanel");
+            response.sendRedirect("admpanel.jsp");
         } catch (IOException e) {
             log.error("IOException � ������ execute ������ DeleteCommand! -- " + e); // ������ � ���-����
             e.printStackTrace();

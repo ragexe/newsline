@@ -78,13 +78,13 @@
       <!-- Поле основного текста --->
       <core:choose>
         <core:when test="${param.operation.equals('edit')}">
-          <jsp:include page="/edit.jsp">
-            <jsp:param name="sect" value="${param.sect}"/>
-            <jsp:param name="subsect" value="${param.subsect}"/>
-          </jsp:include>
+          <jsp:include page="/edit.jsp"/>
+            <%--<jsp:param name="sect" value="${param.sect}"/>--%>
+            <%--<jsp:param name="subsect" value="${param.subsect}"/>--%>
+          <%--</jsp:include>--%>
         </core:when>
         <core:when test="${param.operation.equals('delete')}">
-          2
+          <jsp:include page="/adminPanel"/>
         </core:when>
         <core:otherwise>
           <p align="center"><h2><jsp:getProperty name="pageBean" property="title"/></h2></p>

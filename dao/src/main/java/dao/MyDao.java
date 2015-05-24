@@ -154,7 +154,7 @@ public class MyDao implements Dao {
     public int deletePage(Page p) {
         Page data = null;
         data = p;
-        int add = 0;
+        int del = 0;
         String sdeletePage = properties.getProperty("sdeletePage");
         //String deletePage = "DELETE FROM pages  Where id=?";
         PreparedStatement pStatement = null;
@@ -171,12 +171,12 @@ public class MyDao implements Dao {
             e1.printStackTrace();
         }
         try {
-            add = pStatement.executeUpdate();
+            del = pStatement.executeUpdate();
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
         }
-        return add;
+        return del;
     }
 
     @Override

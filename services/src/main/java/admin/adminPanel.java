@@ -4,7 +4,6 @@ import admin.commands.*;
 import dao.Dao;
 import dao.MyDao;
 import data.Page;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +26,17 @@ public class adminPanel extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 //        HttpSession session = request.getSession();
+        String id = null;
         Command com = null;
-        Page page = dao.getPage(request.getParameter("id"));
+//        Page page = dao.getPage(request.getParameter("id"));
+//        request.setAttribute("pageBean", page);
+//        request.getParameter("sect");
+//        request.getParameter("subsect");
+        if (request.getParameter("subsect") != null)
+            id = request.getParameter("subsect");
+        else
+            id = request.getParameter("sect");
+        Page page = dao.getPage(id);
         request.setAttribute("pageBean", page);
         if ((request.getParameter("operation") != null)) {
             String operation = request.getParameter("operation");
