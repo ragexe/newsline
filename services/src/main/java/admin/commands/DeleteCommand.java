@@ -5,6 +5,8 @@ import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -14,17 +16,27 @@ public class DeleteCommand extends Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html; charset=UTF-8");
+//        Page page = new Page();
+        Page page;
+        page = (Page)request.getAttribute("pageBean");
+        Dao dao = MyDao.getDao();
         try {
-            Page Page = new Page();
-            Dao dao = MyDao.getDao();
-            Page.setId(request.getParameter("id"));
-            Page.setParentid(request.getParameter("parentid"));
-            Page.setTitle(request.getParameter("title"));
-            Page.setTitle4menu(request.getParameter("title4menu"));
-            //Page.setUser(request.getParameter("user"));
-            Page.setDate(request.getParameter("date"));
-            Page.setMaintext(request.getParameter("maintext"));
-            dao.deletePage(Page);
+//            page.setId(request.getParameter("id"));
+//            page.setParentid(request.getParameter("parentid"));
+//            page.setTitle(request.getParameter("title"));
+//            page.setTitle4menu(request.getParameter("title4menu"));
+////            page.setUser(request.getParameter("user"));
+//            page.setDate(request.getParameter("date"));
+//            page.setMaintext(request.getParameter("maintext"));
+            dao.deletePage(page);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("admpanel.jsp");
+//            try {
+//                dispatcher.forward(request, response);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//                log.error(e.getMessage());
+//            }
+
 
             response.sendRedirect("admpanel.jsp");
         } catch (IOException e) {

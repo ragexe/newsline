@@ -20,8 +20,7 @@ public class menu extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String section = request.getParameter("sect");
-        List<Page> pages = service.getPagesByParent(section);
+        List<Page> pages = service.getPagesByParent(request.getParameter("sect"));
         request.setAttribute("result", pages);
     }
 

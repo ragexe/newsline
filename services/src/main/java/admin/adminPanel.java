@@ -30,14 +30,14 @@ public class adminPanel extends HttpServlet {
         Command com = null;
 //        Page page = dao.getPage(request.getParameter("id"));
 //        request.setAttribute("pageBean", page);
-//        request.getParameter("sect");
-//        request.getParameter("subsect");
-        if (request.getParameter("subsect") != null)
-            id = request.getParameter("subsect");
-        else
-            id = request.getParameter("sect");
-        Page page = dao.getPage(id);
-        request.setAttribute("pageBean", page);
+//
+//        if (request.getParameter("subsect") != null)
+//            id = request.getParameter("subsect");
+//        else
+//            id = request.getParameter("sect");
+//        Page page = dao.getPage(id);
+//        request.setAttribute("pageBean", page);
+
         if ((request.getParameter("operation") != null)) {
             String operation = request.getParameter("operation");
             switch (operation){
