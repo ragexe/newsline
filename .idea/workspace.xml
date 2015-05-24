@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="админка. Эдит пашет&#10;&#10;&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" afterPath="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" />
+    <list default="true" id="a7e1c4f3-5239-4aef-8ede-5ba3d95f87e6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/empty.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="089c4868-4049-4e18-8ab7-96d7ca7446ca" name="Failed commit: Default" comment="админку на jstl&#10;&#10;" />
@@ -76,11 +74,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admpanel.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admpanel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.659612" vertical-offset="612" max-vertical-offset="2261">
-              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+            <state vertical-scroll-proportion="-16.576923" vertical-offset="1303" max-vertical-offset="1870">
+              <caret line="102" column="7" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8994709" vertical-offset="867" max-vertical-offset="1530">
+              <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="empty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/empty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.884615" vertical-offset="79" max-vertical-offset="646">
+              <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -104,16 +122,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/AddCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,16 +161,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/src/main/java/admin/commands/Command.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -188,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dao/pom.xml" />
         <option value="$PROJECT_DIR$/dao/src/main/java/Dao.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/MyDao.java" />
         <option value="$PROJECT_DIR$/dao/src/main/resources/config.properties" />
@@ -217,7 +214,6 @@
         <option value="$PROJECT_DIR$/web/src/main/java/page.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/authoriz.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/login.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/mylogin.jsp" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/AddWriteCommand.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/add.jsp" />
@@ -235,10 +231,12 @@
         <option value="$PROJECT_DIR$/web/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/EditWriteCommand.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/dao/MyDao.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/edit.jsp" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/adminPanel.java" />
         <option value="$PROJECT_DIR$/services/src/main/java/admin/commands/DeleteCommand.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/empty.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -623,12 +621,16 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Projects/newsline/dao/src/main/java/data/Page.java" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\newsline\web\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\newsline\web\src\main\webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1402,7 +1404,7 @@
       <workItem from="1432137541238" duration="15243000" />
       <workItem from="1432235596137" duration="3419000" />
       <workItem from="1432372695709" duration="10589000" />
-      <workItem from="1432451968643" duration="8905000" />
+      <workItem from="1432451968643" duration="9105000" />
     </task>
     <task id="LOCAL-00001" summary="удалил ненужный src&#10;">
       <created>1431125154317</created>
@@ -1632,11 +1634,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432401822978</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="эксперемент&#10;&#10;&#10;">
+      <created>1432465425151</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1432465425151</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129707000" />
+    <option name="totallyTimeSpent" value="129907000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1731,7 +1739,8 @@
     <MESSAGE value="админку на jstl&#10;&#10;" />
     <MESSAGE value="админка.не готова&#10;&#10;&#10;" />
     <MESSAGE value="админка. Эдит пашет&#10;&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="админка. Эдит пашет&#10;&#10;&#10;" />
+    <MESSAGE value="эксперемент&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="эксперемент&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1758,13 +1767,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/src/main/java/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
@@ -1875,14 +1877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.653846" vertical-offset="436" max-vertical-offset="1921">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2170,10 +2164,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/empty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.884615" vertical-offset="79" max-vertical-offset="646">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/admpanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.659612" vertical-offset="612" max-vertical-offset="2261">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        <state vertical-scroll-proportion="-16.576923" vertical-offset="1303" max-vertical-offset="1870">
+          <caret line="102" column="7" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8994709" vertical-offset="867" max-vertical-offset="1530">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
           <folding />
         </state>
       </provider>
