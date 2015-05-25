@@ -3,7 +3,7 @@ package admin;
 import admin.commands.*;
 import dao.Dao;
 import dao.MyDao;
-import data.Page;
+//import data.Page;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-public class AdminPanel extends HttpServlet {
+public class ControlPanel extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     Dao dao;
 
-    public AdminPanel() {
+    public ControlPanel() {
         super();
         dao = MyDao.getDao();
     }
@@ -27,7 +27,7 @@ public class AdminPanel extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 //        HttpSession session = request.getSession();
 //        String id = null;
-        Command com = null;
+        Command com;
 //        Page page = dao.getPage(request.getParameter("id"));
 //        request.setAttribute("pageBean", page);
 //
@@ -55,6 +55,9 @@ public class AdminPanel extends HttpServlet {
                     break;
                 case "editwrite":
                     com = new EditWriteCommand();
+                    break;
+                case "registration":
+                    com = new RegCommand();
                     break;
                 default:
                     com = new ShowCommand();

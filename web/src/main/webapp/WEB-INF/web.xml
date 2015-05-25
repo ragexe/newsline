@@ -87,11 +87,11 @@
 
     <servlet>
     <servlet-name>servlet8</servlet-name>
-    <servlet-class>admin.AdminPanel</servlet-class>
+    <servlet-class>admin.ControlPanel</servlet-class>
 </servlet>
     <servlet-mapping>
         <servlet-name>servlet8</servlet-name>
-        <url-pattern>/adminPanel</url-pattern>
+        <url-pattern>/control</url-pattern>
     </servlet-mapping>
 
     <servlet>

@@ -5,9 +5,6 @@ import data.Users;
 
 import java.util.List;
 
-/**
- * Created by ragexe on 08.05.2015.
- */
 public interface Dao {
     Page getPage(String id);
     List<Page> getPagesByParent(String parentid);
@@ -16,6 +13,7 @@ public interface Dao {
     int editPage(Page p);
     Users getUser(String email);
     Users getUser(int idu);
+    int addUser(Users user);
     List<Users> getUsers();
 
 

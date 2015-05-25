@@ -90,7 +90,7 @@ public class MyDao implements Dao {
     @Override
     public List<Page> getPagesByParent(String parentid)
     {
-        ArrayList<Page> pages = new ArrayList<Page>();
+        ArrayList<Page> pages = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from pages where parentid='" + parentid + "'");
@@ -117,7 +117,7 @@ public class MyDao implements Dao {
 
     @Override
     public int addPage(Page p) {
-        Page data = null;
+        Page data;
         data = p;
         int add = 0;
         String saddPage = properties.getProperty("saddPage");
@@ -140,6 +140,9 @@ public class MyDao implements Dao {
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
+        } catch (NullPointerException e2) {
+            log.error(e2.getMessage());
+            e2.printStackTrace();
         }
         try {
             add = pStatement.executeUpdate();
@@ -152,7 +155,7 @@ public class MyDao implements Dao {
 
     @Override
     public int deletePage(Page p) {
-        Page data = null;
+        Page data;
         data = p;
         int del = 0;
         String sdeletePage = properties.getProperty("sdeletePage");
@@ -163,12 +166,18 @@ public class MyDao implements Dao {
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
+        } catch (NullPointerException e2) {
+        log.error(e2.getMessage());
+        e2.printStackTrace();
         }
         try {
             pStatement.setString(1, data.getId());
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
+        } catch (NullPointerException e2) {
+        log.error(e2.getMessage());
+        e2.printStackTrace();
         }
         try {
             del = pStatement.executeUpdate();
@@ -279,5 +288,36 @@ public class MyDao implements Dao {
             e.printStackTrace();
         }
         return user;
+    }
+    @Override
+    public int addUser(Users usr) {
+        Users user = null;
+        user = usr;
+        int add = 0;
+        String saddUser = properties.getProperty("saddUser");
+        PreparedStatement pStatement = null;
+        try {
+            pStatement = connection.prepareStatement(saddUser);
+        } catch (SQLException e1) {
+            log.error(e1.getMessage());
+            e1.printStackTrace();
+        }
+        try {
+            pStatement.setString(1, user.getName());
+            pStatement.setString(2, user.getLastname());
+            pStatement.setString(3, user.getEmail());
+            pStatement.setString(4, user.getPassword());
+            pStatement.setInt(5, user.getRole());
+        } catch (SQLException e1) {
+            log.error(e1.getMessage());
+            e1.printStackTrace();
+        }
+        try {
+            add = pStatement.executeUpdate();
+        } catch (SQLException e1) {
+            log.error(e1.getMessage());
+            e1.printStackTrace();
+        }
+        return add;
     }
 }

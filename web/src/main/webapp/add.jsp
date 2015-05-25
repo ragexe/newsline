@@ -7,7 +7,7 @@
     <title>Insert title here</title>
 </head>
 <body>
-<form action="adminPanel" accept-charset="utf-8">
+<form action="control" accept-charset="utf-8">
     <table>
         <input type="hidden" name="operation" value="addwrite">
         <tr>

@@ -81,7 +81,7 @@
           <jsp:include page="/edit.jsp"/>
         </core:when>
         <core:when test="${param.operation.equals('delete')}">
-          <jsp:forward page="/adminPanel"/>
+          <jsp:forward page="/control"/>
         </core:when>
         <core:otherwise>
           <p align="center"><h2><jsp:getProperty name="pageBean" property="title"/></h2></p>
