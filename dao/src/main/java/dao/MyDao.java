@@ -19,8 +19,7 @@ public class MyDao implements Dao {
     private String user;
     private String password;
     private Properties properties = new Properties();
-    //private static final String FILE_PROPERTIES_NAME = "E:\\News\\Newsline\\newsline\\dao\\src\\main\\resources\\config.properties";
-    private static final String FILE_PROPERTIES_NAME = "D:\\Projects\\newsline\\dao\\src\\main\\resources\\config.properties";
+    private static final String FILE_PROPERTIES_NAME = "..\\webapps\\ROOT\\WEB-INF\\classes\\config.properties";
 
     private MyDao() {
         try {

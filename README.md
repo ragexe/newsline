@@ -18,3 +18,8 @@ password=
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" URIEncoding="UTF-8"/>
+
+PrintWriter writer = new PrintWriter("..\\webapps\\ROOT\\WEB-INF\\classes\\the-file-name.txt", "UTF-8");
+               writer.println("The first line");
+               writer.println("The second line");
+               writer.close();
