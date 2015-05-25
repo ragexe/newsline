@@ -17,6 +17,7 @@
         <module>dao</module>
         <module>services</module>
         <module>web</module>
+        <module>entities</module>
     </modules>
 
     <build>

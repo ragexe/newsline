@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="dao" />
+        <module name="entities" />
         <module name="newslineWeb" />
         <module name="services" />
         <module name="web" />
@@ -30,6 +31,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dao" target="1.7" />
+      <module name="entities" target="1.7" />
       <module name="newsline" target="1.7" />
       <module name="services" target="1.7" />
       <module name="web" target="1.7" />
