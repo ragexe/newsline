@@ -11,13 +11,13 @@
 
     <artifactId>dao</artifactId>
 
-    <!--<build>-->
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>${basedir}/src/main/resources</directory>-->
-            <!--</resource>-->
-        <!--</resources>-->
-    <!--</build>-->
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
 
     <dependencies>
         <dependency>
