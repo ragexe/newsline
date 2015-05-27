@@ -1,6 +1,6 @@
 package admin.commands;
 
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
@@ -14,7 +14,7 @@ public class DeleteCommand extends Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html; charset=UTF-8");
         Page page = (Page)request.getAttribute("pageBean");//получаем бин пэйдж
-        Dao dao = MyDao.getDao();
+        IDao dao = MyDao.getDao();
         try {
             dao.deletePage(page);
             response.sendRedirect("admpanel.jsp");

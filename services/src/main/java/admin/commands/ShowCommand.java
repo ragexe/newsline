@@ -1,6 +1,6 @@
 package admin.commands;
 
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
@@ -22,7 +22,7 @@ public class ShowCommand extends Command {
         List<Page> list;
         List<Page> subList;
         Iterator<Page> pageIterator;
-        Dao dao = MyDao.getDao();
+        IDao dao = MyDao.getDao();
         list = dao.getPagesByParent("main");
         pageIterator = list.iterator();
         StringBuffer st = new StringBuffer();

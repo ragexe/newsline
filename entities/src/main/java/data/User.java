@@ -2,7 +2,7 @@ package data;
 
 import java.io.Serializable;
 
-public class Users implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 6L;
 
@@ -13,7 +13,7 @@ public class Users implements Serializable {
     private String password;
     private int role;
 
-    public Users() {
+    public User() {
         this.idu = 0;
         this.name = "";
         this.email = "";
@@ -90,7 +90,7 @@ public class Users implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Users other = (Users) obj;
+        User other = (User) obj;
         if (email == null) {
             if (other.email != null)
                 return false;
@@ -118,7 +118,7 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "Users [idu=" + idu + ", name=" + name + ", lastname="
+        return "User [idu=" + idu + ", name=" + name + ", lastname="
                 + lastname + ", email=" + email + ", password=" + password
                 + ", admin=" + role + "]";
     }

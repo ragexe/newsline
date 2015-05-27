@@ -1,6 +1,6 @@
 package admin.commands;
 
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
@@ -15,7 +15,7 @@ public class EditWriteCommand extends Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         Page page = new Page();
-        Dao dao = MyDao.getDao();
+        IDao dao = MyDao.getDao();
         response.setContentType("text/html; charset=UTF-8");
         try {
             page.setId(request.getParameter("id"));

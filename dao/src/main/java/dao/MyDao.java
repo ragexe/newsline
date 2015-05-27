@@ -1,7 +1,7 @@
 package dao;
 
 import data.Page;
-import data.Users;
+import data.User;
 import org.apache.log4j.Logger;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class MyDao implements Dao {
+public class MyDao implements IDao {
     private static final Logger log = Logger.getLogger(MyDao.class);
     private static final long serialVersionUID = 4L;
     private Connection connection;
@@ -223,8 +223,8 @@ public class MyDao implements Dao {
     }
 
     @Override
-    public Users getUser(String email) {
-        Users ussr = new Users();
+    public User getUser(String email) {
+        User ussr = new User();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
         String usermail = "select * from users where email like '" + email + "'";
         try {
@@ -246,8 +246,8 @@ public class MyDao implements Dao {
     }
 
     @Override
-    public Users getUser(int idu) {
-        Users ussr = new Users();
+    public User getUser(int idu) {
+        User ussr = new User();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
         String useridu = "select * from users where idu ='" + idu + "'";
         try {
@@ -269,13 +269,13 @@ public class MyDao implements Dao {
     }
 
     @Override
-    public List<Users> getUsers() {
-        ArrayList<Users> user = new ArrayList<Users>();
+    public List<User> getUsers() {
+        ArrayList<User> user = new ArrayList<User>();
         try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select idu, name, email from users");
             while (rs.next()) {
-                Users usr = new Users();
+                User usr = new User();
                 usr.setIdu(rs.getInt("idu"));
                 usr.setName(rs.getString("name"));
                 usr.setEmail(rs.getString("email"));
@@ -289,8 +289,8 @@ public class MyDao implements Dao {
         return user;
     }
     @Override
-    public int addUser(Users usr) {
-        Users user = null;
+    public int addUser(User usr) {
+        User user = null;
         user = usr;
         int add = 0;
         String saddUser = properties.getProperty("saddUser");

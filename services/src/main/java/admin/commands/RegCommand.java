@@ -1,8 +1,8 @@
 package admin.commands;
 
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
-import data.Users;
+import data.User;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +14,8 @@ public class RegCommand extends Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        Users user = new Users();
-        Dao dao = MyDao.getDao();
+        User user = new User();
+        IDao dao = MyDao.getDao();
         try {
             user.setRole(Integer.parseInt(request.getParameter("role")));
             user.setName(request.getParameter("name"));

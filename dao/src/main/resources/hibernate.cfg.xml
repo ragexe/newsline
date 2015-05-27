@@ -6,10 +6,13 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/newsbase</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="data.PagesEntity"/>
-        <mapping resource="data/PagesEntity.hbm.xml"/>
-        <mapping class="data.UsersEntity"/>
-        <mapping resource="data/UsersEntity.hbm.xml"/>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.pool_size">20</property>
+        <mapping class="data.Page"/>
+        <mapping class="data.User"/>
+        <!--<mapping class="data.UserDetailEntity"/>-->
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

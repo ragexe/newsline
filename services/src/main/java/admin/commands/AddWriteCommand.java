@@ -1,6 +1,6 @@
 package admin.commands;
 
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
 import data.Page;
 
@@ -16,7 +16,7 @@ public class AddWriteCommand extends Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         Page page = new Page();
-        Dao dao = MyDao.getDao();
+        IDao dao = MyDao.getDao();
         try {
             page.setId(request.getParameter("id"));
             page.setParentid(request.getParameter("parentid"));
