@@ -1,4 +1,4 @@
-import dao.Dao;
+import dao.IDao;
 
 import dao.MyDao;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotNull;
 public class TestGetUsers {
     @Test
     public void TestGetUsers(){
-        Dao dao = MyDao.getDao();
+        IDao dao = MyDao.getDao();
         dao.getUsers();
         assertNotNull("Users not null", dao.getUsers());
     }

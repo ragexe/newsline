@@ -1,7 +1,7 @@
 package admin;
 
 import admin.commands.*;
-import dao.Dao;
+import dao.IDao;
 import dao.MyDao;
 //import data.Page;
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ControlPanel extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    Dao dao;
+    IDao dao;
 
     public ControlPanel() {
         super();

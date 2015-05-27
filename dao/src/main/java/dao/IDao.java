@@ -1,20 +1,20 @@
 package dao;
 
 import data.Page;
-import data.Users;
+import data.User;
 
 import java.util.List;
 
-public interface Dao {
+public interface IDao {
     Page getPage(String id);
     List<Page> getPagesByParent(String parentid);
     int addPage(Page p);
     int deletePage(Page p);
     int editPage(Page p);
-    Users getUser(String email);
-    Users getUser(int idu);
-    int addUser(Users user);
-    List<Users> getUsers();
+    User getUser(String email);
+    User getUser(int idu);
+    int addUser(User user);
+    List<User> getUsers();
 
 
 }
