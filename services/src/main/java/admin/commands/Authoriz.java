@@ -1,3 +1,5 @@
+package admin.commands;
+
 import dao.IDao;
 import dao.MyDao;
 import data.User;
