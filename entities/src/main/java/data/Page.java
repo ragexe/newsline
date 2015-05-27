@@ -14,7 +14,7 @@ public class Page {
     private String title;
     private String title4Menu;
     private int user;
-    private Date date;
+    private String date;
     private String maintext;
 
     @Id
@@ -69,11 +69,11 @@ public class Page {
 
     @Basic
     @Column(name = "date", nullable = false, insertable = true, updatable = true)
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

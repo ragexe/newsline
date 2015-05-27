@@ -21,7 +21,7 @@ public class AddWriteCommand extends Command {
             page.setId(request.getParameter("id"));
             page.setParentid(request.getParameter("parentid"));
             page.setTitle(request.getParameter("title"));
-            page.setTitle4menu(request.getParameter("title4menu"));
+            page.setTitle4Menu(request.getParameter("title4menu"));
             page.setUser(Integer.parseInt(request.getParameter("user")));
             page.setDate(request.getParameter("date"));
             page.setMaintext(request.getParameter("maintext"));

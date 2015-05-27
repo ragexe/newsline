@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 public class EditWriteCommand extends Command {
     private static final Logger log = Logger.getLogger(EditWriteCommand.class);
@@ -21,7 +22,7 @@ public class EditWriteCommand extends Command {
             page.setId(request.getParameter("id"));
             page.setParentid(request.getParameter("parentid"));
             page.setTitle(request.getParameter("title"));
-            page.setTitle4menu(request.getParameter("title4menu"));
+            page.setTitle4Menu(request.getParameter("title4menu"));
             page.setUser(Integer.parseInt(request.getParameter("user")));
             page.setDate(request.getParameter("date"));
             page.setMaintext(request.getParameter("maintext"));

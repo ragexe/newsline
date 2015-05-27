@@ -4,10 +4,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.apache.log4j.Logger;
 
-
 /**
  * Created by ragexe on 27.05.2015.
  */
+
 public class HibernateUtil {
     private static final Logger logger = Logger.getLogger(HibernateUtil.class);
 
@@ -20,7 +20,6 @@ public class HibernateUtil {
 //            // Create the sessionFactory from hibernate.cfg.xml
 //            Configuration configuration = new AnnotationConfiguration();
 //            configuration.setNamingStrategy(new CustomNamingStrategy());
-
             sessionFactory = new AnnotationConfiguration().configure().setNamingStrategy(new CustomNamingStrategy()).buildSessionFactory();
         } catch (Throwable ex) {
             logger.error(ex.getMessage());

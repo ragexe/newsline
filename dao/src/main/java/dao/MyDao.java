@@ -76,7 +76,7 @@ public class MyDao implements IDao {
                 data.setTitle(rs.getString("title"));
                 data.setTitle4Menu(rs.getString("title4menu"));
                 data.setUser(rs.getInt("user"));
-                data.setDate(rs.getDate("date"));
+                data.setDate(rs.getString("date"));
                 data.setMaintext(rs.getString("maintext"));
             } else
                 return null;
@@ -102,7 +102,7 @@ public class MyDao implements IDao {
                 data.setTitle(rs.getString("title"));
                 data.setTitle4Menu(rs.getString("title4menu"));
                 data.setUser(rs.getInt("user"));
-                data.setDate(rs.getDate("date"));
+                data.setDate(rs.getString("date"));
                 data.setMaintext(rs.getString("maintext"));
                 pages.add(data);
 
@@ -135,7 +135,7 @@ public class MyDao implements IDao {
             pStatement.setString(3, data.getTitle());
             pStatement.setString(4, data.getTitle4Menu());
             pStatement.setInt(5, data.getUser());
-            pStatement.setDate(6, data.getDate());
+            pStatement.setString(6, data.getDate());
             pStatement.setString(7, data.getMaintext());
         } catch (SQLException e1) {
             log.error(e1.getMessage());
@@ -207,7 +207,7 @@ public class MyDao implements IDao {
             pStatement.setString(2, data.getTitle());
             pStatement.setString(3, data.getTitle4Menu());
             pStatement.setInt(4, data.getUser());
-            pStatement.setDate(5, data.getDate());
+            pStatement.setString(5, data.getDate());
             pStatement.setString(6, data.getMaintext());
             pStatement.setString(7, data.getId());
         } catch (SQLException e1) {
