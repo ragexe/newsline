@@ -1,33 +1,43 @@
 package data;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
-public class User implements Serializable {
+/**
+ * Created by ragexe on 27.05.2015.
+ */
+@Entity
+@Table(name = "T_USER")
+public class User extends CustomEntity implements Serializable {
+    private static final long serialVersionUID = -3731830107340403943L;
+    
+    @Id
+    @Column(name = "F_ID", nullable = false, insertable = true, updatable = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    private static final long serialVersionUID = 6L;
-
-    private int idu;
+    @Column(name = "F_NAME", nullable = false, insertable = true, updatable = true, length = 20)
     private String name;
+
+    @Column(name = "F_LASTNAME", nullable = false, insertable = true, updatable = true, length = 30)
     private String lastname;
+
+    @Column(name = "F_EMAIL", nullable = false, insertable = true, updatable = true, length = 30)
     private String email;
+
+    @Column(name = "F_PASSWORD", nullable = false, insertable = true, updatable = true, length = 20)
     private String password;
-    private int role;
 
-    public User() {
-        this.idu = 0;
-        this.name = "";
-        this.email = "";
-        this.password = "";
-        this.role = 0;
+    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
+    private Integer role;
+
+
+    public long getId() {
+        return id;
     }
 
-
-    public int getIdu() {
-        return idu;
-    }
-
-    public void setIdu(int idu) {
-        this.idu = idu;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -62,66 +72,40 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public int getRole(){
+    public Integer getRole() {
         return role;
     }
 
-    public void setRole(int role){
+    public void setRole(Integer role) {
         this.role = role;
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
-        result = prime * result + idu;
-        result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((password == null) ? 0 : password.hashCode());
-        return result;
-    }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        User other = (User) obj;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
-        if (idu != other.idu)
-            return false;
-        if (lastname == null) {
-            if (other.lastname != null)
-                return false;
-        } else if (!lastname.equals(other.lastname))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        if (password == null) {
-            if (other.password != null)
-                return false;
-        } else if (!password.equals(other.password))
-            return false;
+        User that = (User) o;
+
+        if (id != that.id) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (role != null ? !role.equals(that.role) : that.role != null) return false;
+
         return true;
     }
 
     @Override
-    public String toString() {
-        return "User [idu=" + idu + ", name=" + name + ", lastname="
-                + lastname + ", email=" + email + ", password=" + password
-                + ", admin=" + role + "]";
+    public int hashCode() {
+        int result = (int) id;
+        int var = 28;
+        result = var * result + (name != null ? name.hashCode() : 0);
+        result = var * result + (lastname != null ? lastname.hashCode() : 0);
+        result = var * result + (email != null ? email.hashCode() : 0);
+        result = var * result + (password != null ? password.hashCode() : 0);
+        result = var * result + (role != null ? role.hashCode() : 0);
+        return result;
     }
-
-
 }

@@ -1,10 +1,13 @@
 package admin;
 
 import javax.servlet.*;
+
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+@WebFilter(filterName = "AdminFilter", urlPatterns = {"/admpanel.jsp"})
 public class AdminFilter implements Filter{
 
     public void init(FilterConfig arg0) throws ServletException {}

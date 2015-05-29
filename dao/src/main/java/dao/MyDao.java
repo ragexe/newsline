@@ -224,48 +224,48 @@ public class MyDao implements IDao {
 
     @Override
     public User getUser(String email) {
-        User ussr = new User();
+        User user = new User();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
-        String usermail = "select * from users where email like '" + email + "'";
+        String usermail = "select * from T_USER where email like '" + email + "'";
         try {
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery(usermail);
             if (result.next()) {
-                ussr.setIdu(result.getInt("idu"));
-                ussr.setName(result.getString("name"));
-                ussr.setLastname(result.getString("lastname"));
-                ussr.setEmail(result.getString("email"));
-                ussr.setPassword(result.getString("password"));
-                ussr.setRole(result.getInt("role"));
+                user.setId(result.getInt("id"));
+                user.setName(result.getString("name"));
+                user.setLastname(result.getString("lastname"));
+                user.setEmail(result.getString("email"));
+                user.setPassword(result.getString("password"));
+                user.setRole(result.getInt("role"));
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
             e.printStackTrace();
         }
-        return ussr;
+        return user;
     }
 
     @Override
-    public User getUser(int idu) {
-        User ussr = new User();
+    public User getUser(int id) {
+        User user = new User();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
-        String useridu = "select * from users where idu ='" + idu + "'";
+        String userid = "select * from T_USER where F_ID ='" + id + "'";
         try {
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery(useridu);
+            ResultSet result = statement.executeQuery(userid);
             if (result.next()) {
-                ussr.setIdu(result.getInt("idu"));
-                ussr.setName(result.getString("name"));
-                ussr.setLastname(result.getString("lastname"));
-                ussr.setEmail(result.getString("email"));
-                ussr.setPassword(result.getString("password"));
-                ussr.setRole(result.getInt("role"));
+                user.setId(result.getInt("id"));
+                user.setName(result.getString("name"));
+                user.setLastname(result.getString("lastname"));
+                user.setEmail(result.getString("email"));
+                user.setPassword(result.getString("password"));
+                user.setRole(result.getInt("role"));
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
             e.printStackTrace();
         }
-        return ussr;
+        return user;
     }
 
     @Override
@@ -273,10 +273,10 @@ public class MyDao implements IDao {
         ArrayList<User> user = new ArrayList<User>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select idu, name, email from users");
+            ResultSet rs = statement.executeQuery("select F_ID, name, email from T_USER");
             while (rs.next()) {
                 User usr = new User();
-                usr.setIdu(rs.getInt("idu"));
+                usr.setId(rs.getInt("id"));
                 usr.setName(rs.getString("name"));
                 usr.setEmail(rs.getString("email"));
                 usr.setRole(rs.getInt("role"));

@@ -78,7 +78,7 @@
 
     <servlet>
         <servlet-name>servlet7</servlet-name>
-        <servlet-class>admin.commands.Authoriz</servlet-class>
+        <servlet-class>admin.Authoriz</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servlet7</servlet-name>
