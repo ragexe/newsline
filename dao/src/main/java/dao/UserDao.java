@@ -33,9 +33,8 @@ public class UserDao extends AbstractDao<User> {
         session = getSession();
         StatusEnum status = StatusEnum.SAVED;
         User user;
-//        String hql = "SELECT u FROM User u WHERE p.status=:status and p.UserDetail.email=:email";
+        String hql = "SELECT U FROM User U WHERE U.status=:status and U.email=:email";
 //        String hql = "SELECT u FROM User u WHERE u.status=:status";
-        String hql = "SELECT u FROM User u WHERE u.status=:status";
         Query query = session.createQuery(hql)
                 .setParameter("status", status)
                 .setParameter("email", email);
