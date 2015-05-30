@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
 * Created by ragexe on 13.04.15.
-* Class for working with persistence entity of Pages
+* Class for working with persistence entity of Page
 */
 public class PageDao extends AbstractDao<Page> {
     private static final Logger logger = Logger.getLogger(PageDao.class);
@@ -31,7 +31,7 @@ public class PageDao extends AbstractDao<Page> {
     protected List<Page> parseResultSet(Session session) throws PersistException {
         StatusEnum status = StatusEnum.SAVED;
         List<Page> list;
-        String hql = "SELECT n FROM pages n WHERE n.status=:status";
+        String hql = "SELECT P FROM Page P WHERE P.status=:status";
         Query query = session.createQuery(hql).setParameter("status", status);
         list = query.list();
         return list;
@@ -43,7 +43,7 @@ public class PageDao extends AbstractDao<Page> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT p FROM News p WHERE p.person.personId=:pK and p.status=:status";
+            String hql = "SELECT P FROM Page P WHERE P.person.personId=:pK and P.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("pK", pK)
                     .setParameter("status", status);

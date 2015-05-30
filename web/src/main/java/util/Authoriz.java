@@ -1,18 +1,18 @@
-package admin;
+package util;
 
-import dao.IDao;
-import dao.MyDao;
 import data.User;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+@WebServlet (name = "Authoriz", urlPatterns = "/authoriz")
 public class Authoriz extends HttpServlet {
     private static final Logger log = Logger.getLogger(Authoriz.class);
 

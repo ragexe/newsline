@@ -1,6 +1,7 @@
 import data.Page;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,11 +10,12 @@ import java.io.IOException;
 /**
  * Created by ragexe on 17.05.2015.
  */
-public class page extends HttpServlet {
+@WebServlet (name = "PageService", urlPatterns = "/page")
+public class PageService extends HttpServlet {
     private static final long serialVersionUID = 4L;
     private Service service;
     private Page page;
-    public page() {}
+    public PageService() {}
 
     public void init() throws ServletException {
         super.init();

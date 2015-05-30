@@ -1,4 +1,4 @@
-package admin;
+package filters;
 
 import javax.servlet.*;
 

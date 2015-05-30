@@ -1,4 +1,4 @@
-package admin.commands;
+package commands;
 
 import dao.IDao;
 import dao.MyDao;

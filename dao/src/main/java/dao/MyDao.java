@@ -67,7 +67,7 @@ public class MyDao implements IDao {
         Page data = null;
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from pages where id='" + id + "'");
+            ResultSet rs = statement.executeQuery("select * from T_PAGE where id='" + id + "'");
             if (rs.next()) {
                 data = new Page();
                 data.setId(rs.getString("id"));
@@ -92,7 +92,7 @@ public class MyDao implements IDao {
         ArrayList<Page> pages = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from pages where parentid='" + parentid + "'");
+            ResultSet rs = statement.executeQuery("select * from T_PAGE where parentid='" + parentid + "'");
             while (rs.next()) {
                 Page data = new Page();
 
@@ -120,7 +120,7 @@ public class MyDao implements IDao {
         data = p;
         int add = 0;
         String saddPage = properties.getProperty("saddPage");
-        //String addPage = "INSERT INTO pages VALUES (?,?,?,?,?,?,?)";
+        //String addPage = "INSERT INTpageses VALUES (?,?,?,?,?,?,?)";
         PreparedStatement pStatement = null;
         try {
             pStatement = connection.prepareStatement(saddPage);
@@ -158,7 +158,7 @@ public class MyDao implements IDao {
         data = p;
         int del = 0;
         String sdeletePage = properties.getProperty("sdeletePage");
-        //String deletePage = "DELETE FROM pages  Where id=?";
+        //String deletePage = "DELETE FROpageses  Where id=?";
         PreparedStatement pStatement = null;
         try {
             pStatement = connection.prepareStatement(sdeletePage);
@@ -193,7 +193,7 @@ public class MyDao implements IDao {
         data = p;
         int add = 0;
         String seditPage = properties.getProperty("seditPage");
-        //String editPage = "UPDATE pages SET parentid=?, title=?, title4menu=?, user=?, date=?, maintext=? WHERE id=?";
+        //String editPage = "UPDATpageses SET parentid=?, title=?, title4menu=?, user=?, date=?, maintext=? WHERE id=?";
         PreparedStatement pStatement = null;
         try {
             pStatement = connection.prepareStatement(seditPage);

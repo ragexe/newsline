@@ -1,4 +1,4 @@
-package admin.commands;
+package commands;
 
 
 import org.apache.log4j.Logger;

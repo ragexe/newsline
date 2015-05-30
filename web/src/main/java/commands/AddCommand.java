@@ -1,4 +1,4 @@
-package admin.commands;
+package commands;
 
 import org.apache.log4j.Logger;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddCommand extends admin.commands.Command {
+public class AddCommand extends Command {
     private static final Logger log = Logger.getLogger(AddCommand.class);
 
 
