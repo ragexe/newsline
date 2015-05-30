@@ -18,8 +18,8 @@ public class EditWriteCommand extends Command {
         IDao dao = MyDao.getDao();
         response.setContentType("text/html; charset=UTF-8");
         try {
-            page.setId(request.getParameter("id"));
-            page.setParentid(request.getParameter("parentid"));
+            page.setId(Long.parseLong(request.getParameter("id")));
+            page.setParentid(Long.parseLong(request.getParameter("parentid")));
             page.setTitle(request.getParameter("title"));
             page.setTitle4menu(request.getParameter("title4menu"));
             page.setUser(Integer.parseInt(request.getParameter("user")));

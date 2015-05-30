@@ -6,10 +6,10 @@ import javax.persistence.*;
  * Created by ragexe on 27.05.2015.
  */
 @Entity
-@Table(name = "pages", schema = "", catalog = "newsbase")
+@Table(name = "T_PAGE", schema = "", catalog = "newsbase")
 public class Page {
-    private String id;
-    private String parentid;
+    private long id;
+    private long parentid;
     private String title;
     private String title4menu;
     private int user;
@@ -18,21 +18,21 @@ public class Page {
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true, length = 10)
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     @Basic
     @Column(name = "parentid", nullable = false, insertable = true, updatable = true, length = 10)
-    public String getParentid() {
+    public long getParentid() {
         return parentid;
     }
 
-    public void setParentid(String parentid) {
+    public void setParentid(long parentid) {
         this.parentid = parentid;
     }
 
@@ -95,9 +95,9 @@ public class Page {
 
         if (user != that.user) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (id != 0 ? id!=that.id : that.id != 0) return false;
         if (maintext != null ? !maintext.equals(that.maintext) : that.maintext != null) return false;
-        if (parentid != null ? !parentid.equals(that.parentid) : that.parentid != null) return false;
+        if (parentid != 0 ? parentid!=that.parentid : that.parentid != 0) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (title4menu != null ? !title4menu.equals(that.title4menu) : that.title4menu != null) return false;
 
@@ -106,8 +106,8 @@ public class Page {
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (parentid != null ? parentid.hashCode() : 0);
+        int result = (int) id;
+        result = 31 * result + (int) parentid;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (title4menu != null ? title4menu.hashCode() : 0);
         result = 31 * result + user;

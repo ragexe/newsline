@@ -67,11 +67,11 @@ public class MyDao implements IDao {
         Page data = null;
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from T_PAGE where id='" + id + "'");
+            ResultSet rs = statement.executeQuery("select * from T_PAGE where F_ID='" + id + "'");
             if (rs.next()) {
                 data = new Page();
-                data.setId(rs.getString("id"));
-                data.setParentid(rs.getString("parentid"));
+                data.setId(rs.getLong("id"));
+                data.setParentid(rs.getLong("parentid"));
                 data.setTitle(rs.getString("title"));
                 data.setTitle4menu(rs.getString("title4menu"));
                 data.setUser(rs.getInt("user"));
@@ -96,8 +96,8 @@ public class MyDao implements IDao {
             while (rs.next()) {
                 Page data = new Page();
 
-                data.setId(rs.getString("id"));
-                data.setParentid(rs.getString("parentid"));
+                data.setId(rs.getLong("id"));
+                data.setParentid(rs.getLong("parentid"));
                 data.setTitle(rs.getString("title"));
                 data.setTitle4menu(rs.getString("title4menu"));
                 data.setUser(rs.getInt("user"));
@@ -129,8 +129,8 @@ public class MyDao implements IDao {
             e1.printStackTrace();
         }
         try {
-            pStatement.setString(1, data.getId());
-            pStatement.setString(2, data.getParentid());
+            pStatement.setLong(1, data.getId());
+            pStatement.setLong(2, data.getParentid());
             pStatement.setString(3, data.getTitle());
             pStatement.setString(4, data.getTitle4menu());
             pStatement.setInt(5, data.getUser());
@@ -158,7 +158,7 @@ public class MyDao implements IDao {
         data = p;
         int del = 0;
         String sdeletePage = properties.getProperty("sdeletePage");
-        //String deletePage = "DELETE FROpageses  Where id=?";
+        //String deletePage = "DELETE FROM pageses  Where id=?";
         PreparedStatement pStatement = null;
         try {
             pStatement = connection.prepareStatement(sdeletePage);
@@ -170,7 +170,7 @@ public class MyDao implements IDao {
         e2.printStackTrace();
         }
         try {
-            pStatement.setString(1, data.getId());
+            pStatement.setLong(1, data.getId());
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
@@ -202,13 +202,13 @@ public class MyDao implements IDao {
             e1.printStackTrace();
         }
         try {
-            pStatement.setString(1, data.getParentid());
+            pStatement.setLong(1, data.getParentid());
             pStatement.setString(2, data.getTitle());
             pStatement.setString(3, data.getTitle4menu());
             pStatement.setInt(4, data.getUser());
             pStatement.setString(5, data.getDate());
             pStatement.setString(6, data.getMaintext());
-            pStatement.setString(7, data.getId());
+            pStatement.setLong(7, data.getId());
         } catch (SQLException e1) {
             log.error(e1.getMessage());
             e1.printStackTrace();
