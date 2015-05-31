@@ -22,7 +22,7 @@ public class AddWriteCommand extends Command {
             page.setParentid(Long.parseLong(request.getParameter("parentid")));
             page.setTitle(request.getParameter("title"));
             page.setTitle4menu(request.getParameter("title4menu"));
-            page.setUser(Integer.parseInt(request.getParameter("user")));
+//            page.setAuthor(Long.parseLong(request.getParameter("author")));
             page.setDate(request.getParameter("date"));
             page.setMaintext(request.getParameter("maintext"));
             dao.addPage(page);

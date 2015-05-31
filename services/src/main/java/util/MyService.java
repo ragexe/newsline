@@ -1,3 +1,5 @@
+package util;
+
 import dao.IDao;
 import dao.MyDao;
 import data.Page;
@@ -5,7 +7,6 @@ import data.User;
 
 import java.util.List;
 
-import static org.junit.Assert.assertSame;
 /**
  * Created by ragexe on 09.05.2015.
  */
@@ -17,12 +18,12 @@ public class MyService implements Service {
     }
 
     @Override
-    public Page getPage(String id) {
+    public Page getPage(long id) {
         return dao.getPage(id);
     }
 
     @Override
-    public List<Page> getPagesByParent(String parentid) {
+    public List<Page> getPagesByParent(long parentid) {
         return dao.getPagesByParent(parentid);
     }
 

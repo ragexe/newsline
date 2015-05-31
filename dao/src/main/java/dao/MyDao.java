@@ -63,7 +63,7 @@ public class MyDao implements IDao {
     }
 
     @Override
-    public Page getPage(String id) {
+    public Page getPage(long id) {
         Page data = null;
         try {
             Statement statement = connection.createStatement();
@@ -74,7 +74,8 @@ public class MyDao implements IDao {
                 data.setParentid(rs.getLong("parentid"));
                 data.setTitle(rs.getString("title"));
                 data.setTitle4menu(rs.getString("title4menu"));
-                data.setUser(rs.getInt("user"));
+//                data.setAuthor(rs.getInt("user"));
+                data.setAuthor((User) rs.getObject("user"));
                 data.setDate(rs.getString("date"));
                 data.setMaintext(rs.getString("maintext"));
             } else
@@ -87,12 +88,12 @@ public class MyDao implements IDao {
     }
 
     @Override
-    public List<Page> getPagesByParent(String parentid)
+    public List<Page> getPagesByParent(long parentid)
     {
         ArrayList<Page> pages = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from T_PAGE where parentid='" + parentid + "'");
+            ResultSet rs = statement.executeQuery("select * from T_PAGE where F_PARENTID='" + parentid + "'");
             while (rs.next()) {
                 Page data = new Page();
 
@@ -100,7 +101,8 @@ public class MyDao implements IDao {
                 data.setParentid(rs.getLong("parentid"));
                 data.setTitle(rs.getString("title"));
                 data.setTitle4menu(rs.getString("title4menu"));
-                data.setUser(rs.getInt("user"));
+//                data.setAuthor(rs.getInt("user"));
+                data.setAuthor((User) rs.getObject("user"));
                 data.setDate(rs.getString("date"));
                 data.setMaintext(rs.getString("maintext"));
                 pages.add(data);
@@ -133,7 +135,7 @@ public class MyDao implements IDao {
             pStatement.setLong(2, data.getParentid());
             pStatement.setString(3, data.getTitle());
             pStatement.setString(4, data.getTitle4menu());
-            pStatement.setInt(5, data.getUser());
+            pStatement.setObject(5, data.getAuthor());
             pStatement.setString(6, data.getDate());
             pStatement.setString(7, data.getMaintext());
         } catch (SQLException e1) {
@@ -205,7 +207,8 @@ public class MyDao implements IDao {
             pStatement.setLong(1, data.getParentid());
             pStatement.setString(2, data.getTitle());
             pStatement.setString(3, data.getTitle4menu());
-            pStatement.setInt(4, data.getUser());
+//            pStatement.setLong(4, data.getAuthor());
+            pStatement.setObject(4, data.getAuthor());
             pStatement.setString(5, data.getDate());
             pStatement.setString(6, data.getMaintext());
             pStatement.setLong(7, data.getId());
@@ -226,7 +229,7 @@ public class MyDao implements IDao {
     public User getUser(String email) {
         User user = new User();
         //String sgetUserByEmail = properties.getProperty("sgetUserByEmail");
-        String usermail = "select * from T_USER where email like '" + email + "'";
+        String usermail = "select * from T_USER where T_USER.F_EMAIL like '" + email + "'";
         try {
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery(usermail);
@@ -273,7 +276,7 @@ public class MyDao implements IDao {
         ArrayList<User> user = new ArrayList<User>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select F_ID, name, email from T_USER");
+            ResultSet rs = statement.executeQuery("select F_ID, F_NAME, F_EMAIL from T_USER");
             while (rs.next()) {
                 User usr = new User();
                 usr.setId(rs.getInt("id"));

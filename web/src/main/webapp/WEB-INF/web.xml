@@ -33,7 +33,7 @@
 
     <!--<servlet>-->
         <!--<servlet-name>servlet5</servlet-name>-->
-        <!--<servlet-class>MenuManager</servlet-class>-->
+        <!--<servlet-class>util.MenuManager</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
         <!--<servlet-name>servlet5</servlet-name>-->

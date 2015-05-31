@@ -23,3 +23,5 @@ PrintWriter writer = new PrintWriter("..\\webapps\\ROOT\\WEB-INF\\classes\\the-f
                writer.println("The first line");
                writer.println("The second line");
                writer.close();
+
+win+r cmd.exe netstat -ano

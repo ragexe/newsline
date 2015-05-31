@@ -43,7 +43,7 @@ public class PageDao extends AbstractDao<Page> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT P FROM Page P WHERE P.person.personId=:pK and P.status=:status";
+            String hql = "SELECT P FROM Page P WHERE P.author.id=:pK and P.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("pK", pK)
                     .setParameter("status", status);
@@ -63,6 +63,23 @@ public class PageDao extends AbstractDao<Page> {
             String hql = "SELECT n FROM page WHERE n.category.categoryId=:pK and n.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("pK", pK)
+                    .setParameter("status", status);
+            pages = query.list();
+        } catch (HibernateException e) {
+            logger.error("Error get " + pages.isEmpty() + " in Dao " + e);
+            throw new PersistException(e);
+        }
+        return pages;
+    }
+
+    public List<Page> getListPageByParentid(long id) throws PersistException{
+        List<Page> pages = null;
+        try {
+            session = getSession();
+            StatusEnum status = StatusEnum.SAVED;
+            String hql = "SELECT P FROM Page P WHERE P.parentid=:id and P.status=:status";
+            Query query = session.createQuery(hql)
+                    .setParameter("id", id)
                     .setParameter("status", status);
             pages = query.list();
         } catch (HibernateException e) {
@@ -92,25 +109,25 @@ public class PageDao extends AbstractDao<Page> {
     /**
      * Get Object by string cretery
      *
-     * @param pageId     value of column in database
+     * @param id     value of column in database
      * @return object
      * @throws PersistException my class of exception, abstracted from relational databases
      */
-    public Page getByPageId(String pageId) throws PersistException {
-        Page pages = null;
+    public Page getByPageId(long id) throws PersistException {
+        Page page = null;
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT n FROM News n WHERE n.pageId=:pageId and n.status=:status";
+            String hql = "SELECT P FROM Page P WHERE P.id=:id and P.status=:status";
             Query query = session.createQuery(hql)
-                    .setParameter("pageId", pageId)
+                    .setParameter("id", id)
                     .setParameter("status", status);
-            pages = (Page) query.uniqueResult();
+            page = (Page) query.uniqueResult();
         } catch (HibernateException e) {
-            logger.error("Error get " + pages.getClass().getName() + " in Dao " + e);
+            logger.error("Error get " + page.getClass().getName() + " in Dao " + e);
             throw new PersistException(e);
         }
-        return pages;
+        return page;
     }
 
 }

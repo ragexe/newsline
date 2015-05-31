@@ -23,7 +23,7 @@ public class UserDao extends AbstractDao<User> {
     protected List<User> parseResultSet(Session session) throws PersistException {
         StatusEnum status = StatusEnum.SAVED;
         List<User> list;
-        String hql = "SELECT u FROM User u WHERE u.status=:status";
+        String hql = "SELECT U FROM User U WHERE U.status=:status";
         Query query = session.createQuery(hql).setParameter("status", status);
         list = query.list();
         return list;

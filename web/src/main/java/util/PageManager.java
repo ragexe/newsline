@@ -1,3 +1,5 @@
+package util;
+
 import data.Page;
 
 import javax.servlet.ServletException;
@@ -10,32 +12,35 @@ import java.io.IOException;
 /**
  * Created by ragexe on 17.05.2015.
  */
-@WebServlet (name = "PageService", urlPatterns = "/page")
-public class PageService extends HttpServlet {
+@WebServlet (name = "util.PageManager", urlPatterns = "/page")
+public class PageManager extends HttpServlet {
     private static final long serialVersionUID = 4L;
-    private Service service;
+//    private util.Service service;
+    private PageService pageService;
     private Page page;
-    public PageService() {}
+    public PageManager() {}
 
     public void init() throws ServletException {
         super.init();
-        service = new MyService();
+//        service = new util.MyService();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        pageService = PageService.getInstance();
         String sect = request.getParameter("sect");
         String subsect = request.getParameter("subsect");
         String id;
         if (sect.equals("")){
-            id = "main";
+            id = "0";
         } else if (subsect.equals("")){
             id = sect;
         } else{
             id = subsect;
         }
-        page = service.getPage(id);
+//        page = service.getPage(Long.parseLong(id));
+        page = pageService.getPageByPageId(Long.parseLong(id));
         request.setAttribute("pageBean", page);
     }
 

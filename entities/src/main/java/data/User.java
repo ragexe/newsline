@@ -108,4 +108,9 @@ public class User extends CustomEntity implements Serializable {
         result = var * result + (role != null ? role.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

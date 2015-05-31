@@ -19,7 +19,7 @@
         </tr>
 
         <tr>
-            <td>user:</td>
+            <td>author:</td>
             <td><input name="user" VALUE=<jsp:getProperty name="pageBean" property="user"/>></td>
         </tr>
 

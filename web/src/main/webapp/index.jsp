@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <jsp:useBean id="pageBean" class="data.Page" scope="request"/>
+<%--<jsp:useBean id="userBean" class="data.User" scope="request"/>--%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html>
@@ -19,7 +20,6 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <%--<fmt:requestEncoding value="UTF-8"/>--%>
   <!-- Заголовок страницы -->
   <title>
     <jsp:getProperty name="pageBean" property="title"/>
@@ -50,12 +50,13 @@
     <td width="25%" valign="top">
       <!-- Поле менюшки -->
       <jsp:include page="/menu">
-        <jsp:param name="sect" value="main"/>
+        <jsp:param name="sect" value="0"/>
       </jsp:include>
       <ul>
         <core:forEach var="page1" items="${result}">
           <li><a href=\?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
-          <core:if test="${param.sect.equals(page1.id)}">
+          <%--<core:if test="${param.sect.equals(page1.id)}">--%>
+          <core:if test="${param.sect == page1.id}">
             <jsp:include page="/menu">
               <jsp:param name="sect" value="${page1.id}"/>
             </jsp:include>
@@ -75,7 +76,7 @@
       <!-- Поле основного текста -->
       <p align="center"><h2><jsp:getProperty name="pageBean" property="title"/></h2></p>
       <p><jsp:getProperty name="pageBean" property="maintext"/></p>
-      <br><p align="right"><i><jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="user"/></i></p>
+      <br><p align="right"><i><jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="author"/></i></p>
     </td>
     <td width="10%" align="left" valign="top">
       <!-- Пустое поле -->

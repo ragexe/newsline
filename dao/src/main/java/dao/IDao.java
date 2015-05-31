@@ -6,8 +6,8 @@ import data.User;
 import java.util.List;
 
 public interface IDao {
-    Page getPage(String id);
-    List<Page> getPagesByParent(String parentid);
+    Page getPage(long id);
+    List<Page> getPagesByParent(long parentid);
     int addPage(Page p);
     int deletePage(Page p);
     int editPage(Page p);

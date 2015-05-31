@@ -1,23 +1,45 @@
 package data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by ragexe on 27.05.2015.
  */
 @Entity
 @Table(name = "T_PAGE", schema = "", catalog = "newsbase")
-public class Page {
-    private long id;
-    private long parentid;
-    private String title;
-    private String title4menu;
-    private int user;
-    private String date;
-    private String maintext;
+public class Page extends CustomEntity implements Serializable {
+    private static final long serialVersionUID = -3731830107340403944L;
 
     @Id
-    @Column(name = "id", nullable = false, insertable = true, updatable = true, length = 10)
+    @Column(name = "F_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Basic
+    @Column(name = "F_PARENTID")
+    private long parentid;
+
+    @Basic
+    @Column(name = "F_TITLE")
+    private String title;
+
+    @Basic
+    @Column(name = "F_TITLE4MENU")
+    private String title4menu;
+
+    @ManyToOne
+    @JoinColumn(name = "F_AUTHOR")
+    private User author;
+
+    @Basic
+    @Column(name = "F_DATE", nullable = false, insertable = true, updatable = true)
+    private String date;
+
+    @Basic
+    @Column(name = "F_MAINTEXT", nullable = false, insertable = true, updatable = true, length = 65535)
+    private String maintext;
+
     public long getId() {
         return id;
     }
@@ -26,8 +48,6 @@ public class Page {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "parentid", nullable = false, insertable = true, updatable = true, length = 10)
     public long getParentid() {
         return parentid;
     }
@@ -36,8 +56,6 @@ public class Page {
         this.parentid = parentid;
     }
 
-    @Basic
-    @Column(name = "title", nullable = false, insertable = true, updatable = true, length = 80)
     public String getTitle() {
         return title;
     }
@@ -46,8 +64,6 @@ public class Page {
         this.title = title;
     }
 
-    @Basic
-    @Column(name = "title4menu", nullable = false, insertable = true, updatable = true, length = 50)
     public String getTitle4menu() {
         return title4menu;
     }
@@ -56,18 +72,14 @@ public class Page {
         this.title4menu = title4menu;
     }
 
-    @Basic
-    @Column(name = "user", nullable = false, insertable = true, updatable = true)
-    public int getUser() {
-        return user;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setUser(int user) {
-        this.user = user;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
-    @Basic
-    @Column(name = "date", nullable = false, insertable = true, updatable = true)
     public String getDate() {
         return date;
     }
@@ -76,8 +88,6 @@ public class Page {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "maintext", nullable = false, insertable = true, updatable = true, length = 65535)
     public String getMaintext() {
         return maintext;
     }
@@ -93,7 +103,7 @@ public class Page {
 
         Page that = (Page) o;
 
-        if (user != that.user) return false;
+        if (author != that.author) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (id != 0 ? id!=that.id : that.id != 0) return false;
         if (maintext != null ? !maintext.equals(that.maintext) : that.maintext != null) return false;
@@ -110,7 +120,7 @@ public class Page {
         result = 31 * result + (int) parentid;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (title4menu != null ? title4menu.hashCode() : 0);
-        result = 31 * result + user;
+//        result = 31 * result + (int) author;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (maintext != null ? maintext.hashCode() : 0);
         return result;
