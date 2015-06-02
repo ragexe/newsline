@@ -1,7 +1,7 @@
 package commands;
 
-import dao.IDao;
-import dao.MyDao;
+//import dao.IDao;
+//import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
 

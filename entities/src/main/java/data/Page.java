@@ -2,6 +2,8 @@ package data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+
 
 /**
  * Created by ragexe on 27.05.2015.
@@ -13,7 +15,7 @@ public class Page extends CustomEntity implements Serializable {
 
     @Id
     @Column(name = "F_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Basic
@@ -34,7 +36,7 @@ public class Page extends CustomEntity implements Serializable {
 
     @Basic
     @Column(name = "F_DATE", nullable = false, insertable = true, updatable = true)
-    private String date;
+    private Date date;
 
     @Basic
     @Column(name = "F_MAINTEXT", nullable = false, insertable = true, updatable = true, length = 65535)
@@ -80,11 +82,11 @@ public class Page extends CustomEntity implements Serializable {
         this.author = author;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

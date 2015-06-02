@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:useBean id="dateNow" class="java.util.Date" />
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +19,7 @@
             <td>
                 <select size="1" name="parentid">
                     <jsp:include page="/menu">
-                        <jsp:param name="sect" value="main"/>
+                        <jsp:param name="sect" value="0"/>
                     </jsp:include>
                     <option selected disabled>Выберите категорию</option>
                     <core:forEach var="page" items="${result}">
@@ -41,18 +43,20 @@
                 user:
             </td>
             <td>
-                <input name="user">
+                <input name="user" value="${user.id}">
             </td>
         </tr>
 
-        <tr>
-            <td>
-                date:
-            </td>
-            <td>
-                <input name="date">
-            </td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td>--%>
+                <%--date:--%>
+            <%--</td>--%>
+            <%--<td>--%>
+                <%--<input size="30" id="date" name="date"--%>
+                       <%--value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateNow}"/>" readonly--%>
+                       <%--pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"/><br>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
 
         <tr>
             <td>

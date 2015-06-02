@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<jsp:useBean id="user" class="data.User" scope="session"/>
 <html>
 <%--<head>--%>
     <%--<title></title>--%>
@@ -20,8 +21,8 @@
     <br><i><a href="reg.jsp">Регистрация</a></i>
   </core:when>
   <core:otherwise>
-    Привет, <core:out value="${sessionScope.login}"/>
-    <core:if test="${sessionScope.role == 1}">
+    Привет, <core:out value="${user.name}"/>
+    <core:if test="${user.role == 1}">
       <br><a href="admpanel.jsp">Капитанская рубка</a>
     </core:if>
     <br><i><a href="logout">Выйти</a></i>

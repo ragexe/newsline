@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <jsp:useBean id="pageBean" class="data.Page" scope="request"/>
+<jsp:useBean id="user" class="data.User" scope="session"/>
 <%--<jsp:useBean id="userBean" class="data.User" scope="request"/>--%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
@@ -39,7 +40,7 @@
   <tr>
     <td width="25%" valign="bottom">
       <!-- "На главную" -->
-      <ul><li><a href=\>На главную</a></li></ul>
+      <ul><li><a href=/main.jsp>На главную</a></li></ul>
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
@@ -54,7 +55,7 @@
       </jsp:include>
       <ul>
         <core:forEach var="page1" items="${result}">
-          <li><a href=\main?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
+          <li><a href=/main.jsp?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
           <%--<core:if test="${param.sect.equals(page1.id)}">--%>
           <core:if test="${param.sect == page1.id}">
             <jsp:include page="/menu">
@@ -62,7 +63,7 @@
             </jsp:include>
             <ul>
               <core:forEach var="page2" items="${result}">
-                <li><a href=\main?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a></li>
+                <li><a href=/main.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a></li>
               </core:forEach>
             </ul>
           </core:if>

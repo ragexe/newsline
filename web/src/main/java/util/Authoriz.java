@@ -42,7 +42,8 @@ public class Authoriz extends HttpServlet {
             if (null != user && (user.getPassword().equals(password) && user.getEmail().equals(email))) {
                 session.setAttribute("login", user.getName());
                 session.setAttribute("role", user.getRole());
-                response.sendRedirect("/");
+                session.setAttribute("user", user);
+                response.sendRedirect("/main.jsp");
             } else {
                 request.setAttribute("message", "wrong login or password");
                 dispatcher.forward(request, response);

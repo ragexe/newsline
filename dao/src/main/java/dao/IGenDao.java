@@ -19,7 +19,8 @@ public interface IGenDao<T> {
     void clearSession(ThreadLocal sessionStatus);
 
     /** It creates a new entry, the corresponding object object */
-     Long save(T object)  throws PersistException;
+//     Long save(T object)  throws PersistException;
+    void save (T object) throws PersistException;
 
     /** It creates a new entry, the corresponding object object */
     void saveOrUpdate(T object) throws PersistException;

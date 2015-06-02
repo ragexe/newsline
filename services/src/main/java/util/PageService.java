@@ -166,7 +166,8 @@ public class PageService implements IPageService {
             session = pageDao.getSession();
             transaction = session.beginTransaction();
             page.setStatus(StatusEnum.SAVED);
-            savedPageId = pageDao.save(page);
+//            savedPageId = pageDao.save(page);
+            pageDao.save(page);
             transaction.commit();
         } catch (HibernateException e) {
             logger.error("Error get list of Categories from database" + e);

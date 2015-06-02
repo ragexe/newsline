@@ -13,7 +13,7 @@ public class User extends CustomEntity implements Serializable {
     
     @Id
     @Column(name = "F_ID", nullable = false, insertable = true, updatable = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "F_NAME", nullable = false, insertable = true, updatable = true, length = 20)

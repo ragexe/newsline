@@ -2,8 +2,8 @@ package util;
 
 
 import commands.*;
-import dao.IDao;
-import dao.MyDao;
+//import dao.IDao;
+//import dao.MyDao;
 //import data.Page;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,11 +17,11 @@ import java.io.IOException;
 public class ControlPanel extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    IDao dao;
+//    IDao dao;
 
     public ControlPanel() {
         super();
-        dao = MyDao.getDao();
+//        dao = MyDao.getDao();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,24 +43,21 @@ public class ControlPanel extends HttpServlet {
         if ((request.getParameter("operation") != null)) {
             String operation = request.getParameter("operation");
             switch (operation){
-                case "add":
-                    com = new AddCommand();
-                    break;
                 case "addwrite":
                     com = new AddWriteCommand();
                     break;
-                case "delete":
-                    com = new DeleteCommand();
-                    break;
+//                case "delete":
+//                    com = new DeleteCommand();
+//                    break;
                 case "edit":
                     com = new EditCommand();
                     break;
-                case "editwrite":
-                    com = new EditWriteCommand();
-                    break;
-                case "registration":
-                    com = new RegCommand();
-                    break;
+//                case "editwrite":
+//                    com = new EditWriteCommand();
+//                    break;
+//                case "registration":
+//                    com = new RegCommand();
+//                    break;
                 default:
                     com = new ShowCommand();
             }

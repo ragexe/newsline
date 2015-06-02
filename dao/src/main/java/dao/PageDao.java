@@ -94,7 +94,7 @@ public class PageDao extends AbstractDao<Page> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT n FROM News n WHERE n.date=:date and n.status=:status";
+            String hql = "SELECT P FROM Page P WHERE P.date=:date and P.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("date", date)
                     .setParameter("status", status);

@@ -55,17 +55,28 @@ public abstract class AbstractDao<T> implements IGenDao<T> {
     protected abstract List<T> parseResultSet(Session session) throws PersistException;
 
     /** It creates a new entry, the corresponding object object */
+//    @Override
+//    public Long save(T object)  throws PersistException {
+//        Long generatedId;
+//        try {
+//            session = getSession();
+//            generatedId = (Long) session.save(object);
+//        } catch (HibernateException e) {
+//            logger.error(e.getMessage());
+//            throw new PersistException(e);
+//        }
+//        return generatedId;
+//    }
+
     @Override
-    public Long save(T object)  throws PersistException {
-        Long generatedId;
+    public void save(T object)  throws PersistException {
         try {
             session = getSession();
-            generatedId = (Long) session.save(object);
+            session.save(object);
         } catch (HibernateException e) {
             logger.error(e.getMessage());
             throw new PersistException(e);
         }
-        return generatedId;
     }
 
     /** It creates a new entry, the corresponding object object */
