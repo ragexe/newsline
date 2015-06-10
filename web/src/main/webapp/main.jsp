@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <jsp:useBean id="pageBean" class="data.Page" scope="request"/>
 <jsp:useBean id="user" class="data.User" scope="session"/>
+<jsp:useBean id="Category" class="data.Category" scope="request"/>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html lang="ru">

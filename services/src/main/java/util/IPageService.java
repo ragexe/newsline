@@ -3,9 +3,7 @@ package util;
 import data.Page;
 import java.util.List;
 
-/**
- * Created by alexanderleonovich on 29.04.15.
- */
+
 public interface IPageService {
     Page getPageByPK(Long PK);
     Page getPageByPageId(long id);
