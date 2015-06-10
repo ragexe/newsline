@@ -1,9 +1,11 @@
 package daofactory;
 
 
+import dao.CategoryDao;
 import dao.IGenDao;
 import dao.PageDao;
 import dao.UserDao;
+import data.Category;
 import data.Page;
 import data.User;
 import exception.PersistException;
@@ -35,6 +37,12 @@ public class DaoFactoryImpl implements IDaoFactory {
             @Override
             public IGenDao create() {
                 return new PageDao();
+            }
+        });
+        creators.put(Category.class, new IDaoCreator() {
+            @Override
+            public IGenDao create() {
+                return new CategoryDao();
             }
         });
 //        creators.put(Commentary.class, new IDaoCreator() {
