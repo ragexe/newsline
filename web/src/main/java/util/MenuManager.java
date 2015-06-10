@@ -30,8 +30,8 @@ public class MenuManager extends HttpServlet {
         categoryService = CategoryService.getInstance();
         //pageService = PageService.getInstance();
         //List<Page> pages = pageService.getListPageByParentid(Long.parseLong(request.getParameter("sect")));
-        List<Category> category = categoryService.getList();
-        request.setAttribute("result", category);
+        List<Category> categories = categoryService.getList();
+        request.setAttribute("result", categories);
         //request.setAttribute("result", pages);
     }
 

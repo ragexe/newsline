@@ -28,3 +28,4 @@ win+r cmd.exe netstat -ano
 
 insert into t_page (f_parentid, f_title, f_title4menu, f_author, f_date, f_maintext, f_status) values (0, 'jklafgu', 'askdjgd', 6, '2012-12-12', 'vkjgjklghv', 'SAVED');
 
+mysqldump -u USER -pPASSWORD DATABASE > /path/to/file/dump.sql

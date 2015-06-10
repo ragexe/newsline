@@ -10,16 +10,16 @@
 <!DOCTYPE html>
 <%--<jsp:useBean id="pageBean" class="data.Page" scope="request"/>--%>
 <jsp:useBean id="user" class="data.User" scope="session"/>
-<jsp:useBean id="Category" class="data.Category" scope="request"/>
+<%--<jsp:useBean id="Category" class="data.Category" scope="request"/>--%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html lang="ru">
 <head>
 
- <%-- <jsp:include page="/page">
-    <jsp:param name="sect" value="${param.sect}"/>
-    <jsp:param name="subsect" value="${param.subsect}"/>
-  </jsp:include>--%>
+  <%--<jsp:include page="/page">--%>
+    <%--<jsp:param name="sect" value="${param.sect}"/>--%>
+    <%--<jsp:param name="subsect" value="${param.subsect}"/>--%>
+  <%--</jsp:include>--%>
   <fmt:requestEncoding value="UTF-8"/>
   <jsp:include page="common/styles-common.jsp"/>
   <jsp:include page="common/navipanel.jsp"/>
@@ -69,11 +69,11 @@
           <%--<core:if test="${sessionScope.login != null}">--%>
           <%--<li><a href="add.jsp" class="btn btn-link">+ Добавить новость</a></li>--%>
           <%--</core:if>--%>
-          <jsp:include page="/menu">
-          </jsp:include>
+          <jsp:include page="/menu"/>
+
           <ul>
             <core:forEach var="page1" items="${result}">
-              <li><a href=/main.jsp?sect=<core:out value="${page1.id}" /> class="btn btn-link"><%--<core:out value="${page1.title4menu}"/>--%></a></li>
+              <li><a href=/main.jsp?sect=<core:out value="${page1.id}" /> class="btn btn-link"><core:out value="${page1.title4menu}"/></a></li>
             </core:forEach>
           </ul>
 
