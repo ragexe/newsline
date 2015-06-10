@@ -31,32 +31,12 @@
 
         <tr>
             <td>
-                id:
+                ${user.id} user:
             </td>
             <td>
-                <input name="id">
+                <input name="author" value="${user.id}">
             </td>
         </tr>
-
-        <tr>
-            <td>
-                user:
-            </td>
-            <td>
-                <input name="user" value="${user.id}">
-            </td>
-        </tr>
-
-        <%--<tr>--%>
-            <%--<td>--%>
-                <%--date:--%>
-            <%--</td>--%>
-            <%--<td>--%>
-                <%--<input size="30" id="date" name="date"--%>
-                       <%--value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateNow}"/>" readonly--%>
-                       <%--pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"/><br>--%>
-            <%--</td>--%>
-        <%--</tr>--%>
 
         <tr>
             <td>

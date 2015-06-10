@@ -2,12 +2,11 @@ package data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 
 /**
- * Created by ragexe on 27.05.2015.
- */
+* Created by ragexe on 27.05.2015.
+*/
 @Entity
 @Table(name = "T_PAGE", schema = "", catalog = "newsbase")
 public class Page extends CustomEntity implements Serializable {
@@ -36,7 +35,7 @@ public class Page extends CustomEntity implements Serializable {
 
     @Basic
     @Column(name = "F_DATE", nullable = false, insertable = true, updatable = true)
-    private Date date;
+    private java.sql.Date date;
 
     @Basic
     @Column(name = "F_MAINTEXT", nullable = false, insertable = true, updatable = true, length = 65535)
@@ -82,11 +81,11 @@ public class Page extends CustomEntity implements Serializable {
         this.author = author;
     }
 
-    public Date getDate() {
+    public java.sql.Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(java.sql.Date date) {
         this.date = date;
     }
 

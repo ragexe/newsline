@@ -179,6 +179,24 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public User getUserById(long id) {
+            User user = null;
+            try {
+                session = userDao.getSession();
+                transaction = session.beginTransaction();
+                user = userDao.getById(id);
+                transaction.commit();
+            } catch (PersistException e) {
+                transaction.rollback();
+                logger.error(e);
+            }finally {
+                sessionStatus.set(true);
+                userDao.clearSession(sessionStatus);
+            }
+            return user;
+    }
+
+    @Override
     public void updateUserInformation(User user) {
         if (user.getId() != 0
 //                && user.getId() != ServiceConstants.Const.ZERO

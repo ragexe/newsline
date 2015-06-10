@@ -32,7 +32,7 @@
   <tr>
     <td width="25%" valign="bottom">
       <!-- "На главную" -->
-      <ul><li><a href=\>На главную</a></li></ul>
+      <ul><li><a href=/WEB-INF/view/main.jspview/main.jsp>На главную</a></li></ul>
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
@@ -45,7 +45,7 @@
     <td width="25%" valign="top">
       <!-- Поле менюшки -->
       <jsp:include page="/menu">
-        <jsp:param name="sect" value="main"/>
+        <jsp:param name="sect" value="0"/>
       </jsp:include>
       <ul>
         <core:forEach var="page1" items="${result}">
@@ -86,7 +86,7 @@
         <core:otherwise>
           <p align="center"><h2><jsp:getProperty name="pageBean" property="title"/></h2></p>
           <p><jsp:getProperty name="pageBean" property="maintext"/></p>
-          <br><p align="right"><i><jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="user"/></i></p>
+          <br><p align="right"><i><jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="author"/></i></p>
         </core:otherwise>
       </core:choose>
     </td>

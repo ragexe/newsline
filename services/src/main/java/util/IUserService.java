@@ -18,6 +18,8 @@ public interface IUserService {
 
     User getUserByEmail(String email);
 
+    User getUserById(long id);
+
     void updateUserInformation(User User);
 
 }

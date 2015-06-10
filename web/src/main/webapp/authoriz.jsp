@@ -10,9 +10,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <jsp:useBean id="user" class="data.User" scope="session"/>
 <html>
-<%--<head>--%>
+<head>
     <%--<title></title>--%>
-<%--</head>--%>
+</head>
 <fmt:requestEncoding value="UTF-8"/>
 <body>
 <core:choose>
