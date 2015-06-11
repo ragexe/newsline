@@ -1,6 +1,7 @@
 package util;
 
 import data.Page;
+import data.Pages;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,30 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 /**
- * Created by ragexe on 17.05.2015.
+ * Created by HappyQ on 11.06.2015.
  */
-@WebServlet(name = "util.PageManager", urlPatterns = "/page")
-public class PageManager extends HttpServlet {
+@WebServlet(name="util.PagesManager",urlPatterns = "/pages")
+public class PagesManager extends HttpServlet {
+    private static final long serialVersionUID = 5L;
+    private PagesService pagesService;
+    private Pages pages;
 
-    private static final long serialVersionUID = 4L;
-    //    private util.Service service;
-    private PageService pageService;
-    private Page page;
+    public PagesManager(){
 
-    public PageManager() {
     }
 
     public void init() throws ServletException {
         super.init();
-//        service = new util.MyService();
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        pageService = PageService.getInstance();
+        pagesService = PagesService.getInstance();
         String sect = request.getParameter("sect");
         String subsect = request.getParameter("subsect");
         String id;
@@ -43,13 +42,14 @@ public class PageManager extends HttpServlet {
             id = subsect;
         }
 //        page = service.getPage(Long.parseLong(id));
-        page = pageService.getPageByPageId(Long.parseLong(id));
-        request.setAttribute("pageBean", page);
-    }
+        pages = pagesService.getPageByPageId(Long.parseLong(id));
+        request.setAttribute("pageBean", pages);
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+    protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         doGet(request, response);
     }
+
 }
