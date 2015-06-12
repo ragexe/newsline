@@ -55,8 +55,12 @@
         <li>
           <a href="https://github.com/ragexe/newsline/">GitHub</a>
         </li>
-        <li>
-          <a href="https://vk.com/ragexe">Blog</a>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="blog">Author's<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="blog">
+            <li><a href="https://vk.com/ragexe">Roman aka ragexe</a></li>
+            <li><a href="https://vk.com/followhappyq">Ivan aka happyQ</a></li>
+          </ul>
         </li>
         <%--<li class="dropdown">--%>
         <%--<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>--%>
