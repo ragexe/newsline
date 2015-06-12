@@ -70,7 +70,6 @@
           <%--<li><a href="add.jsp" class="btn btn-link">+ Добавить новость</a></li>--%>
           <%--</core:if>--%>
           <jsp:include page="/menu"/>
-
           <ul>
             <core:forEach var="page1" items="${result}">
               <li><a href=/main.jsp?sect=<core:out value="${page1.id}" /> class="btn btn-link"><core:out value="${page1.title4menu}"/></a></li>
@@ -88,6 +87,22 @@
       <%--<p><jsp:getProperty name="pageBean" property="maintext"/></p>      --%>
       <%--<br><p class="text-warning" align="right"><i>      --%>
       <%--<jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="author"/></i></p>--%>
+
+
+      <jsp:include page="/pages">
+        <jsp:param name="sect" value="${param.sect}"/>
+      </jsp:include>
+      <core:forEach var="page2" items="${resulty}">
+      <%--<li><a href=/main.jsp?sect=<core:out value="${page2.id}" /> class="btn btn-link"><core:out value="${page2.title4menu}"/></a></li>--%>
+      <core:out value="${page2.title}"/>
+      </core:forEach>
+
+
+
+
+
+
+
 
 
 

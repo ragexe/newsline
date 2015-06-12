@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 /**
  * Created by HappyQ on 11.06.2015.
@@ -17,8 +18,8 @@ import java.io.UnsupportedEncodingException;
 @WebServlet(name="util.PagesManager",urlPatterns = "/pages")
 public class PagesManager extends HttpServlet {
     private static final long serialVersionUID = 5L;
-    private PagesService pagesService;
-    private Pages pages;
+    private PageService pagesService;
+    private List<Page> pages;
 
     public PagesManager(){
 
@@ -30,20 +31,17 @@ public class PagesManager extends HttpServlet {
     protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        pagesService = PagesService.getInstance();
+        pagesService = PageService.getInstance();
         String sect = request.getParameter("sect");
-        String subsect = request.getParameter("subsect");
+        //String subsect = request.getParameter("subsect");
         String id;
         if (sect.equals("")) {
-            id = "0";
-        } else if (subsect.equals("")) {
+            id = "-1";
+        }else{
             id = sect;
-        } else {
-            id = subsect;
         }
-//        page = service.getPage(Long.parseLong(id));
-        pages = pagesService.getPageByPageId(Long.parseLong(id));
-        request.setAttribute("pageBean", pages);
+        pages = pagesService.getListPageByParentid(Long.parseLong(id));
+        request.setAttribute("resulty", pages);
 
     }
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
