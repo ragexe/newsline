@@ -15,7 +15,7 @@
         <mapping class="data.Page"/>
         <mapping class="data.User"/>
         <mapping class="data.Category"/>
-        <mapping class="data.Pages"/>
+        <!--<mapping class="data.HuitaPage"/>-->
 
         <!--<mapping class="data.UserDetailEntity"/>-->
         <!-- DB schema will be updated if needed -->

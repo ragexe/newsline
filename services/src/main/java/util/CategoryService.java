@@ -78,6 +78,25 @@ public class CategoryService implements ICategoryService {
         }
         return pages;
     }
+
+    @Override
+    public Category getCategoryById(long id) {
+        Category category = null;
+        try {
+            session = categoryDao.getSession();
+            transaction = session.beginTransaction();
+            category = categoryDao.getByCategoryId(id);
+            transaction.commit();
+        } catch (PersistException e) {
+            transaction.rollback();
+            logger.error(e);
+        } finally {
+            sessionStatus.set(true);
+            categoryDao.clearSession(sessionStatus);
+        }
+        return category;
+    }
+    
     public static synchronized CategoryService getInstance() {
         if (categoryServiceInst == null) {
             categoryServiceInst = new CategoryService();

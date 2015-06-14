@@ -4,10 +4,7 @@ package commands;
 //import dao.MyDao;
 import data.Page;
 import org.apache.log4j.Logger;
-import util.IPageService;
-import util.IUserService;
-import util.PageService;
-import util.UserService;
+import util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +15,7 @@ public class AddWriteCommand extends Command {
     private static final Logger log = Logger.getLogger(AddWriteCommand.class);
     private IPageService pageService;
     private IUserService userService;
+    private ICategoryService categoryService;
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
@@ -27,7 +25,9 @@ public class AddWriteCommand extends Command {
         try {
             pageService = PageService.getInstance();
             userService = UserService.getInstance();
-            page.setParentid(Long.parseLong(request.getParameter("parentid")));
+            categoryService = CategoryService.getInstance();
+//            page.setParentid(Long.parseLong(request.getParameter("parentid")));
+            page.setParentid(categoryService.getCategoryById(Long.parseLong(request.getParameter("parentid"))));
             page.setTitle(request.getParameter("title"));
             page.setTitle4menu(request.getParameter("title4menu"));
             page.setAuthor(userService.getUserById(Long.parseLong(request.getParameter("author"))));

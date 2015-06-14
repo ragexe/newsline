@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by ragexe on 17.05.2015.
@@ -19,6 +20,7 @@ public class PageManager extends HttpServlet {
     //    private util.Service service;
     private PageService pageService;
     private Page page;
+    private List<Page> pages;
 
     public PageManager() {
     }
@@ -28,24 +30,34 @@ public class PageManager extends HttpServlet {
 //        service = new util.MyService();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        pageService = PageService.getInstance();
-        String sect = request.getParameter("sect");
-        String subsect = request.getParameter("subsect");
-        String id;
-        if (sect.equals("")) {
-            id = "0";
-        } else if (subsect.equals("")) {
-            id = sect;
-        } else {
-            id = subsect;
-        }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        response.setContentType("text/html;charset=UTF-8");
+//        request.setCharacterEncoding("UTF-8");
+//        pageService = PageService.getInstance();
+//        String sect = request.getParameter("sect");
+//        String subsect = request.getParameter("subsect");
+//        String id;
+//        if (sect.equals("")) {
+//            id = "0";
+//        } else if (subsect.equals("")) {
+//            id = sect;
+//        } else {
+//            id = subsect;
+//        }
+////        page = service.getPage(Long.parseLong(id));
+//        page = pageService.getPageByPageId(Long.parseLong(id));
+//        request.setAttribute("pageBean", page);
+//    }
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    response.setContentType("text/html;charset=UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    pageService = PageService.getInstance();
+    String sect = request.getParameter("sect");
+
 //        page = service.getPage(Long.parseLong(id));
-        page = pageService.getPageByPageId(Long.parseLong(id));
-        request.setAttribute("pageBean", page);
-    }
+    pages = pageService.getAllPages();
+    request.setAttribute("pages", pages);
+}
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

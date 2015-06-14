@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.intellij.lang.annotations.Language;
 
 import java.sql.Date;
 import java.util.List;
@@ -40,7 +41,7 @@ public class CategoryDao extends AbstractDao<Category> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT C FROM Category C WHERE C.status=:status";
+            @Language("HQL") String hql = "SELECT C FROM Category C WHERE C.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("status", status);
             Category = query.list();
@@ -63,7 +64,7 @@ public class CategoryDao extends AbstractDao<Category> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT P FROM Category P WHERE P.id=:id and P.status=:status";
+            @Language("HQL") String hql = "SELECT c FROM Category c WHERE c.id=:id and c.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("id", id)
                     .setParameter("status", status);

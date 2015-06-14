@@ -1,8 +1,9 @@
 package util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+
 import org.apache.log4j.Logger;
+import org.hibernate.cfg.AnnotationConfiguration;
 
 /**
  * Created by ragexe on 27.05.2015.

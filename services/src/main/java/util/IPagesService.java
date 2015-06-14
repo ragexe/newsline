@@ -1,15 +1,15 @@
-package util;
-
-import data.Pages;
-
-import java.util.List;
-
-/**
- * Created by HappyQ on 11.06.2015.
- */
-public interface IPagesService {
-    Pages getPageByPageId(long id);
-    List<Pages> getListOfPageByCategory(Long categoryId);
-    List<Pages> getListPageByParentid(long id);
-
-}
+//package util;
+//
+//import data.HuitaPage;
+//
+//import java.util.List;
+//
+///**
+// * Created by HappyQ on 11.06.2015.
+// */
+//public interface IPagesService {
+//    HuitaPage getPageByPageId(long id);
+//    List<HuitaPage> getListOfPageByCategory(Long categoryId);
+//    List<HuitaPage> getListPageByParentid(long id);
+//
+//}

@@ -6,6 +6,7 @@ import com.mysql.jdbc.StringUtils;
 import dao.PageDao;
 import daofactory.DaoFactoryImpl;
 import daofactory.IDaoFactory;
+import data.Category;
 import data.Page;
 import data.util.StatusEnum;
 import exception.PersistException;
@@ -120,12 +121,52 @@ public class PageService implements IPageService {
     }
 
     @Override
-    public List<Page> getListOfPageByCategory(Long categoryId) {
+    public List<Page> getListOfPageByCategory(Category category) {
         List<Page> pages = null;
         try {
             session = pageDao.getSession();
             transaction = session.beginTransaction();
-            pages = pageDao.getByCategory(categoryId);
+            pages = pageDao.getByCategory(category);
+            transaction.commit();
+        } catch (HibernateException e) {
+            logger.error("Error get list of Categories from database" + e);
+            transaction.rollback();
+        } catch (PersistException e) {
+            logger.error(e);
+        }finally {
+            sessionStatus.set(true);
+            pageDao.clearSession(sessionStatus);
+        }
+        return pages;
+    }
+
+    @Override
+    public List<Page> getListOfPageByCategoryId(long categoryId) {
+        List<Page> pages = null;
+        try {
+            session = pageDao.getSession();
+            transaction = session.beginTransaction();
+            pages = pageDao.getByCategoryId(categoryId);
+            transaction.commit();
+        } catch (HibernateException e) {
+            logger.error("Error get list of Categories from database" + e);
+            transaction.rollback();
+        } catch (PersistException e) {
+            logger.error(e);
+        }finally {
+            sessionStatus.set(true);
+            pageDao.clearSession(sessionStatus);
+        }
+        return pages;
+    }
+
+    @Override
+    public List<Page> getAllPages() {
+        List<Page> pages = null;
+        try {
+            session = pageDao.getSession();
+            transaction = session.beginTransaction();
+            pages = pageDao.getAll();
             transaction.commit();
         } catch (HibernateException e) {
             logger.error("Error get list of Categories from database" + e);
@@ -140,25 +181,26 @@ public class PageService implements IPageService {
     }
 
 
-    @Override
-    public List<Page> getListPageByParentid(long id) {
-        List<Page> pages = null;
-        try {
-            session = pageDao.getSession();
-            transaction = session.beginTransaction();
-            pages = pageDao.getListPageByParentid(id);
-            transaction.commit();
-        } catch (HibernateException e) {
-            logger.error("Error get list of parentid from database" + e);
-            transaction.rollback();
-        } catch (PersistException e) {
-            logger.error(e);
-        }finally {
-            sessionStatus.set(true);
-            pageDao.clearSession(sessionStatus);
-        }
-        return pages;
-    }
+//    @Override
+//    public List<Page> getListPageByParentid(long id) {
+//        List<Page> pages = null;
+//        try {
+//            session = pageDao.getSession();
+//            transaction = session.beginTransaction();
+////            pages = pageDao.getListPageByParentid(id);
+//            pages = pageDao.getListPageByParentid(id);
+//            transaction.commit();
+//        } catch (HibernateException e) {
+//            logger.error("Error get list of parentid from database" + e);
+//            transaction.rollback();
+//        } catch (PersistException e) {
+//            logger.error(e);
+//        }finally {
+//            sessionStatus.set(true);
+//            pageDao.clearSession(sessionStatus);
+//        }
+//        return pages;
+//    }
     @Override
     public Long savePage(Page page) {
         Long savedPageId = null;

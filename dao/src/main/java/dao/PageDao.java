@@ -1,5 +1,6 @@
 package dao;
 
+import data.Category;
 import data.util.StatusEnum;
 import exception.PersistException;
 import data.Page;
@@ -7,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
+import org.intellij.lang.annotations.Language;
 
 
 import java.sql.Date;
@@ -31,7 +32,7 @@ public class PageDao extends AbstractDao<Page> {
     protected List<Page> parseResultSet(Session session) throws PersistException {
         StatusEnum status = StatusEnum.SAVED;
         List<Page> list;
-        String hql = "SELECT P FROM Page P WHERE P.status=:status";
+        @Language("HQL") String hql = "SELECT P FROM Page P WHERE P.status=:status";
         Query query = session.createQuery(hql).setParameter("status", status);
         list = query.list();
         return list;
@@ -55,14 +56,51 @@ public class PageDao extends AbstractDao<Page> {
         return pages;
     }
 
-    public List<Page> getByCategory(Long pK) throws PersistException{
+    public List<Page> getByCategory(Category category) throws PersistException{
         List<Page> pages = null;
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT n FROM page WHERE n.category.categoryId=:pK and n.status=:status";
+//            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.parentid.id=:id and p.status=:status";
+//            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.category.id=:categoryId and p.status=:status";
+            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.status=:status AND p.category=:category" ;
             Query query = session.createQuery(hql)
-                    .setParameter("pK", pK)
+                    .setParameter("category", category)
+                    .setParameter("status", status);
+            pages = query.list();
+        } catch (HibernateException e) {
+            logger.error("Error get " + pages.isEmpty() + " in Dao " + e);
+            throw new PersistException(e);
+        }
+        return pages;
+    }
+
+    public List<Page> getByCategoryId(Long categoryId) throws PersistException{
+        List<Page> pages = null;
+        try {
+            session = getSession();
+            StatusEnum status = StatusEnum.SAVED;
+//            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.parentid.id=:id and p.status=:status";
+//            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.category.id=:categoryId and p.status=:status";
+            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.status=:status AND p.category.id=:categoryId" ;
+            Query query = session.createQuery(hql)
+                    .setParameter("categoryId", categoryId)
+                    .setParameter("status", status);
+            pages = query.list();
+        } catch (HibernateException e) {
+            logger.error("Error get " + pages.isEmpty() + " in Dao " + e);
+            throw new PersistException(e);
+        }
+        return pages;
+    }
+
+    public List<Page> getAll() throws PersistException{
+        List<Page> pages = null;
+        try {
+            session = getSession();
+            StatusEnum status = StatusEnum.SAVED;
+            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.status=:status" ;
+            Query query = session.createQuery(hql)
                     .setParameter("status", status);
             pages = query.list();
         } catch (HibernateException e) {
@@ -77,9 +115,27 @@ public class PageDao extends AbstractDao<Page> {
         try {
             session = getSession();
             StatusEnum status = StatusEnum.SAVED;
-            String hql = "SELECT P FROM Page P WHERE P.parentid=:id and P.status=:status";
+            @Language("HQL") String hql = "SELECT P FROM Page P WHERE P.category.id=:id and P.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("id", id)
+                    .setParameter("status", status);
+            pages = query.list();
+        } catch (HibernateException e) {
+            logger.error("Error get " + pages.isEmpty() + " in Dao " + e);
+            logger.error(e.getMessage());
+            throw new PersistException(e);
+        }
+        return pages;
+    }
+
+    public List<Page> getListPageByCategory(Category category) throws PersistException{
+        List<Page> pages = null;
+        try {
+            session = getSession();
+            StatusEnum status = StatusEnum.SAVED;
+            @Language("HQL") String hql = "SELECT P FROM Page P WHERE P.parentid=:category and P.status=:status";
+            Query query = session.createQuery(hql)
+                    .setParameter("category", category)
                     .setParameter("status", status);
             pages = query.list();
         } catch (HibernateException e) {

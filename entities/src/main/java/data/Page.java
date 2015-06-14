@@ -10,16 +10,19 @@ import java.io.Serializable;
 @Entity
 @Table(name = "T_PAGE", schema = "", catalog = "newsbase")
 public class Page extends CustomEntity implements Serializable {
-    private static final long serialVersionUID = -3731830107340403944L;
+    private static final long serialVersionUID = -3731830107340403946L;
 
     @Id
-    @Column(name = "F_ID")
+    @Column(name = "F_PAGE_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Basic
-    @Column(name = "F_PARENTID")
-    private long parentid;
+//    @Basic
+//    @Column(name = "F_PARENTID")
+//    private long category;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
+    private Category category;
 
     @Basic
     @Column(name = "F_TITLE")
@@ -29,8 +32,8 @@ public class Page extends CustomEntity implements Serializable {
     @Column(name = "F_TITLE4MENU")
     private String title4menu;
 
-    @ManyToOne
-    @JoinColumn(name = "F_AUTHOR")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "F_USER_ID", nullable = false)
     private User author;
 
     @Basic
@@ -49,12 +52,19 @@ public class Page extends CustomEntity implements Serializable {
         this.id = id;
     }
 
-    public long getParentid() {
-        return parentid;
-    }
+//    public long getParentid() {
+//        return category;
+//    }
+//
+//    public void setParentid(long category) {
+//        this.category = category;
+//    }
+    public Category getParentid() {
+    return category;
+}
 
-    public void setParentid(long parentid) {
-        this.parentid = parentid;
+    public void setParentid(Category category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -108,7 +118,7 @@ public class Page extends CustomEntity implements Serializable {
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (id != 0 ? id!=that.id : that.id != 0) return false;
         if (maintext != null ? !maintext.equals(that.maintext) : that.maintext != null) return false;
-        if (parentid != 0 ? parentid!=that.parentid : that.parentid != 0) return false;
+//        if (category != 0 ? category!=that.category : that.category != 0) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (title4menu != null ? !title4menu.equals(that.title4menu) : that.title4menu != null) return false;
 
@@ -118,7 +128,7 @@ public class Page extends CustomEntity implements Serializable {
     @Override
     public int hashCode() {
         int result = (int) id;
-        result = 31 * result + (int) parentid;
+//        result = 31 * result + (int) category;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (title4menu != null ? title4menu.hashCode() : 0);
 //        result = 31 * result + (int) author;

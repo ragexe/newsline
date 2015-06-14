@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">--%>
 <!DOCTYPE html>
-<%--<jsp:useBean id="pageBean" class="data.Page" scope="request"/>--%>
+<%--<jsp:useBean id="page" class="data.Page" scope="request"/>--%>
 <jsp:useBean id="user" class="data.User" scope="session"/>
 <%--<jsp:useBean id="Category" class="data.Category" scope="request"/>--%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -17,8 +17,8 @@
 <head>
 
   <%--<jsp:include page="/page">--%>
-    <%--<jsp:param name="sect" value="${param.sect}"/>--%>
-    <%--<jsp:param name="subsect" value="${param.subsect}"/>--%>
+  <%--<jsp:param name="sect" value="${param.sect}"/>--%>
+  <%--<jsp:param name="subsect" value="${param.subsect}"/>--%>
   <%--</jsp:include>--%>
   <fmt:requestEncoding value="UTF-8"/>
   <jsp:include page="common/styles-common.jsp"/>
@@ -83,24 +83,32 @@
       <!--Body content-->
 
 
-      <%--<h2><p class="text-info"><jsp:getProperty name="pageBean" property="title"/></p></h2>      --%>
-      <%--<p><jsp:getProperty name="pageBean" property="maintext"/></p>      --%>
-      <%--<br><p class="text-warning" align="right"><i>      --%>
+      <%--<h2><p class="text-info"><jsp:getProperty name="pageBean" property="title"/></p></h2>--%>
+      <%--<p><jsp:getProperty name="pageBean" property="maintext"/></p>--%>
+      <%--<br><p class="text-warning" align="right"><i>--%>
       <%--<jsp:getProperty name="pageBean" property="date"/> - <jsp:getProperty name="pageBean" property="author"/></i></p>--%>
 
 
-      <jsp:include page="/pages">
+      <%--<jsp:include page="/page">--%>
+      <%--&lt;%&ndash;<jsp:param name="sect" value="${param.sect}"/>&ndash;%&gt;--%>
+      <%--</jsp:include>--%>
+      <%--<core:forEach var="page2" items="${resulty}">--%>
+      <%--&lt;%&ndash;<li><a href=/main.jsp?sect=<core:out value="${page2.id}" /> class="btn btn-link"><core:out value="${page2.title4menu}"/></a></li>&ndash;%&gt;--%>
+      <%--<core:out value="${page2.title}"/>--%>
+      <%--</core:forEach>--%>
+
+      <jsp:include page="/test">
         <jsp:param name="sect" value="${param.sect}"/>
       </jsp:include>
-      <core:forEach var="page2" items="${resulty}">
-      <%--<li><a href=/main.jsp?sect=<core:out value="${page2.id}" /> class="btn btn-link"><core:out value="${page2.title4menu}"/></a></li>--%>
-      <core:out value="${page2.title}"/>
+      <core:forEach var="hoboct" items="${page}">
+        <h1><core:out value="${hoboct.title}"/></h1>
+        <blockquote>
+          <p><core:out value="${hoboct.maintext}"/><br></p>
+          <small>author - <core:out value="${hoboct.date}"/></small>
+        </blockquote>
+        
       </core:forEach>
-
-
-
-
-
+      <%--<core:out value="${category}"/>--%>
 
 
 

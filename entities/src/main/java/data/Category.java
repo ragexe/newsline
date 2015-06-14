@@ -2,6 +2,7 @@ package data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
 /**
@@ -13,7 +14,7 @@ public class Category extends CustomEntity implements Serializable {
     private static final long serialVersionUID = -373183010734040395L;
 
     @Id
-    @Column(name = "F_ID")
+    @Column(name = "F_CATEGORY_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -25,6 +26,8 @@ public class Category extends CustomEntity implements Serializable {
     @Column(name = "F_TITLE4MENU")
     private String title4menu;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    private Set<Page> pages;
 
     public long getId() {
         return id;
@@ -50,8 +53,18 @@ public class Category extends CustomEntity implements Serializable {
         this.title4menu = title4menu;
     }
 
+    public Set<Page> getPages() {
+        return pages;
+    }
 
+    public void setPages(Set<Page> pages) {
+        this.pages = pages;
+    }
 
+    @Override
+    public String toString() {
+        return this.getTitle();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -70,8 +83,6 @@ public class Category extends CustomEntity implements Serializable {
         int result = (int) id;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (title4menu != null ? title4menu.hashCode() : 0);
-//        result = 31 * result + (int) author;
-
         return result;
     }
 }

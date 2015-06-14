@@ -2,6 +2,7 @@ package data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by ragexe on 27.05.2015.
@@ -12,7 +13,7 @@ public class User extends CustomEntity implements Serializable {
     private static final long serialVersionUID = -3731830107340403943L;
     
     @Id
-    @Column(name = "F_ID", nullable = false, insertable = true, updatable = true)
+    @Column(name = "F_USER_ID", nullable = false, insertable = true, updatable = true)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -31,6 +32,9 @@ public class User extends CustomEntity implements Serializable {
     @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
     private Integer role;
 
+//    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
+    private Set<Page> pages;
 
     public long getId() {
         return id;
@@ -78,6 +82,14 @@ public class User extends CustomEntity implements Serializable {
 
     public void setRole(Integer role) {
         this.role = role;
+    }
+
+    public Set<Page> getPages() {
+        return pages;
+    }
+
+    public void setPages(Set<Page> pages) {
+        this.pages = pages;
     }
 
     @Override
