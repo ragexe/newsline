@@ -41,14 +41,14 @@
             <version>${com.intellij.version}</version>
         </dependency>
 
-        <!-- EHCache Core APIs -->
+
+
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
             <version>${ehcache-core.version}</version>
         </dependency>
 
-        <!-- Hibernate EHCache API -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>

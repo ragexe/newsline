@@ -2,7 +2,6 @@ package util;
 
 
 import data.Category;
-import data.Page;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,26 +12,20 @@ import java.util.List;
 
 @WebServlet (name = "util.MenuManager", urlPatterns = "/menu")
 public class MenuManager extends HttpServlet {
-    //private PageService pageService;
     private CategoryService categoryService;
     private static final long serialVersionUID = 3L;
-//    private Service service;
     public MenuManager() {}
 
     public void init() throws ServletException {
         super.init();
-//        service = new MyService();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         categoryService = CategoryService.getInstance();
-        //pageService = PageService.getInstance();
-        //List<Page> pages = pageService.getListPageByParentid(Long.parseLong(request.getParameter("sect")));
         List<Category> categories = categoryService.getList();
         request.setAttribute("result", categories);
-        //request.setAttribute("result", pages);
     }
 
     /**

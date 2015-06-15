@@ -21,6 +21,7 @@ public class Page extends CustomEntity implements Serializable {
 //    @Column(name = "F_PARENTID")
 //    private long category;
     @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
     @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
     private Category category;
 
@@ -120,9 +121,8 @@ public class Page extends CustomEntity implements Serializable {
         if (maintext != null ? !maintext.equals(that.maintext) : that.maintext != null) return false;
 //        if (category != 0 ? category!=that.category : that.category != 0) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
-        if (title4menu != null ? !title4menu.equals(that.title4menu) : that.title4menu != null) return false;
+        return !(title4menu != null ? !title4menu.equals(that.title4menu) : that.title4menu != null);
 
-        return true;
     }
 
     @Override
