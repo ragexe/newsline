@@ -81,10 +81,9 @@
 
             <table border="1" cellpadding="5" cellspacing="5">
               <tr>
-                <th>Emp ID</th>
-                <th>Emp Name</th>
-                <th>Salary</th>
-                <th>Dept Name</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Date</th>
               </tr>
 
               <c:forEach var="employee" items="${employeeList}">
