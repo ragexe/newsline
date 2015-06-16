@@ -33,8 +33,7 @@ public class Pagination extends HttpServlet{
         if(request.getParameter("page") != null)
             page = Integer.parseInt(request.getParameter("page"));
         //EmployeeDAO dao = new EmployeeDAO();
-        //List<Employe> list = dao.viewAllEmployees((page-1)*recordsPerPage,
-       //         recordsPerPage);
+        //List<Page> list = dao.viewAllEmployees((page-1)*recordsPerPage,recordsPerPage);
         //int noOfRecords = dao.getNoOfRecords();
        // int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
         //request.setAttribute("employeeList", list);
