@@ -3,7 +3,7 @@ package util;
 import org.hibernate.cfg.DefaultNamingStrategy;
 
 /**
- * Created by ragexe on 20.05.15.
+ * Created by HappyQ on 12.06.2015.
  */
 public class CustomNamingStrategy extends DefaultNamingStrategy {
 

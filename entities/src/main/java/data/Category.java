@@ -9,7 +9,7 @@ import java.util.Set;
 * Created by ragexe on 27.05.2015.
 */
 @Entity
-@Table(name = "T_CATEGORY", schema = "", catalog = "newsbase")
+@Table(name = "t_category", schema = "", catalog = "newsbase")
 public class Category extends CustomEntity implements Serializable {
     private static final long serialVersionUID = -373183010734040395L;
 
