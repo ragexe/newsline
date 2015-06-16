@@ -108,7 +108,7 @@
                   <core:choose>
                     <core:when test="${currentPage eq i}">
                       <td>${i}</td>
-                    </c:when>
+                    </core:when>
                     <core:otherwise>
                       <td><a href="employee.do?page=${i}">${i}</a></td>
                     </core:otherwise>
