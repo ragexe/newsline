@@ -88,10 +88,10 @@
               </tr>
               <core:forEach var="pagin" items="${paginList}">
                 <tr>
-                  <td>${pagin.employeeId}</td>
-                  <td>${pagin.employeeName}</td>
-                  <td>${pagin.salary}</td>
-                  <td>${pagin.deptName}</td>
+                  <td>${pagin.paginTitle}</td>
+                  <td>${pagin.paginText}</td>
+                  <td>${pagin.paginAuthor}</td>
+                  <td>${pagin.paginDate}</td>
                 </tr>
               </core:forEach>
             </table>
