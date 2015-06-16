@@ -85,43 +85,42 @@
                 <th>Author</th>
                 <th>Date</th>
               </tr>
-
-              <c:forEach var="employee" items="${employeeList}">
+              <core:forEach var="employee" items="${employeeList}">
                 <tr>
                   <td>${employee.employeeId}</td>
                   <td>${employee.employeeName}</td>
                   <td>${employee.salary}</td>
                   <td>${employee.deptName}</td>
                 </tr>
-              </c:forEach>
+              </core:forEach>
             </table>
 
             <%--For displaying Previous link except for the 1st page --%>
-            <c:if test="${currentPage != 1}">
+            <core:if test="${currentPage != 1}">
               <td><a href="employee.do?page=${currentPage - 1}">Previous</a></td>
-            </c:if>
+            </core:if>
 
             <%--For displaying Page numbers.
             The when condition does not display a link for the current page--%>
             <table border="1" cellpadding="5" cellspacing="5">
               <tr>
-                <c:forEach begin="1" end="${noOfPages}" var="i">
-                  <c:choose>
-                    <c:when test="${currentPage eq i}">
+                <core:forEach begin="1" end="${noOfPages}" var="i">
+                  <core:choose>
+                    <core:when test="${currentPage eq i}">
                       <td>${i}</td>
                     </c:when>
-                    <c:otherwise>
+                    <core:otherwise>
                       <td><a href="employee.do?page=${i}">${i}</a></td>
-                    </c:otherwise>
-                  </c:choose>
-                </c:forEach>
+                    </core:otherwise>
+                  </core:choose>
+                </core:forEach>
               </tr>
             </table>
 
             <%--For displaying Next link --%>
-            <c:if test="${currentPage lt noOfPages}">
+            <core:if test="${currentPage lt noOfPages}">
               <td><a href="employee.do?page=${currentPage + 1}">Next</a></td>
-            </c:if>
+            </core:if>
 
 
 
