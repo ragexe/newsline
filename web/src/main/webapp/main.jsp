@@ -78,26 +78,27 @@
 
 
 
-
+            <%--<jsp:include page="/pagination"/>--%>
             <table border="1" cellpadding="5" cellspacing="5">
               <tr>
                 <th>Title</th>
+                <th>Text</th>
                 <th>Author</th>
                 <th>Date</th>
               </tr>
-              <core:forEach var="employee" items="${employeeList}">
+              <core:forEach var="pagin" items="${paginList}">
                 <tr>
-                  <td>${employee.employeeId}</td>
-                  <td>${employee.employeeName}</td>
-                  <td>${employee.salary}</td>
-                  <td>${employee.deptName}</td>
+                  <td>${pagin.employeeId}</td>
+                  <td>${pagin.employeeName}</td>
+                  <td>${pagin.salary}</td>
+                  <td>${pagin.deptName}</td>
                 </tr>
               </core:forEach>
             </table>
 
             <%--For displaying Previous link except for the 1st page --%>
             <core:if test="${currentPage != 1}">
-              <td><a href="employee.do?page=${currentPage - 1}">Previous</a></td>
+              <td><a href="pagin.do?page=${currentPage - 1}">Previous</a></td>
             </core:if>
 
             <%--For displaying Page numbers.
@@ -110,7 +111,7 @@
                       <td>${i}</td>
                     </core:when>
                     <core:otherwise>
-                      <td><a href="employee.do?page=${i}">${i}</a></td>
+                      <td><a href="pagin.do?page=${i}">${i}</a></td>
                     </core:otherwise>
                   </core:choose>
                 </core:forEach>
@@ -119,7 +120,7 @@
 
             <%--For displaying Next link --%>
             <core:if test="${currentPage lt noOfPages}">
-              <td><a href="employee.do?page=${currentPage + 1}">Next</a></td>
+              <td><a href="pagin.do?page=${currentPage + 1}">Next</a></td>
             </core:if>
 
 
