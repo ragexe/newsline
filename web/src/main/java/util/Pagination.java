@@ -4,6 +4,7 @@ import data.Page;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import java.util.List;
 /**
  * Created by HappyQ on 16.06.2015.
  */
+@WebServlet(name="util.Pagination",urlPatterns = "/pagination")
 public class Pagination extends HttpServlet{
     private static final long serialVersionUID = 7L;
 
