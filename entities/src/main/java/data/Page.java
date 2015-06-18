@@ -8,7 +8,7 @@ import java.io.Serializable;
 * Created by ragexe on 27.05.2015.
 */
 @Entity
-@Table(name = "T_PAGE", schema = "", catalog = "newsbase")
+@Table(name = "t_page", schema = "", catalog = "newsbase")
 public class Page extends CustomEntity implements Serializable {
     private static final long serialVersionUID = -3731830107340403946L;
 
