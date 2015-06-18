@@ -8,9 +8,9 @@ import daofactory.IDaoFactory;
 import data.User;
 import exception.PersistException;
 import org.apache.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 
@@ -18,15 +18,15 @@ import java.util.List;
  * Created by ragexe on 29.04.15.
  */
 
+@Service
 public class UserService implements IUserService {
     private static final Logger logger = Logger.getLogger(UserService.class);
 
     private static UserService userServiceInst;
-    private final ThreadLocal sessionStatus = new ThreadLocal();
+
 
     private UserDao userDao;
-    private Session session;
-    private Transaction transaction;
+
 
     private UserService() {
         IDaoFactory factory = DaoFactoryImpl.getInstance();
@@ -49,16 +49,9 @@ public class UserService implements IUserService {
         if (pK != null) {
             User user = null;
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 user = userDao.getByPK(pK);
-                transaction.commit();
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
             return user;
         }
@@ -75,26 +68,15 @@ public class UserService implements IUserService {
     public boolean checkUser(String email, String password) {
         if (!(StringUtils.isNullOrEmpty(email)) && !(StringUtils.isNullOrEmpty(password))) {
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 List<User> userList = userDao.getAll();
-                transaction.commit();
-                for (User userElement : userList) {
-//                    if ((userElement.getUserDetail().getEmail().equals(email))
-//                            && (userElement.getUserDetail().getPassword().equals(password))) {
-//                        return true;
-//                    }
+                for (User userElement : userList) {//
                     if ((userElement.getEmail().equals(email))
                             && (userElement.getPassword().equals(password))) {
                         return true;
                     }
                 }
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
         }
         return false;
@@ -110,16 +92,9 @@ public class UserService implements IUserService {
         if (!(StringUtils.isNullOrEmpty(email))) {
             User user = null;
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 user = userDao.getByEmail(email);
-                transaction.commit();
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
             return user;
         }
@@ -127,18 +102,11 @@ public class UserService implements IUserService {
     }
 
     @Override
+    @Transactional
     public boolean registerNewUser(User user) {
         if (user != null) {
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 List<User> users = userDao.getAll();
-                transaction.commit();
-//                for (User element : users) {
-//                    if (element.getUserDetail().getEmail().equals(user.getuserDetail().getEmail())) {
-//                        return false;
-//                    }
-//                }
                 for (User element : users) {
                     if (element.getEmail().equals(user.getEmail())) {
                         return false;
@@ -147,31 +115,21 @@ public class UserService implements IUserService {
                 userDao.save(user);
                 return true;
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
         }
         return false;
     }
 
     @Override
+    @Transactional
     public User getUserByEmail(String email) {
         if (!(StringUtils.isNullOrEmpty(email))) {
             User user = null;
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 user = userDao.getByEmail(email);
-                transaction.commit();
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
             return user;
         }
@@ -179,41 +137,27 @@ public class UserService implements IUserService {
     }
 
     @Override
+    @Transactional
     public User getUserById(long id) {
             User user = null;
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 user = userDao.getById(id);
-                transaction.commit();
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
             return user;
     }
 
     @Override
+    @Transactional
     public void updateUserInformation(User user) {
         if (user.getId() != 0
-//                && user.getId() != ServiceConstants.Const.ZERO
-//                && user.getId() > ServiceConstants.Const.ZERO) {
                 && user.getId() != 0
                 && user.getId() > 0) {
             try {
-                session = userDao.getSession();
-                transaction = session.beginTransaction();
                 userDao.update(user);
-                transaction.commit();
             } catch (PersistException e) {
-                transaction.rollback();
                 logger.error(e);
-            }finally {
-                sessionStatus.set(true);
-                userDao.clearSession(sessionStatus);
             }
         }
     }

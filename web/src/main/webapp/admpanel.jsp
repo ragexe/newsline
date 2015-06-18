@@ -78,7 +78,7 @@
       <!-- Поле основного текста --->
       <core:choose>
         <core:when test="${param.operation.equals('edit')}">
-          <jsp:include page="/edit.jsp"/>
+          <jsp:include page="/jsp/edit.jsp.jsp"/>
         </core:when>
         <core:when test="${param.operation.equals('delete')}">
           <jsp:forward page="/control"/>

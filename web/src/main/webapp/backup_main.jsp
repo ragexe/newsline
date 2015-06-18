@@ -72,7 +72,7 @@
           <jsp:include page="/menu"/>
           <ul>
             <core:forEach var="page1" items="${result}">
-              <li><a href=/main.jsp?sect=<core:out value="${page1.id}" /> class="btn btn-link"><core:out value="${page1.title4menu}"/></a></li>
+              <li><a href=/jsp/main.jsp.jsp?sect=<core:out value="${page1.id}" /> class="btn btn-link"><core:out value="${page1.title4menu}"/></a></li>
             </core:forEach>
           </ul>
 
