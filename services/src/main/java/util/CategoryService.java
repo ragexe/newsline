@@ -1,8 +1,6 @@
 package util;
 
 import dao.CategoryDao;
-import daofactory.DaoFactoryImpl;
-import daofactory.IDaoFactory;
 import data.Category;
 import exception.PersistException;
 import org.apache.log4j.Logger;
@@ -24,16 +22,6 @@ public class CategoryService implements ICategoryService {
     private static CategoryService categoryServiceInst;
     @Autowired
     private CategoryDao categoryDao;
-
-
-   /* private CategoryService() {
-        IDaoFactory factory = DaoFactoryImpl.getInstance();
-        try {
-            categoryDao = (CategoryDao) factory.getDao(Category.class);
-        } catch (PersistException e) {
-            logger.error(e);
-        }
-    }*/
 
     @Override
     public List<Category> getList() {
