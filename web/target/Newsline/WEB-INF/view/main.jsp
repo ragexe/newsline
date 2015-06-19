@@ -43,7 +43,7 @@
         <div class="panel-heading">Категории</div>
         <div class="panel-body">
 
-          <%--<jsp:include page="/menu"/>--%>
+
           <ul>
             <core:forEach var="page1" items="${category}">
               <li><a href=/WEB-INF/view/main?sect=<core:out value="${page1.id}" /> class=""><core:out value="${page1.title4menu}"/></a></li>
