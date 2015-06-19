@@ -18,6 +18,7 @@ import java.util.List;
 public class PagesManager extends HttpServlet {
     private static final long serialVersionUID = 5L;
     private PageService pageService;
+
     private CategoryService categoryService;
     private List<Page> pages;
 

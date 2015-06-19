@@ -9,6 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.intellij.lang.annotations.Language;
+import org.springframework.stereotype.Repository;
 
 
 import java.sql.Date;
@@ -18,6 +19,7 @@ import java.util.List;
 * Created by ragexe on 13.04.15.
 * Class for working with persistence entity of Page
 */
+@Repository
 public class PageDao extends AbstractDao<Page> {
     private static final Logger logger = Logger.getLogger(PageDao.class);
 

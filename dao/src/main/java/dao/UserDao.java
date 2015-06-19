@@ -6,6 +6,7 @@ import data.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.intellij.lang.annotations.Language;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 * Created by ragexe on 11.04.15.
 * Class for working with persistence entity of USER
 */
+@Repository
 public class UserDao extends AbstractDao<User> {
 
     public UserDao() {

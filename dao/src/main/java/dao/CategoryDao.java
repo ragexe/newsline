@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.intellij.lang.annotations.Language;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
@@ -16,15 +17,13 @@ import java.util.List;
 * Created by ragexe on 13.04.15.
 * Class for working with persistence entity of Category
 */
+@Repository
 public class CategoryDao extends AbstractDao<Category> {
     private static final Logger logger = Logger.getLogger(CategoryDao.class);
 
     /**
      * Constructor of MySqlNewsDao.class
      */
-    public CategoryDao() {
-        super();
-    }
 
     @Override
     protected List<Category> parseResultSet(Session session) throws PersistException {

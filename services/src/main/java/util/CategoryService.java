@@ -6,6 +6,7 @@ import daofactory.IDaoFactory;
 import data.Category;
 import exception.PersistException;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,17 +20,18 @@ public class CategoryService implements ICategoryService {
     private static final Logger logger = Logger.getLogger(CategoryService.class);
 
     private static CategoryService categoryServiceInst;
+    @Autowired
     private CategoryDao categoryDao;
 
 
-    private CategoryService() {
+   /* private CategoryService() {
         IDaoFactory factory = DaoFactoryImpl.getInstance();
         try {
             categoryDao = (CategoryDao) factory.getDao(Category.class);
         } catch (PersistException e) {
             logger.error(e);
         }
-    }
+    }*/
 
     @Override
     @Transactional
