@@ -7,9 +7,13 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.sql.Date;
 import java.util.List;
 
@@ -18,14 +22,17 @@ import java.util.List;
 * Class for working with persistence entity of Category
 */
 @Repository
-public class CategoryDao extends AbstractDao<Category> {
+@Transactional(propagation = Propagation.MANDATORY)
+public class CategoryDao {
     private static final Logger logger = Logger.getLogger(CategoryDao.class);
 
     /**
      * Constructor of MySqlNewsDao.class
      */
+    @Resource
+    private SessionFactory sessionFactory;
 
-    @Override
+
     protected List<Category> parseResultSet(Session session) throws PersistException {
         StatusEnum status = StatusEnum.SAVED;
         List<Category> list;
@@ -36,19 +43,19 @@ public class CategoryDao extends AbstractDao<Category> {
     }
 
     public List<Category> getList() throws PersistException{
-        List<Category> Category = null;
+        List<Category> category = null;
         try {
-            session = getSession();
+            Session session = sessionFactory.getCurrentSession();
             StatusEnum status = StatusEnum.SAVED;
             @Language("HQL") String hql = "SELECT C FROM Category C WHERE C.status=:status";
             Query query = session.createQuery(hql)
                     .setParameter("status", status);
-            Category = query.list();
+            category = query.list();
         } catch (HibernateException e) {
-            logger.error("Error get " + Category.isEmpty() + " in Dao " + e);
+            logger.error("Error get " + category.isEmpty() + " in Dao " + e);
             throw new PersistException(e);
         }
-        return Category;
+        return category;
     }
 
     /**
@@ -61,7 +68,7 @@ public class CategoryDao extends AbstractDao<Category> {
     public Category getByCategoryId(long id) throws PersistException {
         Category Category = null;
         try {
-            session = getSession();
+            Session session = sessionFactory.getCurrentSession();
             StatusEnum status = StatusEnum.SAVED;
             @Language("HQL") String hql = "SELECT c FROM Category c WHERE c.id=:id and c.status=:status";
             Query query = session.createQuery(hql)

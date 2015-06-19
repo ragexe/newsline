@@ -42,7 +42,8 @@ public class DaoFactoryImpl implements IDaoFactory {
         creators.put(Category.class, new IDaoCreator() {
             @Override
             public IGenDao create() {
-                return new CategoryDao();
+              //  return new CategoryDao();
+                return null;
             }
         });
 //        creators.put(Commentary.class, new IDaoCreator() {

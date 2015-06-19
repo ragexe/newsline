@@ -8,14 +8,16 @@ import exception.PersistException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /**
  * Created by HappyQ on 10.06.2015.
  */
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class CategoryService implements ICategoryService {
     private static final Logger logger = Logger.getLogger(CategoryService.class);
 
@@ -34,7 +36,6 @@ public class CategoryService implements ICategoryService {
     }*/
 
     @Override
-    @Transactional
     public List<Category> getList() {
         List<Category> pages = null;
         try {
@@ -46,7 +47,6 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    @Transactional
     public Category getCategoryById(long id) {
         Category category = null;
         try {

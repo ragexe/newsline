@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import util.CategoryService;
+import util.ICategoryService;
 import util.PageService;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ShowController {
 
     @Autowired
-    CategoryService categoryService;
+    ICategoryService categoryService;
     private List<Page> pages;
     private PageService pageService;
 
