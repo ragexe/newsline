@@ -1,10 +1,8 @@
-package util;
+package by.newsline.service;
 
 
 import com.mysql.jdbc.StringUtils;
 import dao.UserDao;
-import daofactory.DaoFactoryImpl;
-import daofactory.IDaoFactory;
 import data.User;
 import exception.PersistException;
 import org.apache.log4j.Logger;
@@ -29,20 +27,20 @@ public class UserService implements IUserService {
 
 
     private UserService() {
-        IDaoFactory factory = DaoFactoryImpl.getInstance();
-        try {
-            userDao = (UserDao) factory.getDao(User.class);
-        } catch (PersistException e) {
-            logger.error(e);
-        }
+//        IDaoFactory factory = DaoFactoryImpl.getInstance();
+//        try {
+//            userDao = (UserDao) factory.getDao(User.class);
+//        } catch (PersistException e) {
+//            logger.error(e);
+//        }
     }
 
-    public static synchronized UserService getInstance(){
-        if (userServiceInst == null){
-            userServiceInst = new UserService();
-        }
-        return userServiceInst;
-    }
+//    public static synchronized UserService getInstance(){
+//        if (userServiceInst == null){
+//            userServiceInst = new UserService();
+//        }
+//        return userServiceInst;
+//    }
 
     @Override
     public User getByPK(Long pK) {

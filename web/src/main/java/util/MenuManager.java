@@ -1,6 +1,7 @@
 package util;
 
 
+import by.newsline.service.CategoryService;
 import data.Category;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +24,6 @@ public class MenuManager extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        categoryService = CategoryService.getInstance();
         List<Category> categories = categoryService.getList();
         request.setAttribute("result", categories);
     }

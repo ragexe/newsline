@@ -1,4 +1,4 @@
-package util;
+package by.newsline.service;
 
 
 import data.User;

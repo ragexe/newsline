@@ -1,4 +1,4 @@
-package util;
+package by.newsline.service;
 
 
 import dao.PageDao;
@@ -9,6 +9,7 @@ import data.Page;
 import data.util.StatusEnum;
 import exception.PersistException;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,6 +24,7 @@ public class PageService implements IPageService {
     private static final Logger logger = Logger.getLogger(PageService.class);
 
     private static PageService pageServiceInst;
+    @Autowired
     private PageDao pageDao;
 
 
@@ -43,12 +45,12 @@ public class PageService implements IPageService {
      *
      * @return instance of CommentaryService
      */
-    public static synchronized PageService getInstance() {
+    /*public static synchronized PageService getInstance() {
         if (pageServiceInst == null) {
             pageServiceInst = new PageService();
         }
         return pageServiceInst;
-    }
+    }*/
 
 
     @Override

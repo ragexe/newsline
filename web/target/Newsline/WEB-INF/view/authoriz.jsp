@@ -17,7 +17,7 @@
 <body>
 <core:choose>
   <core:when test="${sessionScope.login == null}">
-    Привет, Гость. Чтобы добавить новость, необходимо <a href="login.jsp">авторизоваться</a>
+    Привет, Гость. Чтобы добавить новость, необходимо <a href="../../login.jsp">авторизоваться</a>
     <br><i><a href="reg.jsp">Регистрация</a></i>
   </core:when>
   <core:otherwise>

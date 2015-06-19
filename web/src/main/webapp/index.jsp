@@ -43,7 +43,7 @@
     </td>
     <td width="75%" align="right" valign="top" colspan="2">
       <!-- Поле авторизации -->
-        <jsp:include page="authoriz.jsp"/>
+        <jsp:include page="WEB-INF/view/authoriz.jsp"/>
     </td>
   </tr>
   <tr>
@@ -68,7 +68,7 @@
           </core:if>
         </core:forEach>
         <core:if test="${sessionScope.login != null}">
-          <li><a href="add.jsp">+ Добавить новость</a></li>
+          <li><a href="WEB-INF/view/add.jsp">+ Добавить новость</a></li>
         </core:if>
       </ul>
     </td>

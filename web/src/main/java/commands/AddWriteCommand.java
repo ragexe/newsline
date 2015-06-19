@@ -2,14 +2,13 @@ package commands;
 
 //import dao.IDao;
 //import dao.MyDao;
-import data.Page;
+import by.newsline.service.ICategoryService;
+import by.newsline.service.IPageService;
+import by.newsline.service.IUserService;
 import org.apache.log4j.Logger;
-import util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.Date;
 
 public class AddWriteCommand extends Command {
     private static final Logger log = Logger.getLogger(AddWriteCommand.class);
@@ -19,7 +18,7 @@ public class AddWriteCommand extends Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        Page page = new Page();
+        /*Page page = new Page();
         java.util.Date utilDate = new java.util.Date();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         try {
@@ -46,6 +45,6 @@ public class AddWriteCommand extends Command {
         } catch (NullPointerException e1) {
             log.error("NullPointerException � ������ execute ������ AddWriteCommand! -- " + e1); // ������ � ���-����
             e1.printStackTrace();
-        }
+        }*/
     }
 }

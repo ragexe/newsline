@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-import util.CategoryService;
-import util.ICategoryService;
-import util.PageService;
+import by.newsline.service.ICategoryService;
+import by.newsline.service.PageService;
 
 import java.util.List;
 
@@ -28,5 +26,12 @@ public class ShowController {
         model.addAttribute("category",categories);
 
         return "cat";
+    }
+
+    @RequestMapping(value = "main", method = RequestMethod.GET)
+    public String category(ModelMap model){
+        List<Category> categories = categoryService.getList();
+        model.addAttribute("category",categories);
+        return "main";
     }
 }

@@ -85,7 +85,7 @@
     </td>
     <td width="10%" align="left" valign="top">
       <!-- Пустое поле -->
-      <core:import url="empty.html" charEncoding="UTF-8"/>
+      <core:import url="../../empty.html" charEncoding="UTF-8"/>
     </td>
   </tr>
 </table>
