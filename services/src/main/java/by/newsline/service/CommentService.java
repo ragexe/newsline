@@ -12,11 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
-
-/**
- * Created by HappyQ on 10.06.2015.
- */
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
 public class CommentService implements ICommentService {
@@ -33,6 +28,7 @@ public class CommentService implements ICommentService {
             throw new ServiceException(e);
         }
     }
+
     public void deleteCommentById(long id) throws ServiceException{
         try {
             commentDao.deleteCommentById(id);

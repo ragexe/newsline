@@ -1,6 +1,5 @@
 package by.newsline.service;
 
-
 import by.newsline.dao.ICategoryDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
@@ -13,11 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-//import by.newsline.dao.util.exception.PersistException;
-
-/**
- * Created by HappyQ on 10.06.2015.
- */
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
 public class CategoryService implements ICategoryService {
