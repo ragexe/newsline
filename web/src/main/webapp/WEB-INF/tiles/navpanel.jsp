@@ -5,7 +5,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="/WEB-INF/view/main.jsp" class="navbar-brand">NEWSLINE</a>
+            <a href="/WEB-INF/view/test/main.jsp" class="navbar-brand">NEWSLINE</a>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -36,7 +36,7 @@
                         <li><a href="../united/">United</a></li>
                         <li><a href="../yeti/">Yeti</a></li>
                         <li class="divider"></li>
-                        <li><a href="/WEB-INF/view/new.jsp">Пример</a> </li>
+                        <li><a href="/WEB-INF/view/test/new.jsp">Пример</a> </li>
                     </ul>
                 </li>
                 <li>
@@ -58,10 +58,10 @@
                         <div class="btn-toolbar bs-component" style="margin: 0;">
                             <core:choose>
                                 <core:when test="${sessionScope.login == null}">
-                                    <a href="/WEB-INF/view/add.jsp" class="btn btn-success disabled" title="Авторизуйтесь">+ Добавить новость</a>
+                                    <a href="/WEB-INF/view/test/add.jsp" class="btn btn-success disabled" title="Авторизуйтесь">+ Добавить новость</a>
                                 </core:when>
                                 <core:otherwise>
-                                    <a href="/WEB-INF/view/add.jsp" class="btn btn-success">+ Добавить новость</a>
+                                    <a href="/WEB-INF/view/test/add.jsp" class="btn btn-success">+ Добавить новость</a>
                                 </core:otherwise>
                             </core:choose>
                         </div>

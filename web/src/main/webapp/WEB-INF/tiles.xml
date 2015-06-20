@@ -15,5 +15,11 @@
     <definition name="cat" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/cat.jsp"/>
     </definition>
+    <definition name="test" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/test/test.jsp"/>
+    </definition>
+    <definition name="menu" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/menu.jsp"/>
+    </definition>
 
 </tiles-definitions>

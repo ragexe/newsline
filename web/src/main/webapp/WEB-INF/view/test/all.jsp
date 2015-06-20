@@ -55,7 +55,7 @@
       </jsp:include>
       <ul>
         <core:forEach var="page1" items="${result}">
-          <li><a href=/WEB-INF/view/all.jsp?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
+          <li><a href=/WEB-INF/view/test/all.jsp?sect=<core:out value="${page1.id}"/>><core:out value="${page1.title4menu}"/></a></li>
           <%--<core:if test="${param.sect.equals(page1.id)}">--%>
           <core:if test="${param.sect == page1.id}">
             <jsp:include page="/menu">
@@ -63,7 +63,7 @@
             </jsp:include>
             <ul>
               <core:forEach var="page2" items="${result}">
-                <li><a href=/WEB-INF/view/all.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a></li>
+                <li><a href=/WEB-INF/view/test/all.jsp?sect=<core:out value="${page1.id}"/>&subsect=<core:out value="${page2.id}"/>><core:out value="${page2.title4menu}"/></a></li>
               </core:forEach>
             </ul>
           </core:if>
@@ -85,7 +85,7 @@
     </td>
     <td width="10%" align="left" valign="top">
       <!-- Пустое поле -->
-      <core:import url="../../empty.html" charEncoding="UTF-8"/>
+      <core:import url="../../../empty.html" charEncoding="UTF-8"/>
     </td>
   </tr>
 </table>

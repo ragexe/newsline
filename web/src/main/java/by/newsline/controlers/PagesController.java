@@ -24,7 +24,7 @@ public class PagesController {
     @Autowired
     IPageService pageService;
 
-    @RequestMapping(value = "pages", method = RequestMethod.GET)
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
     public String allPage(ModelMap modelMap) throws WebException{
         List<Page> pages = null;
         try {
@@ -34,7 +34,7 @@ public class PagesController {
             throw new WebException(e);
         }
         modelMap.addAttribute("pages",pages);
-        return "/test/test";
+        return "test";
 
     }
 

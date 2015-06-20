@@ -36,7 +36,7 @@ public class ShowController {
         return "cat";
     }
 
-    @RequestMapping(value = "main", method = RequestMethod.GET)
+    @RequestMapping(value = "menu", method = RequestMethod.GET)
     public String category(ModelMap model) throws WebException{
         List<Category> categories = null;
         try {
@@ -46,7 +46,7 @@ public class ShowController {
             throw new WebException(e);
         }
         model.addAttribute("category",categories);
-        return "cat";
+        return "menu";
     }
 
 }

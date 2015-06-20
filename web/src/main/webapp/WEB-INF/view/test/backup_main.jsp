@@ -21,8 +21,8 @@
     <%--<jsp:param name="subsect" value="${param.subsect}"/>--%>
   <%--</jsp:include>--%>
   <fmt:requestEncoding value="UTF-8"/>
-  <jsp:include page="../../common/styles-common.jsp"/>
-  <jsp:include page="../../common/navipanel.jsp"/>
+  <jsp:include page="../../../common/styles-common.jsp"/>
+  <jsp:include page="../../../common/navipanel.jsp"/>
   <!-- Заголовок страницы -->
   <title>
     <%--<jsp:getProperty name="pageBean" property="title"/>--%>
