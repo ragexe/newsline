@@ -12,29 +12,42 @@
     <title></title>
 </head>
 <body>
-
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>News</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="col-lg-2">
     <div class="panel panel-success">
         <div class="panel-heading">Категории</div>
         <div class="panel-body">
             <ul>
                 <core:forEach var="categ" items="${category}">
-                    <li><a href="${categ.id}">${categ.title}</a></li>
+                    <li><a href="menu/${categ.id}">${categ.title}</a></li>
                 </core:forEach>
             </ul>
         </div>
     </div>
 </div>
+</div>
 
+<div class="col-lg-7">
+    <!--Body content-->
+
+    <core:forEach var="page" items="${pages}">
+        <blockquote>
+            ${page.title}
+        </blockquote>
+
+    </core:forEach>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 </body>
 </html>
