@@ -2,9 +2,11 @@ package by.newsline.controlers;
 
 import by.newsline.exceptons.WebException;
 import by.newsline.service.ICategoryService;
+import by.newsline.service.ICommentService;
 import by.newsline.service.IPageService;
 import by.newsline.service.util.exception.ServiceException;
 import data.Category;
+import data.Comment;
 import data.Page;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +29,11 @@ public class PagesController {
     IPageService pageService;
     @Autowired
     ICategoryService categoryService;
+    @Autowired
+    ICommentService commentService;
 
     @RequestMapping(value = "/menu/{id}", method = RequestMethod.GET)
-    public String allPage(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException{
+    public String allPage(@PathVariable(value = "id")Long id, ModelMap modelMap) throws WebException{
         List<Page> pages = null;
         List<Category> categories = null;
         try {
@@ -42,7 +46,26 @@ public class PagesController {
         modelMap.addAttribute("pages",pages);
         modelMap.addAttribute("category",categories);
         return "menu";
+    }
 
+    @RequestMapping(value = "/post/{id}", method = RequestMethod.GET)
+    public String aPost(@PathVariable(value = "id")Long id, ModelMap modelMap) throws WebException{
+        List<Comment> comments = null;
+        Page page = null;
+//        Comment comment = null;
+        try {
+            page = pageService.getById(id);
+            comments = commentService.getAllByPageId(id);
+//            comment = commentService.getById(1);
+
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
+        modelMap.addAttribute("page", page);
+//        modelMap.addAttribute("comment", comment);
+        modelMap.addAttribute("comments",comments);
+        return "post";
     }
 
 
