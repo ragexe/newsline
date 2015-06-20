@@ -28,10 +28,10 @@
 
 <div class="col-lg-7">
     <core:forEach var="page" items="${pages}">
-        <h1><core:out value="${page.title}"/></h1>
+        <h1><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h1>
+        <small><cite><core:out value="${page.author.name}"/></cite> написал <core:out value="${page.date}"/></small>
         <blockquote>
             <p><core:out value="${page.maintext}"/><br></p>
-            <small><core:out value="${page.author.name}"/> - <core:out value="${page.date}"/></small>
         </blockquote>
     </core:forEach>
 
