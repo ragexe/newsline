@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `t_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_category` (
-  `F_CATEGORY_ID` bigint(20) NOT NULL DEFAULT '0',
+  `F_CATEGORY_ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `F_TITLE` varchar(80) NOT NULL,
   `F_TITLE4MENU` varchar(50) NOT NULL,
   `F_STATUS` varchar(8) NOT NULL,
@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `t_page`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_page` (
-  `F_PAGE_ID` bigint(20) NOT NULL DEFAULT '0',
+  `F_PAGE_ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `F_CATEGORY_ID` bigint(20) DEFAULT NULL,
   `F_TITLE` varchar(80) DEFAULT NULL,
   `F_TITLE4MENU` varchar(50) DEFAULT NULL,
@@ -110,7 +110,7 @@ DROP TABLE IF EXISTS `t_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_user` (
-  `F_USER_ID` bigint(20) NOT NULL DEFAULT '0',
+  `F_USER_ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `F_NAME` varchar(20) DEFAULT NULL,
   `F_LASTNAME` varchar(30) DEFAULT NULL,
   `F_EMAIL` varchar(30) DEFAULT NULL,

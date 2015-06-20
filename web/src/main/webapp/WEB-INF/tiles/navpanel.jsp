@@ -58,10 +58,10 @@
                         <div class="btn-toolbar bs-component" style="margin: 0;">
                             <core:choose>
                                 <core:when test="${sessionScope.login == null}">
-                                    <a href="/WEB-INF/view/test/add.jsp" class="btn btn-success disabled" title="Авторизуйтесь">+ Добавить новость</a>
+                                    <a href="/menu/add" class="btn btn-success " title="Авторизуйтесь">+ Добавить новость</a>
                                 </core:when>
                                 <core:otherwise>
-                                    <a href="/WEB-INF/view/test/add.jsp" class="btn btn-success">+ Добавить новость</a>
+                                    <a href="/menu/add" class="btn btn-success">+ Добавить новость</a>
                                 </core:otherwise>
                             </core:choose>
                         </div>
