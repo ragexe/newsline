@@ -62,7 +62,11 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
+<<<<<<< HEAD
+        <element id="file-copy" path="$PROJECT_DIR$/web/target/Newsline/META-INF/MANIFEST.MF" />
+=======
         <element id="file-copy" path="D:\Projects\newsline\web\target/MANIFEST.MF" />
+>>>>>>> 17d9d984b379803603146d40d7cc394525f7e612
       </element>
       <element id="javaee-facet-resources" facet="web/web/Web" />
     </root>

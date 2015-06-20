@@ -21,8 +21,6 @@ public class ShowController {
 
     @Autowired
     ICategoryService categoryService;
-    private List<Page> pages;
-    private PageService pageService;
 
     @RequestMapping(value = "/test1", method = RequestMethod.GET)
     public String helloTest(ModelMap model) throws WebException{
@@ -48,6 +46,7 @@ public class ShowController {
             throw new WebException(e);
         }
         model.addAttribute("category",categories);
-        return "main";
+        return "cat";
     }
+
 }
