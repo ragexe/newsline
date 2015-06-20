@@ -2,6 +2,7 @@ package data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
 /**
@@ -10,13 +11,12 @@ import java.io.Serializable;
 @Entity
 @Table(name = "t_page", schema = "", catalog = "newsbase")
 public class Page extends CustomEntity implements Serializable {
-    private static final long serialVersionUID = -3731830107340403946L;
+    private static final long serialVersionUID = -3731830107340403952L;
 
     @Id
     @Column(name = "F_PAGE_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
@@ -30,7 +30,7 @@ public class Page extends CustomEntity implements Serializable {
     @Column(name = "F_TITLE4MENU")
     private String title4menu;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "F_USER_ID", nullable = false)
     private User author;
 
@@ -42,6 +42,9 @@ public class Page extends CustomEntity implements Serializable {
     @Column(name = "F_MAINTEXT", nullable = false, insertable = true, updatable = true, length = 65535)
     private String maintext;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "page")
+    private Set<Comment> comments;
+
     public long getId() {
         return id;
     }
@@ -50,6 +53,13 @@ public class Page extends CustomEntity implements Serializable {
         this.id = id;
     }
 
+//    public long getParentid() {
+//        return category;
+//    }
+//
+//    public void setParentid(long category) {
+//        this.category = category;
+//    }
     public Category getParentid() {
     return category;
 }
@@ -96,6 +106,10 @@ public class Page extends CustomEntity implements Serializable {
 
     public void setMaintext(String maintext) {
         this.maintext = maintext;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override

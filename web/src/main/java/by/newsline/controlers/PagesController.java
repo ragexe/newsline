@@ -34,7 +34,7 @@ public class PagesController {
         List<Category> categories = null;
         try {
             categories = categoryService.getAllCategories();
-            pages = pageService.getAllPages();
+            pages = pageService.getAllPagesByCategoryId(id);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             throw new WebException(e);

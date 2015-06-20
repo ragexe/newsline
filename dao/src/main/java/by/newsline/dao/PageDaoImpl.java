@@ -43,7 +43,6 @@ public class PageDaoImpl extends AbstractDao implements IPageDao {
         }
     }
 
-    @SuppressWarnings("unchecked")
     public List<Page> getAllPages() throws DaoException{
         List<Page> pages = null;
         try {
@@ -63,13 +62,13 @@ public class PageDaoImpl extends AbstractDao implements IPageDao {
         Page page = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
-            @Language("HQL") String hql = "SELECT c FROM Page c WHERE c.id=:id and c.status=:status";
+            String hql = "SELECT p FROM Page p WHERE p.id=:id and p.status=:status";
             Query query = getSession().createQuery(hql)
                     .setParameter("id", id)
                     .setParameter("status", status);
             page = (Page) query.uniqueResult();
         } catch (HibernateException e) {
-            logger.error("Error get " + page.getClass().getName() + " in Dao " + e);
+            logger.error(e.getMessage());
             throw new DaoException(e);
         }
         return page;

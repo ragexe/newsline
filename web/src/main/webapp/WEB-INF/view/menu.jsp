@@ -18,7 +18,7 @@
         <div class="panel-body">
             <ul>
                 <core:forEach var="categ" items="${category}">
-                    <li><a href="menu/${categ.id}">${categ.title}</a></li>
+                    <li><a href="../menu/${categ.id}">${categ.title}</a></li>
                 </core:forEach>
             </ul>
         </div>
@@ -27,13 +27,12 @@
 </div>
 
 <div class="col-lg-7">
-    <!--Body content-->
-
     <core:forEach var="page" items="${pages}">
+        <h1><core:out value="${page.title}"/></h1>
         <blockquote>
-            ${page.title}
+            <p><core:out value="${page.maintext}"/><br></p>
+            <small><core:out value="${page.author.name}"/> - <core:out value="${page.date}"/></small>
         </blockquote>
-
     </core:forEach>
 
 

@@ -36,6 +36,9 @@ public class User extends CustomEntity implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private Set<Page> pages;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Comment> comments;
+
     public long getId() {
         return id;
     }
@@ -90,6 +93,10 @@ public class User extends CustomEntity implements Serializable {
 
     public void setPages(Set<Page> pages) {
         this.pages = pages;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override

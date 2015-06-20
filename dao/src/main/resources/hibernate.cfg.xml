@@ -15,6 +15,7 @@
         <mapping class="data.Page"/>
         <mapping class="data.User"/>
         <mapping class="data.Category"/>
+        <mapping class="data.Comment"/>
 
         <!--<mapping class="data.UserDetailEntity"/>-->
         <!-- DB schema will be updated if needed -->
