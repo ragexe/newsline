@@ -1,0 +1,14 @@
+.custom_footer{
+    position: absolute;
+    width: 100%;
+
+}
+.custom_footer .custom_left{
+    position: absolute;
+    left: 13px;
+
+}
+.custom_footer .custom_right{
+    position: absolute;
+    right: 13px;
+}
