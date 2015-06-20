@@ -13,11 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
-/**
- * Created by ragexe on 13.04.15.
- * Class for working with persistence entity of Comment
- */
 @Repository("commentDao")
 @Transactional(propagation = Propagation.MANDATORY)
 public class CommentDaoImpl extends AbstractDao implements ICommentDao {
@@ -39,7 +34,7 @@ public class CommentDaoImpl extends AbstractDao implements ICommentDao {
             }
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
     }
 
@@ -63,7 +58,7 @@ public class CommentDaoImpl extends AbstractDao implements ICommentDao {
         List<Comment> comments = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
-            @Language("HQL") String hql = "SELECT c FROM Comment c WHERE c.status=:status and c.page.id=:pageId";
+            @Language("HQL") String hql = "SELECT c FROM Comment c WHERE c.status=:status and c.page.id=:pageId ORDER BY c.date asc";
             Query query = getSession().createQuery(hql)
                     .setParameter("status", status)
                     .setParameter("pageId", pageId);
