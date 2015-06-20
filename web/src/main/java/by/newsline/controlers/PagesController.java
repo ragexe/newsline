@@ -52,18 +52,16 @@ public class PagesController {
     public String aPost(@PathVariable(value = "id")Long id, ModelMap modelMap) throws WebException{
         List<Comment> comments = null;
         Page page = null;
-//        Comment comment = null;
         try {
             page = pageService.getById(id);
             comments = commentService.getAllByPageId(id);
-//            comment = commentService.getById(1);
 
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             throw new WebException(e);
         }
         modelMap.addAttribute("page", page);
-//        modelMap.addAttribute("comment", comment);
+
         modelMap.addAttribute("comments",comments);
         return "post";
     }

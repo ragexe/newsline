@@ -1,5 +1,6 @@
 package data;
 
+import data.util.RoleEnum;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -30,7 +31,8 @@ public class User extends CustomEntity implements Serializable {
     private String password;
 
     @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
-    private Integer role;
+    @Enumerated(EnumType.STRING)
+    private RoleEnum role;
 
 //    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
@@ -79,11 +81,11 @@ public class User extends CustomEntity implements Serializable {
         this.password = password;
     }
 
-    public Integer getRole() {
+    public RoleEnum getRole() {
         return role;
     }
 
-    public void setRole(Integer role) {
+    public void setRole(RoleEnum role) {
         this.role = role;
     }
 
