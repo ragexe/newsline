@@ -1,14 +1,19 @@
 package by.newsline.service;
 
 
+import by.newsline.dao.UserDaoImpl;
+import by.newsline.dao.util.exception.DaoException;
+import by.newsline.service.util.exception.ServiceException;
 import com.mysql.jdbc.StringUtils;
-import dao.UserDao;
-import data.User;
-import exception.PersistException;
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import data.User;
+import org.apache.log4j.Logger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 
@@ -17,148 +22,85 @@ import java.util.List;
  */
 
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class UserService implements IUserService {
     private static final Logger logger = Logger.getLogger(UserService.class);
 
     private static UserService userServiceInst;
 
+    @Autowired
+    private UserDaoImpl userDao;
 
-    private UserDao userDao;
-
-
-    private UserService() {
-//        IDaoFactory factory = DaoFactoryImpl.getInstance();
-//        try {
-//            userDao = (UserDao) factory.getDao(User.class);
-//        } catch (PersistException e) {
-//            logger.error(e);
-//        }
-    }
-
-//    public static synchronized UserService getInstance(){
-//        if (userServiceInst == null){
-//            userServiceInst = new UserService();
-//        }
-//        return userServiceInst;
-//    }
-
-    @Override
-    public User getByPK(Long pK) {
-        if (pK != null) {
-            User user = null;
-            try {
-                user = userDao.getByPK(pK);
-            } catch (PersistException e) {
-                logger.error(e);
-            }
-            return user;
-        }
-        return null;
-    }
-
-    /**
-     * Server validation of user
-     * @param email    - email-adress of user who want to autenitcate to site
-     * @param password - password of user who want to autenitcate to site
-     * @return true, if user in database (registered), or false, if user not registered
-     */
-    @Override
-    public boolean checkUser(String email, String password) {
+    public boolean checkUser(String email, String password) throws ServiceException{
         if (!(StringUtils.isNullOrEmpty(email)) && !(StringUtils.isNullOrEmpty(password))) {
             try {
-                List<User> userList = userDao.getAll();
+                List<User> userList = userDao.getAllUsers();
                 for (User userElement : userList) {//
                     if ((userElement.getEmail().equals(email))
                             && (userElement.getPassword().equals(password))) {
                         return true;
                     }
                 }
-            } catch (PersistException e) {
-                logger.error(e);
+            } catch (DaoException e) {
+                logger.error(e.getMessage());
+                throw new ServiceException(e);
             }
         }
         return false;
     }
 
-    /**
-     * Get registered user from database
-     * @param email - field in column, identified userØ
-     * @return User user
-     */
-    @Override
-    public User authenticationProcess(String email) {
-        if (!(StringUtils.isNullOrEmpty(email))) {
-            User user = null;
-            try {
-                user = userDao.getByEmail(email);
-            } catch (PersistException e) {
-                logger.error(e);
-            }
-            return user;
-        }
-        return null;
-    }
-
-    @Override
-    @Transactional
-    public boolean registerNewUser(User user) {
+    public boolean registerNewUser(User user) throws ServiceException{
         if (user != null) {
             try {
-                List<User> users = userDao.getAll();
+                List<User> users = userDao.getAllUsers();
                 for (User element : users) {
                     if (element.getEmail().equals(user.getEmail())) {
                         return false;
                     }
                 }
-                userDao.save(user);
+                userDao.saveUser(user);
                 return true;
-            } catch (PersistException e) {
-                logger.error(e);
+            } catch (DaoException e) {
+                logger.error(e.getMessage());
+                throw new ServiceException(e);
             }
         }
         return false;
     }
 
-    @Override
-    @Transactional
-    public User getUserByEmail(String email) {
-        if (!(StringUtils.isNullOrEmpty(email))) {
-            User user = null;
-            try {
-                user = userDao.getByEmail(email);
-            } catch (PersistException e) {
-                logger.error(e);
-            }
-            return user;
-        }
-        return null;
-    }
-
-    @Override
-    @Transactional
-    public User getUserById(long id) {
-            User user = null;
-            try {
-                user = userDao.getById(id);
-            } catch (PersistException e) {
-                logger.error(e);
-            }
-            return user;
-    }
-
-    @Override
-    @Transactional
-    public void updateUserInformation(User user) {
-        if (user.getId() != 0
-                && user.getId() != 0
-                && user.getId() > 0) {
-            try {
-                userDao.update(user);
-            } catch (PersistException e) {
-                logger.error(e);
-            }
+    public User getByEmail(String email) throws ServiceException{
+        try {
+            return userDao.getByEmail(email);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
         }
     }
 
+    public void saveUser(User user) throws ServiceException{
+        try {
+            userDao.saveUser(user);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
+    }
 
+    public void deleteUserById(long id) throws ServiceException{
+        try {
+            userDao.deleteUserById(id);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
+    }
+
+    public User getById(long id) throws ServiceException{
+        try {
+            return userDao.getById(id);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
+    }
 }
