@@ -1,6 +1,7 @@
 package by.newsline.service;
 
-import dao.CategoryDao;
+
+import by.newsline.dao.CategoryDaoImpl;
 import data.Category;
 import exception.PersistException;
 import org.apache.log4j.Logger;
@@ -21,14 +22,14 @@ public class CategoryService implements ICategoryService {
 
     private static CategoryService categoryServiceInst;
     @Autowired
-    private CategoryDao categoryDao;
+    private CategoryDaoImpl categoryDao;
 
 
     @Override
     public List<Category> getList() {
         List<Category> pages = null;
         try {
-            pages = categoryDao.getList();
+            pages = categoryDao.getAllCategories();
         } catch (PersistException e) {
             logger.error(e);
         }
@@ -39,7 +40,7 @@ public class CategoryService implements ICategoryService {
     public Category getCategoryById(long id) {
         Category category = null;
         try {
-            category = categoryDao.getByCategoryId(id);
+            category = categoryDao.getById(id);
         } catch (PersistException e) {
             logger.error(e);
         }
