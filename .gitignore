@@ -14,3 +14,7 @@ hs_err_pid*
 .idea/workspace.xml
 .idea/*.*
 *.iml
+web/target
+dao/target
+services/target
+entities/target

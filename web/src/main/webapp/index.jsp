@@ -16,6 +16,9 @@
   <jsp:param name="sect" value="${param.sect}"/>
   <jsp:param name="subsect" value="${param.subsect}"/>
 </jsp:include>
+
+<jsp:include page="/common/styles-common.jsp"/>
+<jsp:include page="/common/navipanel.jsp"/>
 <fmt:requestEncoding value="UTF-8"/>
 
 <head>
