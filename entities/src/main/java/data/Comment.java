@@ -17,11 +17,11 @@ public class Comment extends CustomEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "F_PAGE_ID", nullable = false)
     private Page page;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "F_USER_ID", nullable = false)
     private User user;
 
@@ -33,10 +33,6 @@ public class Comment extends CustomEntity implements Serializable {
     @Column(name = "F_DATE", nullable = false, insertable = true, updatable = true)
     private java.sql.Date date;
 
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public long getId() {
         return id;
