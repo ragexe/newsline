@@ -53,18 +53,18 @@ public class Page extends CustomEntity implements Serializable {
         this.id = id;
     }
 
-//    public long getParentid() {
+//    public long getCategory() {
 //        return category;
 //    }
 //
-//    public void setParentid(long category) {
+//    public void setCategory(long category) {
 //        this.category = category;
 //    }
-    public Category getParentid() {
+    public Category getCategory() {
     return category;
-}
+    }
 
-    public void setParentid(Category category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

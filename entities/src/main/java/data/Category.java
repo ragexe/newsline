@@ -15,7 +15,7 @@ public class Category extends CustomEntity implements Serializable {
 
     @Id
     @Column(name = "F_CATEGORY_ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Basic

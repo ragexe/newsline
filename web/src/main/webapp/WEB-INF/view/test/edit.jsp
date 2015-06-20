@@ -15,7 +15,7 @@
     <table>
         <tr>
             <td>Parentid(раздел):</td>
-            <td><input name="parentid" VALUE=<jsp:getProperty name="pageBean" property="parentid"/>><br></td>
+            <td><input name="parentid" VALUE=<jsp:getProperty name="pageBean" property="category"/>><br></td>
         </tr>
 
         <tr>

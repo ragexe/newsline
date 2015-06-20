@@ -69,7 +69,7 @@
           </core:if>
         </core:forEach>
         <core:if test="${sessionScope.login != null}">
-          <li><a href="add.jsp">+ Добавить новость</a></li>
+          <li><a href="../add.jsp">+ Добавить новость</a></li>
         </core:if>
       </ul>
     </td>

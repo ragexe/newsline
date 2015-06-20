@@ -4,6 +4,7 @@ import by.newsline.dao.ICategoryDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import data.Category;
+import data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class CategoryService implements ICategoryService {
     private ICategoryDao categoryDao;
 
     public void saveCategory(Category category) throws ServiceException{
+        category.setStatus(StatusEnum.SAVED);
         try {
             categoryDao.saveCategory(category);
         } catch (DaoException e) {

@@ -11,6 +11,7 @@ public interface IPageService {
     Page getById(long id) throws ServiceException;
     List<Page> getAllPages() throws ServiceException;
     List<Page> getAllPagesByCategoryId(long id) throws ServiceException;
+    void savePage(long categoryId, Page page) throws ServiceException;
 
 //    List<Page> getMostPopularPageList();
    // List<Page> getListOfPageByPageId(String pageId);

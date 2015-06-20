@@ -21,6 +21,12 @@
     <definition name="menu" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/menu.jsp"/>
     </definition>
+    <definition name="add" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/add.jsp"/>
+    </definition>
+    <definition name="addCategory" extends="base.definition">
+    <put-attribute name="content" value="/WEB-INF/view/addCategory.jsp"/>
+    </definition>
     <definition name="post" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/post.jsp"/>
     </definition>

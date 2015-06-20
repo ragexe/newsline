@@ -7,11 +7,14 @@ import data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -24,8 +27,18 @@ import java.util.List;
 public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
     private static final Logger logger = Logger.getLogger(CategoryDaoImpl.class);
 
+    @Resource
+    private SessionFactory sessionFactory;
+
     public void saveCategory(Category category) throws DaoException {
-        persist(category);
+        Session session = sessionFactory.getCurrentSession();
+        session.save(category);
+        /*try{
+            Session session = sessionFactory.getCurrentSession();
+            session.save(category);
+        }catch (HibernateException e) {
+            logger.error(e.getMessage());
+        }*/
     }
 
     public void deleteCategoryById(long id) throws DaoException {
