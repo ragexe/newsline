@@ -115,7 +115,7 @@ CREATE TABLE `t_user` (
   `F_LASTNAME` varchar(30) DEFAULT NULL,
   `F_EMAIL` varchar(30) DEFAULT NULL,
   `F_PASSWORD` varchar(20) DEFAULT NULL,
-  `F_ROLE` int(11) DEFAULT NULL,
+  `F_ROLE` varchar(5) DEFAULT NULL,
   `F_STATUS` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`F_USER_ID`),
   UNIQUE KEY `unique_F_ID` (`F_USER_ID`),
@@ -129,7 +129,7 @@ CREATE TABLE `t_user` (
 
 LOCK TABLES `t_user` WRITE;
 /*!40000 ALTER TABLE `t_user` DISABLE KEYS */;
-INSERT INTO `t_user` VALUES (1,'ragexe','ragexe','ragexe','1234',1,'SAVED'),(2,'1234','1234','1234','1234',0,'SAVED'),(3,'123','123','123','123',0,'SAVED'),(4,'ro','ro','ro','ro',0,'SAVED'),(5,'ivan','ivan','ivan','1234',1,'SAVED'),(6,'roma','roma','roma','roma',0,'SAVED');
+INSERT INTO `t_user` VALUES (0,'krabbi','ichigo','ichigo','1234','ADMIN','SAVED'),(1,'ragexe','ragexe','ragexe','1234','ADMIN','SAVED'),(2,'1234','1234','1234','1234','USER','SAVED'),(3,'123','123','123','123','USER','SAVED'),(4,'ro','ro','ro','ro','USER','SAVED'),(5,'ivan','ivan','ivan','1234','ADMIN','SAVED'),(6,'roma','roma','roma','roma','USER','SAVED');
 /*!40000 ALTER TABLE `t_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-20 23:00:36
+-- Dump completed on 2015-06-21  0:12:55
