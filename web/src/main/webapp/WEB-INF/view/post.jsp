@@ -20,7 +20,6 @@
     </div>
 
     <div class="col-lg-7">
-
         <h1><core:out value="${page.title}"/></h1>
         <small><cite><core:out value="${page.author.name}"/></cite> написал <core:out value="${page.date}"/></small>
         <blockquote>
