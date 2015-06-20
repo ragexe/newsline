@@ -17,11 +17,8 @@ public class Page extends CustomEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-//    @Basic
-//    @Column(name = "F_PARENTID")
-//    private long category;
+
     @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
     @JoinColumn(name = "F_CATEGORY_ID", nullable = false)
     private Category category;
 
@@ -53,13 +50,6 @@ public class Page extends CustomEntity implements Serializable {
         this.id = id;
     }
 
-//    public long getParentid() {
-//        return category;
-//    }
-//
-//    public void setParentid(long category) {
-//        this.category = category;
-//    }
     public Category getParentid() {
     return category;
 }

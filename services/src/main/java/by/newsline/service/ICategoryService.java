@@ -14,4 +14,6 @@ public interface ICategoryService {
     void deleteCategoryById(long id) throws ServiceException;
     Category getById(long id) throws ServiceException;
     List<Category> getAllCategories() throws ServiceException;
+
+
 }

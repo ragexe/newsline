@@ -14,8 +14,9 @@
 <body>
 <ul>
 <core:forEach var="categ" items="${category}">
-  <li>${categ.title}</li>
+  <li><a href="${categ.title}">${categ.title}</a></li>
 </core:forEach>
 </ul>
+
 </body>
 </html>
