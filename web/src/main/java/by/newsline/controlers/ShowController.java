@@ -1,7 +1,10 @@
-package com.news.controlers;
+package by.newsline.controlers;
 
+import by.newsline.controlers.exception.WebException;
+import by.newsline.service.util.exception.ServiceException;
 import data.Category;
 import data.Page;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +17,7 @@ import java.util.List;
 
 @Controller
 public class ShowController {
+    private static final Logger logger = Logger.getLogger(ShowController.class);
 
     @Autowired
     ICategoryService categoryService;
@@ -21,16 +25,28 @@ public class ShowController {
     private PageService pageService;
 
     @RequestMapping(value = "/test1", method = RequestMethod.GET)
-    public String helloTest(ModelMap model) {
-        List<Category> categories = categoryService.getList();
+    public String helloTest(ModelMap model) throws WebException{
+        List<Category> categories = null;
+        try {
+            categories = categoryService.getAllCategories();
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
         model.addAttribute("category",categories);
 
         return "cat";
     }
 
     @RequestMapping(value = "main", method = RequestMethod.GET)
-    public String category(ModelMap model){
-        List<Category> categories = categoryService.getList();
+    public String category(ModelMap model) throws WebException{
+        List<Category> categories = null;
+        try {
+            categories = categoryService.getAllCategories();
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
         model.addAttribute("category",categories);
         return "main";
     }
