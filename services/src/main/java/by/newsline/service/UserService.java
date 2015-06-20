@@ -1,14 +1,12 @@
 package by.newsline.service;
 
 
-import by.newsline.dao.UserDaoImpl;
+import by.newsline.dao.IUserDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import com.mysql.jdbc.StringUtils;
-
 import data.User;
 import org.apache.log4j.Logger;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -26,10 +24,8 @@ import java.util.List;
 public class UserService implements IUserService {
     private static final Logger logger = Logger.getLogger(UserService.class);
 
-    private static UserService userServiceInst;
-
     @Autowired
-    private UserDaoImpl userDao;
+    private IUserDao userDao;
 
     public boolean checkUser(String email, String password) throws ServiceException{
         if (!(StringUtils.isNullOrEmpty(email)) && !(StringUtils.isNullOrEmpty(password))) {

@@ -8,6 +8,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ import java.util.List;
  * Class for working with persistence entity of Page
  */
 @Repository("pageDao")
+@Transactional(propagation = Propagation.MANDATORY)
 public class PageDaoImpl extends AbstractDao implements IPageDao {
     private static final Logger logger = Logger.getLogger(PageDaoImpl.class);
 

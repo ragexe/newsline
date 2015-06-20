@@ -1,11 +1,10 @@
 package by.newsline.service;
 
 
-import by.newsline.dao.CategoryDaoImpl;
+import by.newsline.dao.ICategoryDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import data.Category;
-//import by.newsline.dao.util.exception.PersistException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +12,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+//import by.newsline.dao.util.exception.PersistException;
 
 /**
  * Created by HappyQ on 10.06.2015.
@@ -23,7 +24,7 @@ public class CategoryService implements ICategoryService {
     private static final Logger logger = Logger.getLogger(CategoryService.class);
 
     @Autowired
-    private CategoryDaoImpl categoryDao;
+    private ICategoryDao categoryDao;
 
     public void saveCategory(Category category) throws ServiceException{
         try {

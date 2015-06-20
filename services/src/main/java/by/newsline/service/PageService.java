@@ -1,18 +1,19 @@
 package by.newsline.service;
 
 
-
-import by.newsline.dao.PageDaoImpl;
+import by.newsline.dao.IPageDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import data.Page;
-//import by.newsline.dao.util.exception.PersistException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
+
+//import by.newsline.dao.util.exception.PersistException;
 
 /**
 * Created by HappyQ on 29.04.15.
@@ -24,10 +25,15 @@ public class PageService implements IPageService {
     private static final Logger logger = Logger.getLogger(PageService.class);
 
     @Autowired
-    private PageDaoImpl pageDao;
+    private IPageDao pageDao;
 
     public void savePage(Page page) throws ServiceException{
-        pageDao.savePage(page);
+        try {
+            pageDao.savePage(page);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
     }
 
     public void deletePageById(long id) throws ServiceException{
@@ -35,7 +41,7 @@ public class PageService implements IPageService {
             pageDao.deletePageById(id);
         } catch (DaoException e) {
             logger.error(e.getMessage());
-            throw new ServiceException();
+            throw new ServiceException(e);
         }
     }
 
@@ -44,7 +50,7 @@ public class PageService implements IPageService {
             return pageDao.getById(id);
         } catch (DaoException e) {
             logger.error(e.getMessage());
-            throw new ServiceException();
+            throw new ServiceException(e);
         }
     }
 
@@ -53,7 +59,7 @@ public class PageService implements IPageService {
             return pageDao.getAllPages();
         } catch (DaoException e) {
             logger.error(e.getMessage());
-            throw new ServiceException();
+            throw new ServiceException(e);
         }
     }
 
@@ -62,7 +68,7 @@ public class PageService implements IPageService {
             return pageDao.getAllPagesByCategoryId(id);
         } catch (DaoException e) {
             logger.error(e.getMessage());
-            throw new ServiceException();
+            throw new ServiceException(e);
         }
     }
 }
