@@ -1,21 +1,16 @@
 package by.newsline.service;
 
-import data.Category;
+import by.newsline.service.util.exception.ServiceException;
 import data.Page;
 import java.util.List;
 
 
 public interface IPageService {
-    Page getPageByPK(Long PK);
-    Page getPageByPageId(long id);
-    List<Page> getListOfPageByPersonId(Long personId);
-    List<Page> getListOfPageByCategory(Category category);
-    List<Page> getListOfPageByCategoryId(long categoryId);
-    List<Page> getAllPages();
-    Long savePage(Page news);
-    Page updatePage(Page news);
-    Page deletePage(Page news);
-    void removePage(Page news);
+    void savePage(Page page) throws ServiceException;
+    void deletePageById(long id) throws ServiceException;
+    Page getById(long id) throws ServiceException;
+    List<Page> getAllPages() throws ServiceException;
+    List<Page> getAllPagesByCategoryId(long id) throws ServiceException;
 
 //    List<Page> getMostPopularPageList();
    // List<Page> getListOfPageByPageId(String pageId);

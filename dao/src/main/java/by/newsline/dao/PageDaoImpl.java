@@ -1,5 +1,6 @@
 package by.newsline.dao;
 
+import by.newsline.exception.DaoException;
 import data.Page;
 import data.util.StatusEnum;
 import org.apache.log4j.Logger;
@@ -16,14 +17,14 @@ import java.util.List;
  * Class for working with persistence entity of Page
  */
 @Repository("pageDao")
-public class PageDaoImpl extends AbstractDao implements IPageDao{
+public class PageDaoImpl extends AbstractDao implements IPageDao {
     private static final Logger logger = Logger.getLogger(PageDaoImpl.class);
 
     public void savePage(Page page) {
         persist(page);
     }
 
-    public void deletePageById(long id) {
+    public void deletePageById(long id) throws DaoException{
         try {
             StatusEnum status = StatusEnum.DELETED;
             @Language("HQL") String hql = "UPDATE Page SET Page.status=:status WHERE Page.id=:id";
@@ -35,12 +36,12 @@ public class PageDaoImpl extends AbstractDao implements IPageDao{
             }
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
     }
 
     @SuppressWarnings("unchecked")
-    public List<Page> getAllPages() {
+    public List<Page> getAllPages() throws DaoException{
         List<Page> pages = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
@@ -50,12 +51,12 @@ public class PageDaoImpl extends AbstractDao implements IPageDao{
             pages = query.list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
         return pages;
     }
 
-    public Page getById(long id) {
+    public Page getById(long id) throws DaoException{
         Page page = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
@@ -66,12 +67,12 @@ public class PageDaoImpl extends AbstractDao implements IPageDao{
             page = (Page) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error("Error get " + page.getClass().getName() + " in Dao " + e);
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
         return page;
     }
 
-    public List<Page> getAllPagesByCategoryId(long id){
+    public List<Page> getAllPagesByCategoryId(long id)throws DaoException{
         List<Page> pages = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
@@ -82,7 +83,7 @@ public class PageDaoImpl extends AbstractDao implements IPageDao{
             pages = query.list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
         return pages;
     }

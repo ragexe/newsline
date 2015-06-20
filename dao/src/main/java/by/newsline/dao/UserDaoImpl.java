@@ -1,5 +1,6 @@
 package by.newsline.dao;
 
+import by.newsline.exception.DaoException;
 import data.User;
 import data.util.StatusEnum;
 import org.apache.log4j.Logger;
@@ -19,11 +20,11 @@ import java.util.List;
 public class UserDaoImpl extends AbstractDao implements IUserDao{
     private static final Logger logger = Logger.getLogger(UserDaoImpl.class);
 
-    public void saveUser(User user) {
+    public void saveUser(User user) throws DaoException {
         persist(user);
     }
 
-    public void deleteUserById(long id) {
+    public void deleteUserById(long id)  throws DaoException {
         try {
             StatusEnum status = StatusEnum.DELETED;
             @Language("HQL") String hql = "UPDATE User SET User.status=:status WHERE User.id=:id";
@@ -35,12 +36,12 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
             }
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
     }
 
     @SuppressWarnings("unchecked")
-    public List<User> getAllUsers() {
+    public List<User> getAllUsers()  throws DaoException {
         List<User> categories = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
@@ -50,12 +51,12 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
             categories = query.list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            throw new PersistException(e);
+            throw new DaoException(e);
         }
         return categories;
     }
 
-    public User getById(long id) {
+    public User getById(long id)  throws DaoException {
         User User = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
@@ -66,7 +67,23 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
             User = (User) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error("Error get " + User.getClass().getName() + " in Dao " + e);
-//            throw new PersistException(e);
+            throw new DaoException(e);
+        }
+        return User;
+    }
+
+    public User getByEmail(String email) throws DaoException {
+        User User = null;
+        try {
+            StatusEnum status = StatusEnum.SAVED;
+            @Language("HQL") String hql = "SELECT c FROM User c WHERE c.email=:email and c.status=:status";
+            Query query = getSession().createQuery(hql)
+                    .setParameter("email", email)
+                    .setParameter("status", status);
+            User = (User) query.uniqueResult();
+        } catch (HibernateException e) {
+            logger.error("Error get " + User.getClass().getName() + " in Dao " + e);
+            throw new DaoException(e);
         }
         return User;
     }

@@ -2,8 +2,10 @@ package by.newsline.service;
 
 
 import by.newsline.dao.CategoryDaoImpl;
+import by.newsline.exception.DaoException;
+import by.newsline.service.util.exception.ServiceException;
 import data.Category;
-import exception.PersistException;
+//import by.newsline.exception.PersistException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,37 +22,42 @@ import java.util.List;
 public class CategoryService implements ICategoryService {
     private static final Logger logger = Logger.getLogger(CategoryService.class);
 
-    private static CategoryService categoryServiceInst;
     @Autowired
     private CategoryDaoImpl categoryDao;
 
-
-    @Override
-    public List<Category> getList() {
-        List<Category> pages = null;
+    public void saveCategory(Category category) throws ServiceException{
         try {
-            pages = categoryDao.getAllCategories();
-        } catch (PersistException e) {
-            logger.error(e);
+            categoryDao.saveCategory(category);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
         }
-        return pages;
     }
 
-    @Override
-    public Category getCategoryById(long id) {
-        Category category = null;
+    public void deleteCategoryById(long id) throws ServiceException {
         try {
-            category = categoryDao.getById(id);
-        } catch (PersistException e) {
-            logger.error(e);
+            categoryDao.deleteCategoryById(id);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
         }
-        return category;
     }
-    
-    /*public static synchronized CategoryService getInstance() {
-        if (categoryServiceInst == null) {
-            categoryServiceInst = new CategoryService();
+
+    public Category getById(long id) throws ServiceException{
+        try {
+            return categoryDao.getById(id);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException();
         }
-        return categoryServiceInst;
-    }*/
+    }
+
+    public List<Category> getAllCategories() throws ServiceException{
+        try {
+            return categoryDao.getAllCategories();
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException();
+        }
+    }
 }

@@ -1,23 +1,17 @@
 package by.newsline.service;
 
 
+import by.newsline.service.util.exception.ServiceException;
 import data.User;
+
+import java.util.List;
 
 
 public interface IUserService {
-
-    User getByPK(Long pK);
-
-    boolean checkUser(String email, String password);
-
-    User authenticationProcess(String email);
-
-    boolean registerNewUser(User User);
-
-    User getUserByEmail(String email);
-
-    User getUserById(long id);
-
-    void updateUserInformation(User User);
-
+    boolean checkUser(String email, String password) throws ServiceException;
+    boolean registerNewUser(User User) throws ServiceException;
+    User getByEmail(String email) throws ServiceException;
+    void saveUser(User user) throws ServiceException;
+    void deleteUserById(long id) throws ServiceException;
+    User getById(long id) throws ServiceException;
 }
