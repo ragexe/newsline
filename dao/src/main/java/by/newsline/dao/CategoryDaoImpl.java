@@ -1,6 +1,6 @@
 package by.newsline.dao;
 
-import by.newsline.exception.DaoException;
+import by.newsline.dao.util.exception.DaoException;
 import data.Category;
 import data.util.StatusEnum;
 

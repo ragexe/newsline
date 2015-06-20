@@ -1,6 +1,6 @@
 package by.newsline.controlers;
 
-import by.newsline.controlers.exception.WebException;
+import by.newsline.controlers.util.exception.WebException;
 import by.newsline.service.util.exception.ServiceException;
 import data.Category;
 import data.Page;

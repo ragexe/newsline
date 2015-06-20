@@ -2,10 +2,10 @@ package by.newsline.service;
 
 
 import by.newsline.dao.CategoryDaoImpl;
-import by.newsline.exception.DaoException;
+import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import data.Category;
-//import by.newsline.exception.PersistException;
+//import by.newsline.dao.util.exception.PersistException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

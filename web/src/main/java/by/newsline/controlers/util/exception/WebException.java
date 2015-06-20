@@ -1,4 +1,4 @@
-package by.newsline.controlers.exception;
+package by.newsline.controlers.util.exception;
 
 /**
  * Created by alexanderleonovich on 16.06.15.

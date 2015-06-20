@@ -1,4 +1,4 @@
-package by.newsline.exception;
+package by.newsline.dao.util.exception;
 
 
 public class DaoException extends Exception {

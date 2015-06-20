@@ -2,7 +2,7 @@ package by.newsline.service;
 
 
 import by.newsline.dao.UserDaoImpl;
-import by.newsline.exception.DaoException;
+import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import com.mysql.jdbc.StringUtils;
 
