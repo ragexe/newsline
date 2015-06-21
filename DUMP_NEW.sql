@@ -1,222 +1,154 @@
-mysql  Ver 14.14 Distrib 5.6.21, for Win32 (x86)
-Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+-- MySQL dump 10.13  Distrib 5.6.21, for Win32 (x86)
+--
+-- Host: localhost    Database: newsbase
+-- ------------------------------------------------------
+-- Server version	5.6.21
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-Usage: mysql [OPTIONS] [database]
-  -?, --help          Display this help and exit.
-  -I, --help          Synonym for -?
-  --auto-rehash       Enable automatic rehashing. One doesn't need to use
-                      'rehash' to get table and field completion, but startup
-                      and reconnecting may take a longer time. Disable with
-                      --disable-auto-rehash.
-                      (Defaults to on; use --skip-auto-rehash to disable.)
-  -A, --no-auto-rehash 
-                      No automatic rehashing. One has to use 'rehash' to get
-                      table and field completion. This gives a quicker start of
-                      mysql and disables rehashing on reconnect.
-  --auto-vertical-output 
-                      Automatically switch to vertical output mode if the
-                      result is wider than the terminal width.
-  -B, --batch         Don't use history file. Disable interactive behavior.
-                      (Enables --silent.)
-  --bind-address=name IP address to bind to.
-  --character-sets-dir=name 
-                      Directory for character set files.
-  --column-type-info  Display column type information.
-  -c, --comments      Preserve comments. Send comments to the server. The
-                      default is --skip-comments (discard comments), enable
-                      with --comments.
-  -C, --compress      Use compression in server/client protocol.
-  -#, --debug[=#]     This is a non-debug version. Catch this and exit.
-  --debug-check       Check memory and open file usage at exit.
-  -T, --debug-info    Print some debug info at exit.
-  -D, --database=name Database to use.
-  --default-character-set=name 
-                      Set the default character set.
-  --delimiter=name    Delimiter to be used.
-  --enable-cleartext-plugin 
-                      Enable/disable the clear text authentication plugin.
-  -e, --execute=name  Execute command and quit. (Disables --force and history
-                      file.)
-  -E, --vertical      Print the output of a query (rows) vertically.
-  -f, --force         Continue even if we get an SQL error.
-  -G, --named-commands 
-                      Enable named commands. Named commands mean this program's
-                      internal commands; see mysql> help . When enabled, the
-                      named commands can be used from any line of the query,
-                      otherwise only from the first line, before an enter.
-                      Disable with --disable-named-commands. This option is
-                      disabled by default.
-  -i, --ignore-spaces Ignore space after function names.
-  --init-command=name SQL Command to execute when connecting to MySQL server.
-                      Will automatically be re-executed when reconnecting.
-  --local-infile      Enable/disable LOAD DATA LOCAL INFILE.
-  -b, --no-beep       Turn off beep on error.
-  -h, --host=name     Connect to host.
-  -H, --html          Produce HTML output.
-  -X, --xml           Produce XML output.
-  --line-numbers      Write line numbers for errors.
-                      (Defaults to on; use --skip-line-numbers to disable.)
-  -L, --skip-line-numbers 
-                      Don't write line number for errors.
-  -n, --unbuffered    Flush buffer after each query.
-  --column-names      Write column names in results.
-                      (Defaults to on; use --skip-column-names to disable.)
-  -N, --skip-column-names 
-                      Don't write column names in results.
-  --sigint-ignore     Ignore SIGINT (CTRL-C).
-  -o, --one-database  Ignore statements except those that occur while the
-                      default database is the one named at the command line.
-  -p, --password[=name] 
-                      Password to use when connecting to server. If password is
-                      not given it's asked from the tty.
-  -W, --pipe          Use named pipes to connect to server.
-  -P, --port=#        Port number to use for connection or 0 for default to, in
-                      order of preference, my.cnf, $MYSQL_TCP_PORT,
-                      /etc/services, built-in default (3306).
-  --prompt=name       Set the mysql prompt to this value.
-  --protocol=name     The protocol to use for connection (tcp, socket, pipe,
-                      memory).
-  -q, --quick         Don't cache result, print it row by row. This may slow
-                      down the server if the output is suspended. Doesn't use
-                      history file.
-  -r, --raw           Write fields without conversion. Used with --batch.
-  --reconnect         Reconnect if the connection is lost. Disable with
-                      --disable-reconnect. This option is enabled by default.
-                      (Defaults to on; use --skip-reconnect to disable.)
-  -s, --silent        Be more silent. Print results with a tab as separator,
-                      each row on new line.
-  --shared-memory-base-name=name 
-                      Base name of shared memory.
-  -S, --socket=name   The socket file to use for connection.
-  --ssl               Enable SSL for connection (automatically enabled with
-                      other flags).
-  --ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies
-                      --ssl).
-  --ssl-capath=name   CA directory (check OpenSSL docs, implies --ssl).
-  --ssl-cert=name     X509 cert in PEM format (implies --ssl).
-  --ssl-cipher=name   SSL cipher to use (implies --ssl).
-  --ssl-key=name      X509 key in PEM format (implies --ssl).
-  --ssl-crl=name      Certificate revocation list (implies --ssl).
-  --ssl-crlpath=name  Certificate revocation list path (implies --ssl).
-  --ssl-verify-server-cert 
-                      Verify server's "Common Name" in its cert against
-                      hostname used when connecting. This option is disabled by
-                      default.
-  -t, --table         Output in table format.
-  --tee=name          Append everything into outfile. See interactive help (\h)
-                      also. Does not work in batch mode. Disable with
-                      --disable-tee. This option is disabled by default.
-  -u, --user=name     User for login if not current user.
-  -U, --safe-updates  Only allow UPDATE and DELETE that uses keys.
-  -U, --i-am-a-dummy  Synonym for option --safe-updates, -U.
-  -v, --verbose       Write more. (-v -v -v gives the table output format).
-  -V, --version       Output version information and exit.
-  -w, --wait          Wait and retry if connection is down.
-  --connect-timeout=# Number of seconds before connection timeout.
-  --max-allowed-packet=# 
-                      The maximum packet length to send to or receive from
-                      server.
-  --net-buffer-length=# 
-                      The buffer size for TCP/IP and socket communication.
-  --select-limit=#    Automatic limit for SELECT when using --safe-updates.
-  --max-join-size=#   Automatic limit for rows in a join when using
-                      --safe-updates.
-  --secure-auth       Refuse client connecting to server if it uses old
-                      (pre-4.1.1) protocol.
-                      (Defaults to on; use --skip-secure-auth to disable.)
-  --server-arg=name   Send embedded server this as a parameter.
-  --show-warnings     Show warnings after every statement.
-  --plugin-dir=name   Directory for client-side plugins.
-  --default-auth=name Default authentication client-side plugin to use.
-  --histignore=name   A colon-separated list of patterns to keep statements
-                      from getting logged into mysql history.
-  --binary-mode       By default, ASCII '\0' is disallowed and '\r\n' is
-                      translated to '\n'. This switch turns off both features,
-                      and also turns off parsing of all clientcommands except
-                      \C and DELIMITER, in non-interactive mode (for input
-                      piped to mysql or loaded using the 'source' command).
-                      This is necessary when processing output from mysqlbinlog
-                      that may contain blobs.
-  --connect-expired-password 
-                      Notify the server that this client is prepared to handle
-                      expired password sandbox mode.
+--
+-- Table structure for table `t_category`
+--
 
-Default options are read from the following files in the given order:
-C:\Windows\my.ini C:\Windows\my.cnf C:\my.ini C:\my.cnf C:\xampp\mysql\my.ini C:\xampp\mysql\my.cnf 
-The following groups are read: mysql client
-The following options may be given as the first argument:
---print-defaults        Print the program argument list and exit.
---no-defaults           Don't read default options from any option file,
-                        except for login file.
---defaults-file=#       Only read default options from the given file #.
---defaults-extra-file=# Read this file after the global files are read.
---defaults-group-suffix=#
-                        Also read groups with concat(group, suffix)
---login-path=#          Read this path from the login file.
+DROP TABLE IF EXISTS `t_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_category` (
+  `F_CATEGORY_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `F_TITLE` varchar(80) NOT NULL,
+  `F_TITLE4MENU` varchar(50) NOT NULL,
+  `F_STATUS` varchar(8) NOT NULL,
+  PRIMARY KEY (`F_CATEGORY_ID`),
+  UNIQUE KEY `unique_F_ID` (`F_CATEGORY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-Variables (--variable-name=value)
-and boolean options {FALSE|TRUE}  Value (after reading options)
---------------------------------- ----------------------------------------
-auto-rehash                       TRUE
-auto-vertical-output              FALSE
-bind-address                      (No default value)
-character-sets-dir                (No default value)
-column-type-info                  FALSE
-comments                          FALSE
-compress                          FALSE
-debug-check                       FALSE
-debug-info                        FALSE
-database                          (No default value)
-default-character-set             auto
-delimiter                         ;
-enable-cleartext-plugin           FALSE
-vertical                          FALSE
-force                             FALSE
-named-commands                    FALSE
-ignore-spaces                     FALSE
-init-command                      (No default value)
-local-infile                      FALSE
-no-beep                           FALSE
-host                              (No default value)
-html                              FALSE
-xml                               FALSE
-line-numbers                      TRUE
-unbuffered                        FALSE
-column-names                      TRUE
-sigint-ignore                     FALSE
-port                              0
-prompt                            mysql> 
-quick                             FALSE
-raw                               FALSE
-reconnect                         FALSE
-shared-memory-base-name           (No default value)
-socket                            (No default value)
-ssl                               FALSE
-ssl-ca                            (No default value)
-ssl-capath                        (No default value)
-ssl-cert                          (No default value)
-ssl-cipher                        (No default value)
-ssl-key                           (No default value)
-ssl-crl                           (No default value)
-ssl-crlpath                       (No default value)
-ssl-verify-server-cert            FALSE
-table                             FALSE
-user                              root
-safe-updates                      FALSE
-i-am-a-dummy                      FALSE
-connect-timeout                   0
-max-allowed-packet                16777216
-net-buffer-length                 16384
-select-limit                      1000
-max-join-size                     1000000
-secure-auth                       TRUE
-show-warnings                     FALSE
-plugin-dir                        (No default value)
-default-auth                      (No default value)
-histignore                        (No default value)
-binary-mode                       FALSE
-connect-expired-password          FALSE
+--
+-- Dumping data for table `t_category`
+--
+
+LOCK TABLES `t_category` WRITE;
+/*!40000 ALTER TABLE `t_category` DISABLE KEYS */;
+INSERT INTO `t_category` VALUES (0,'main','main','SAVED'),(1,'Экономика','Экономика','SAVED'),(2,'Финансы','Финансы','SAVED'),(3,'Политика','Политика','SAVED'),(4,'Туризм','Туризм','SAVED');
+/*!40000 ALTER TABLE `t_category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_comment`
+--
+
+DROP TABLE IF EXISTS `t_comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_comment` (
+  `F_COMMENT_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `F_PAGE_ID` bigint(20) NOT NULL,
+  `F_USER_ID` bigint(20) NOT NULL,
+  `F_TEXT` varchar(199) NOT NULL,
+  `F_DATE` date DEFAULT NULL,
+  `F_STATUS` varchar(8) NOT NULL,
+  PRIMARY KEY (`F_COMMENT_ID`),
+  UNIQUE KEY `unique_F_COMMENT_ID` (`F_COMMENT_ID`),
+  KEY `FK_aut70tpvm02gw4mlm8iiov4j3` (`F_PAGE_ID`),
+  KEY `FK_ehh4qkjvnwh5g6ppsy80l37t5` (`F_USER_ID`),
+  CONSTRAINT `FK_aut70tpvm02gw4mlm8iiov4j3` FOREIGN KEY (`F_PAGE_ID`) REFERENCES `t_page` (`F_PAGE_ID`),
+  CONSTRAINT `FK_ehh4qkjvnwh5g6ppsy80l37t5` FOREIGN KEY (`F_USER_ID`) REFERENCES `t_user` (`F_USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_comment`
+--
+
+LOCK TABLES `t_comment` WRITE;
+/*!40000 ALTER TABLE `t_comment` DISABLE KEYS */;
+INSERT INTO `t_comment` VALUES (1,19,1,'ебанырот!','0001-10-04','SAVED'),(2,19,2,'хуй','2015-06-18','SAVED');
+/*!40000 ALTER TABLE `t_comment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_page`
+--
+
+DROP TABLE IF EXISTS `t_page`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_page` (
+  `F_PAGE_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `F_CATEGORY_ID` bigint(20) DEFAULT NULL,
+  `F_TITLE` varchar(80) DEFAULT NULL,
+  `F_TITLE4MENU` varchar(50) DEFAULT NULL,
+  `F_USER_ID` bigint(20) DEFAULT NULL,
+  `F_DATE` date DEFAULT NULL,
+  `F_MAINTEXT` longtext,
+  `F_STATUS` varchar(8) DEFAULT NULL,
+  PRIMARY KEY (`F_PAGE_ID`),
+  UNIQUE KEY `unique_F_ID` (`F_PAGE_ID`),
+  KEY `FK_bs926pi9hjnktstp3a41qunqi` (`F_USER_ID`),
+  KEY `FK_2nucpdfibn1ynyiv1u4wlpowb` (`F_CATEGORY_ID`),
+  CONSTRAINT `FK_2nucpdfibn1ynyiv1u4wlpowb` FOREIGN KEY (`F_CATEGORY_ID`) REFERENCES `t_category` (`F_CATEGORY_ID`),
+  CONSTRAINT `FK_bs926pi9hjnktstp3a41qunqi` FOREIGN KEY (`F_USER_ID`) REFERENCES `t_user` (`F_USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_page`
+--
+
+LOCK TABLES `t_page` WRITE;
+/*!40000 ALTER TABLE `t_page` DISABLE KEYS */;
+INSERT INTO `t_page` VALUES (0,0,'Главная страница','Главная',1,'2015-04-01','Текст главной страницы','SAVED'),(1,1,'Экономика','Экономика',1,'2015-04-26','Текст пункта1','SAVED'),(2,4,'титл','титл4меню',1,'2015-04-27','майнтекстt','SAVED'),(3,2,'Политическая ситуация в мире','Политика',1,'2015-04-28','Текст пункта3','SAVED'),(4,3,'Финансы','Финансы',1,'2015-05-20','Каста здесь','SAVED'),(5,1,'Курсы валют','Курсы валют',1,'2015-04-27','текст пп11','SAVED'),(6,1,'Финансовые показатели','Финпоказатели',1,'2015-04-27','текст пп12','SAVED'),(7,1,'Экономика на пальцах','Экономика на пальцах',1,'2015-04-28','29 апреля президент Беларуси Александр Лукашенко выступил с традиционным посланием народу и Национальному собранию, которое длилось 2 часа 40 минут. В очередной программе Сергея Чалого мы попробовали разобрать экономическую составляющую этого послания.\r\n\r\n','SAVED'),(8,2,'котики','котикитрусы',1,'2015-05-24','котики','SAVED'),(9,2,'Охота','Охота',1,'2015-04-30','текст пп21','SAVED'),(10,2,'Рыбалка','Рыбалка',1,'2015-03-31','текст пп22','SAVED'),(11,3,'Предвыборная компания','Выборы',1,'2015-04-02','текст пп31','SAVED'),(13,3,'Политические споры','Политические споры',1,'2015-04-10','текст пп 32','SAVED'),(14,4,'Каста','Кастата',1,'2015-03-05','Ляляляляля','SAVED'),(16,4,'jklafgu','askdjgd',6,'2012-12-12','vkjgjklghv','SAVED'),(17,1,'add','add',1,'2015-06-03','add','SAVED'),(18,2,'Вентилятор','Вентилятор',1,'2015-06-03','Вентилятор','SAVED'),(19,2,'Выпей отвар трав','Выпей отвар трав',2,'2015-06-03','Выпей отвар трав','SAVED'),(20,4,'addadd','addadd',2,'2015-06-03','addadd','SAVED'),(21,1,'title','title',2,'2015-06-10','titl','SAVED'),(22,1,'лала','лала',1,'2015-06-10','щал','SAVED');
+/*!40000 ALTER TABLE `t_page` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_user`
+--
+
+DROP TABLE IF EXISTS `t_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_user` (
+  `F_USER_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `F_NAME` varchar(20) DEFAULT NULL,
+  `F_LASTNAME` varchar(30) DEFAULT NULL,
+  `F_EMAIL` varchar(30) DEFAULT NULL,
+  `F_PASSWORD` varchar(20) DEFAULT NULL,
+  `F_STATUS` varchar(8) DEFAULT NULL,
+  `F_ACCESS` varchar(10) DEFAULT NULL,
+  `F_ROLE` int(11) DEFAULT NULL,
+  PRIMARY KEY (`F_USER_ID`),
+  UNIQUE KEY `unique_F_ID` (`F_USER_ID`),
+  UNIQUE KEY `unique_F_EMAIL` (`F_EMAIL`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_user`
+--
+
+LOCK TABLES `t_user` WRITE;
+/*!40000 ALTER TABLE `t_user` DISABLE KEYS */;
+INSERT INTO `t_user` VALUES (1,'ragexe','ragexe','ragexe','1234','SAVED','ADMIN',0),(2,'1234','1234','1234','1234','SAVED','USER',0),(3,'123','123','123','123','SAVED','USER',0),(4,'ro','ro','ro','ro','SAVED','USER',0),(5,'happyq','ivan','ivan','1234','SAVED','ADMIN',0),(6,'roma','roma','roma','roma','SAVED','USER',0);
+/*!40000 ALTER TABLE `t_user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-06-22  1:34:29
