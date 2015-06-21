@@ -4,8 +4,6 @@ package by.newsline.service;
 import by.newsline.service.util.exception.ServiceException;
 import data.User;
 
-import java.util.List;
-
 
 public interface IUserService {
     boolean checkUser(String email, String password) throws ServiceException;

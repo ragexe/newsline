@@ -31,9 +31,11 @@ public class User extends CustomEntity implements Serializable {
     @Column(name = "F_PASSWORD", nullable = false, insertable = true, updatable = true, length = 20)
     private String password;
 
-    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true, columnDefinition = "TEXT")
+//    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true, columnDefinition = "TEXT")
+    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
+
 
 //    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)1
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
