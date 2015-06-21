@@ -1,14 +1,10 @@
-package data;
+package by.newsline.data;
 
-import data.util.StatusEnum;
+import by.newsline.data.util.StatusEnum;
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
-
-/**
- * Created by ragexe on 22.05.15.
- */
 
 @MappedSuperclass
 public class CustomEntity {

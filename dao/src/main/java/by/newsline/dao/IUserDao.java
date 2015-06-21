@@ -1,7 +1,7 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.User;
+import by.newsline.data.User;
 import java.util.List;
 
 

@@ -2,8 +2,7 @@ package by.newsline.controlers;
 
 import by.newsline.exceptons.WebException;
 import by.newsline.service.util.exception.ServiceException;
-import data.Category;
-import data.Page;
+import by.newsline.data.Category;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import by.newsline.service.ICategoryService;
-import by.newsline.service.PageService;
 
 import java.util.List;
 

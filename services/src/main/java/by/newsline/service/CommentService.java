@@ -3,7 +3,7 @@ package by.newsline.service;
 import by.newsline.dao.ICommentDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
-import data.Comment;
+import by.newsline.data.Comment;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

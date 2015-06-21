@@ -1,7 +1,7 @@
 package by.newsline.service;
 
 import by.newsline.service.util.exception.ServiceException;
-import data.Page;
+import by.newsline.data.Page;
 import java.util.List;
 
 

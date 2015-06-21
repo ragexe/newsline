@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="pageBean" class="data.Page" scope="request"/>
+<jsp:useBean id="pageBean" class="by.newsline.data.Page" scope="request"/>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html>
@@ -78,7 +78,7 @@
       <!-- Поле основного текста --->
       <core:choose>
         <core:when test="${param.operation.equals('edit')}">
-          <jsp:include page="/jsp/edit.jsp.jsp"/>
+          <jsp:include page="/jsp/edit.jsp"/>
         </core:when>
         <core:when test="${param.operation.equals('delete')}">
           <jsp:forward page="/control"/>

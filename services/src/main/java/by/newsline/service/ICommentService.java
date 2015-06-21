@@ -1,14 +1,10 @@
 package by.newsline.service;
 
-
 import by.newsline.service.util.exception.ServiceException;
-import data.Comment;
+import by.newsline.data.Comment;
 
 import java.util.List;
 
-/**
- * Created by HappyQ on 10.06.2015.
- */
 public interface ICommentService {
     void saveComment(Comment comment)throws ServiceException;
     void deleteCommentById(long id) throws ServiceException;

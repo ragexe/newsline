@@ -3,7 +3,7 @@
 
 <title></title>
 
-<jsp:useBean id="user" class="data.User" scope="session"/>
+<jsp:useBean id="user" class="by.newsline.data.User" scope="session"/>
 <fmt:requestEncoding value="UTF-8"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

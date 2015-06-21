@@ -33,7 +33,7 @@ CREATE TABLE `t_category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `t_category`
+-- Dumping by.newsline.data for table `t_category`
 --
 
 LOCK TABLES `t_category` WRITE;
@@ -62,7 +62,7 @@ CREATE TABLE `t_comment` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `t_comment`
+-- Dumping by.newsline.data for table `t_comment`
 --
 
 LOCK TABLES `t_comment` WRITE;
@@ -93,7 +93,7 @@ CREATE TABLE `t_page` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `t_page`
+-- Dumping by.newsline.data for table `t_page`
 --
 
 LOCK TABLES `t_page` WRITE;
@@ -124,7 +124,7 @@ CREATE TABLE `t_user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `t_user`
+-- Dumping by.newsline.data for table `t_user`
 --
 
 LOCK TABLES `t_user` WRITE;

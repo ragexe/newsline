@@ -1,8 +1,8 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.Comment;
-import data.util.StatusEnum;
+import by.newsline.data.Comment;
+import by.newsline.data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;

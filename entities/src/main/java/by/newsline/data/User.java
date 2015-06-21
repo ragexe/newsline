@@ -1,18 +1,15 @@
-package data;
+package by.newsline.data;
 
-import data.util.RoleEnum;
+import by.newsline.data.util.RoleEnum;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-/**
- * Created by ragexe on 27.05.2015.
- */
 @Entity
 @Table(name = "T_USER")
 public class User extends CustomEntity implements Serializable {
-    private static final long serialVersionUID = -3731830107340403943L;
+    private static final long serialVersionUID = -373183010734040392L;
     
     @Id
     @Column(name = "F_USER_ID", nullable = false, insertable = true, updatable = true)
@@ -33,9 +30,13 @@ public class User extends CustomEntity implements Serializable {
 
 //    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true, columnDefinition = "TEXT")
     @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
-    @Enumerated(EnumType.STRING)
-    private RoleEnum role;
+    private int role;
 
+
+
+    @Column(name = "F_ACCESS", nullable = true, insertable = true, updatable = true)
+    @Enumerated(EnumType.STRING)
+    private RoleEnum access;
 
 //    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)1
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
@@ -84,11 +85,11 @@ public class User extends CustomEntity implements Serializable {
         this.password = password;
     }
 
-    public RoleEnum getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(RoleEnum role) {
+    public void setRole(int role) {
         this.role = role;
     }
 
@@ -102,6 +103,14 @@ public class User extends CustomEntity implements Serializable {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public RoleEnum getAccess() {
+        return access;
+    }
+
+    public void setAccess(RoleEnum access) {
+        this.access = access;
     }
 
     @Override

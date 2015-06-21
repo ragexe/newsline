@@ -1,8 +1,8 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.User;
-import data.util.StatusEnum;
+import by.newsline.data.User;
+import by.newsline.data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -14,10 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
-/**
- * Created by ragexe on 13.04.15.
- * Class for working with persistence entity of User
- */
 @Repository("userDao")
 @Transactional(propagation = Propagation.MANDATORY)
 public class UserDaoImpl extends AbstractDao implements IUserDao{
@@ -69,7 +65,7 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
                     .setParameter("status", status);
             User = (User) query.uniqueResult();
         } catch (HibernateException e) {
-            logger.error("Error get " + User.getClass().getName() + " in Dao " + e);
+            logger.error(e.getMessage());
             throw new DaoException(e);
         }
         return User;
@@ -85,7 +81,7 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
                     .setParameter("status", status);
             User = (User) query.uniqueResult();
         } catch (HibernateException e) {
-            logger.error("Error get " + User.getClass().getName() + " in Dao " + e);
+            logger.error(e.getMessage());
             throw new DaoException(e);
         }
         return User;

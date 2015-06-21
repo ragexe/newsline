@@ -1,11 +1,10 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.Category;
-import data.util.StatusEnum;
+import by.newsline.data.Category;
+import by.newsline.data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
-import org.hibernate.criterion.Restrictions;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -15,10 +14,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 
-/**
- * Created by ragexe on 13.04.15.
- * Class for working with persistence entity of Category
- */
 @Repository("categoryDao")
 @Transactional(propagation = Propagation.MANDATORY)
 public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
@@ -37,8 +32,6 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
         Category category = (Category) session.load(Category.class, id);
         category.setStatus(StatusEnum.DELETED);
         session.update(category);
-
-
     }
 
     @SuppressWarnings("unchecked")

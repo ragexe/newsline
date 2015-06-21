@@ -8,9 +8,9 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">--%>
 <!DOCTYPE html>
-<%--<jsp:useBean id="pageBean" class="data.Page" scope="request"/>--%>
-<jsp:useBean id="user" class="data.User" scope="session"/>
-<%--<jsp:useBean id="Category" class="data.Category" scope="request"/>--%>
+<%--<jsp:useBean id="pageBean" class="by.newsline.data.Page" scope="request"/>--%>
+<jsp:useBean id="user" class="by.newsline.data.User" scope="session"/>
+<%--<jsp:useBean id="Category" class="by.newsline.data.Category" scope="request"/>--%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html lang="ru">

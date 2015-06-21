@@ -1,4 +1,4 @@
-package data;
+package by.newsline.data;
 
 import javax.persistence.*;
 import java.io.Serializable;

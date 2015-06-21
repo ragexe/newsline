@@ -1,4 +1,4 @@
-package data;
+package by.newsline.data;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +10,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "t_comment", schema = "", catalog = "newsbase")
 public class Comment extends CustomEntity implements Serializable {
-    private static final long serialVersionUID = -373183010734040400L;
+    private static final long serialVersionUID = -373183010734040394L;
 
     @Id
     @Column(name = "F_COMMENT_ID")
@@ -85,9 +85,8 @@ public class Comment extends CustomEntity implements Serializable {
         if (!date.equals(comment.date)) return false;
         if (!maintext.equals(comment.maintext)) return false;
         if (!page.equals(comment.page)) return false;
-        if (!user.equals(comment.user)) return false;
+        return user.equals(comment.user);
 
-        return true;
     }
 
     @Override

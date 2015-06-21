@@ -1,9 +1,10 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.Comment;
+import by.newsline.data.Comment;
 
 import java.util.List;
+
 
 public interface ICommentDao {
 

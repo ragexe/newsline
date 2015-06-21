@@ -1,8 +1,8 @@
 package by.newsline.dao;
 
 import by.newsline.dao.util.exception.DaoException;
-import data.Page;
-import data.util.StatusEnum;
+import by.newsline.data.Page;
+import by.newsline.data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -14,10 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
-/**
- * Created by ragexe on 13.04.15.
- * Class for working with persistence entity of Page
- */
 @Repository("pageDao")
 @Transactional(propagation = Propagation.MANDATORY)
 public class PageDaoImpl extends AbstractDao implements IPageDao {

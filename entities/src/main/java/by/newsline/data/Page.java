@@ -1,17 +1,14 @@
-package data;
+package by.newsline.data;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 
-/**
-* Created by ragexe on 27.05.2015.
-*/
 @Entity
 @Table(name = "t_page", schema = "", catalog = "newsbase")
 public class Page extends CustomEntity implements Serializable {
-    private static final long serialVersionUID = -3731830107340403952L;
+    private static final long serialVersionUID = -373183010734040393L;
 
     @Id
     @Column(name = "F_PAGE_ID")
@@ -110,6 +107,10 @@ public class Page extends CustomEntity implements Serializable {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
     }
 
     @Override

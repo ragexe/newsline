@@ -2,7 +2,7 @@ package by.newsline.service;
 
 
 import by.newsline.service.util.exception.ServiceException;
-import data.User;
+import by.newsline.data.User;
 
 
 public interface IUserService {

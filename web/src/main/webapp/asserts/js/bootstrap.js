@@ -124,7 +124,7 @@ if (typeof jQuery === 'undefined') {
     $parent.removeClass('in')
 
     function removeElement() {
-      // detach from parent, fire event then clean up data
+      // detach from parent, fire event then clean up by.newsline.data
       $parent.detach().trigger('closed.bs.alert').remove()
     }
 

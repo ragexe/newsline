@@ -5,7 +5,7 @@ import by.newsline.dao.IUserDao;
 import by.newsline.dao.util.exception.DaoException;
 import by.newsline.service.util.exception.ServiceException;
 import com.mysql.jdbc.StringUtils;
-import data.User;
+import by.newsline.data.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

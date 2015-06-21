@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html>
 <head>
-  <jsp:useBean id="user" class="data.User" scope="session"/>
+  <jsp:useBean id="user" class="by.newsline.data.User" scope="session"/>
   <fmt:requestEncoding value="UTF-8"/>
   <title></title>
 </head>
@@ -63,7 +63,7 @@
           </ul>
         </li>
         <%--<li class="dropdown">--%>
-        <%--<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>--%>
+        <%--<a class="dropdown-toggle" by.newsline.data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>--%>
         <%--<ul class="dropdown-menu" aria-labelledby="download">--%>
         <%--<li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>--%>
         <%--<li><a href="./bootstrap.css">bootstrap.css</a></li>--%>

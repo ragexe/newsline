@@ -1,4 +1,4 @@
-package data.util;
+package by.newsline.data.util;
 
 public enum RoleEnum {
 
