@@ -10,7 +10,7 @@
 
         <tr>
             <td>
-                title:
+                <fmt:message key="title"/>:
             </td>
             <td>
                 <form:input path="title" type="text" name="title" required="required" title="Title" />
@@ -19,7 +19,7 @@
 
         <tr>
             <td>
-                title4menu:
+                <fmt:message key="title4menu"/>:
             </td>
             <td>
                 <form:input path="title4menu" type="text" name="title4menu" required="required" title="Title for menu" />
@@ -29,5 +29,5 @@
 
 
     </table>
-    <input type="submit" align="middle">
+    <input type="submit" align="middle" value="<fmt:message key="submit"/>">
 </form:form>
