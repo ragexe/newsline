@@ -4,82 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-
-    <!--<filter>-->
-        <!--<filter-name>AdminFilter</filter-name>-->
-        <!--<filter-class>filters.AdminFilter</filter-class>-->
-        <!--<init-param>-->
-            <!--<param-name>requestEncoding</param-name>-->
-            <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
-    <!--</filter>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>AdminFilter</filter-name>-->
-        <!--<url-pattern>/admpanel.jsp</url-pattern>-->
-    <!--</filter-mapping>-->
-
-    <!--<filter>-->
-        <!--<filter-name>CharsetFilter</filter-name>-->
-        <!--<filter-class>filters.CharsetFilter</filter-class>-->
-        <!--<init-param>-->
-            <!--<param-name>requestEncoding</param-name>-->
-            <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
-    <!--</filter>-->
-    <!--<filter-mapping>-->
-        <!--<filter-name>CharsetFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
-
-    <!--<servlet>-->
-        <!--<servlet-name>servlet5</servlet-name>-->
-        <!--<servlet-class>util.MenuManager</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet5</servlet-name>-->
-        <!--<url-pattern>/menu</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!--<servlet>-->
-        <!--<servlet-name>servlet6</servlet-name>-->
-        <!--<servlet-class>PageService</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet6</servlet-name>-->
-        <!--<url-pattern>/page</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!--<servlet>-->
-        <!--<servlet-name>servlet7</servlet-name>-->
-        <!--<servlet-class>util.Authoriz</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet7</servlet-name>-->
-        <!--<url-pattern>/authoriz</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!--<servlet>-->
-    <!--<servlet-name>servlet8</servlet-name>-->
-    <!--<servlet-class>util.ControlPanel</servlet-class>-->
-<!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet8</servlet-name>-->
-        <!--<url-pattern>/control</url-pattern>-->
-    <!--</servlet-mapping>-->
-
-    <!--<servlet>-->
-        <!--<servlet-name>servlet9</servlet-name>-->
-        <!--<servlet-class>util.Logout</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet9</servlet-name>-->
-        <!--<url-pattern>/logout</url-pattern>-->
-    <!--</servlet-mapping>-->
-
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:webContext.xml</param-value>
+        <param-value>/WEB-INF/security.xml,classpath*:webContext.xml</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -111,4 +40,12 @@
         <url-pattern>*.png</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

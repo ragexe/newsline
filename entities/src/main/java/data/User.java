@@ -113,7 +113,7 @@ public class User extends CustomEntity implements Serializable {
         if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (role != null ? !role.equals(that.role) : that.role != null) return false;
+//        if (role != null ? !role.equals(that.role) : that.role != null) return false;
 
         return true;
     }
@@ -126,7 +126,7 @@ public class User extends CustomEntity implements Serializable {
         result = var * result + (lastname != null ? lastname.hashCode() : 0);
         result = var * result + (email != null ? email.hashCode() : 0);
         result = var * result + (password != null ? password.hashCode() : 0);
-        result = var * result + (role != null ? role.hashCode() : 0);
+//        result = var * result + (role != null ? role.hashCode() : 0);
         return result;
     }
 

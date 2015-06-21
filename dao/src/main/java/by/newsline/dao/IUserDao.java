@@ -5,7 +5,6 @@ import data.User;
 import java.util.List;
 
 
-
 public interface IUserDao {
     void saveUser(User user) throws DaoException;
     void deleteUserById(long id) throws DaoException;

@@ -116,10 +116,10 @@
                       <li><a href="#">Мои новости</a></li>
                       <li><a href="#">Профиль</a></li>
                       <li class="divider"></li>
-                      <core:if test="${user.role == 1}">
+                      <%--<core:if test="${user.role == 1}">--%>
                         <li><a href="admpanel.jsp">Админка</a></li>
                         <li class="divider"></li>
-                      </core:if>
+                      <%--</core:if>--%>
                       <li><a href="/logout" class="bg-danger">Выйти</a></li>
                     </ul>
                   </core:otherwise>

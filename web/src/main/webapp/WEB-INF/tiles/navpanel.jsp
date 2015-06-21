@@ -92,10 +92,10 @@
                                             <li><a href="#"><fmt:message key="myNews"/></a></li>
                                             <li><a href="#"><fmt:message key="profile"/></a></li>
                                             <li class="divider"></li>
-                                            <core:if test="${user.role == 1}">
+                                            <%--<core:if test="${user.role == 1}">--%>
                                                 <li><a href="admpanel.jsp"><fmt:message key="adminPanel"/></a></li>
                                                 <li class="divider"></li>
-                                            </core:if>
+                                            <%--</core:if>--%>
                                             <li><a href="/logout" class="bg-danger"><fmt:message key="logout"/></a></li>
                                         </ul>
                                     </core:otherwise>

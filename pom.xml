@@ -37,6 +37,7 @@
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <org.hibernate.javax.persistence.version>1.0.1.Final</org.hibernate.javax.persistence.version>
         <spring.security.version>4.0.1.RELEASE</spring.security.version>
+        <!--<spring.security.version>3.1.4.RELEASE</spring.security.version>-->
 
 
     </properties>
@@ -228,27 +229,7 @@
             <version>${commons-dbcp.version}</version>
         </dependency>
 
-        <!--SPRING SECURITY-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
+
 
         <!-- jsr303 validation -->
         <dependency>
