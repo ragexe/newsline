@@ -36,4 +36,5 @@
                                authorities-by-username-query="SELECT F_EMAIL, F_ROLE FROM t_user WHERE F_EMAIL=?"/>
         </authentication-provider>
     </authentication-manager>
+    <!---->
 </beans:beans>
