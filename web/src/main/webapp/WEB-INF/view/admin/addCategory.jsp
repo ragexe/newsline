@@ -26,8 +26,6 @@
             </td>
         </tr>
 
-
-
     </table>
     <input type="submit" align="middle">
 </form:form>
