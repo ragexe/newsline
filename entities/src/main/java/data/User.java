@@ -35,7 +35,7 @@ public class User extends CustomEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
-//    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)1
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private Set<Page> pages;
 
