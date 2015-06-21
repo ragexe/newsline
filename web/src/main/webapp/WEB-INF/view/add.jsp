@@ -10,7 +10,7 @@
 
         <tr>
             <td>
-                Категория:
+                <fmt:message key="category"/>:
             </td>
             <td>
                 <select name="categoryId">
