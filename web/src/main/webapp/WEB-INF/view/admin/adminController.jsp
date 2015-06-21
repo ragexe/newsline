@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -13,6 +14,7 @@
     <title></title>
 </head>
 <body>
+<h5><fmt:message key="category" /></h5>
 <div class="col-lg-7">
   <table border="3" rules="rows">
   <core:forEach var="category" items="${categories}">
@@ -20,7 +22,7 @@
       <td>
   <h5>${category.title}</h5>
       </td>
-      <td><a href="/menu/adminController/${category.id}" class="btn btn-danger">Danger</a></td>
+      <td><a href="/menu/adminController/${category.id}" class="btn btn-danger"><fmt:message key="delcategory"/></a></td>
     </tr>
 
   </core:forEach>
