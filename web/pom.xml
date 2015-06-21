@@ -41,6 +41,7 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
+        <!---->
 
         <dependency>
             <groupId>by.newsline</groupId>

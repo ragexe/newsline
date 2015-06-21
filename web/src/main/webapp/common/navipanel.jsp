@@ -120,7 +120,7 @@
                         <li><a href="admpanel.jsp">Админка</a></li>
                         <li class="divider"></li>
                       <%--</core:if>--%>
-                      <li><a href="/logout" class="bg-danger">Выйти</a></li>
+                      <li><a href="<core:url value="j_spring_security_logout"/>" class="bg-danger">Выйти</a></li>
                     </ul>
                   </core:otherwise>
                 </core:choose>
