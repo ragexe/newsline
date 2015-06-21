@@ -1,6 +1,7 @@
 package data;
 
 import data.util.RoleEnum;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -30,7 +31,7 @@ public class User extends CustomEntity implements Serializable {
     @Column(name = "F_PASSWORD", nullable = false, insertable = true, updatable = true, length = 20)
     private String password;
 
-    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true)
+    @Column(name = "F_ROLE", nullable = true, insertable = true, updatable = true, columnDefinition = "TEXT")
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
