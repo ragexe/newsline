@@ -24,11 +24,15 @@
     <definition name="add" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/add.jsp"/>
     </definition>
-    <definition name="addCategory" extends="base.definition">
-    <put-attribute name="content" value="/WEB-INF/view/addCategory.jsp"/>
-    </definition>
     <definition name="post" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/post.jsp"/>
+    </definition>
+
+    <definition name="addCategory" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/admin/addCategory.jsp"/>
+    </definition>
+    <definition name="adminController" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/admin/adminController.jsp"/>
     </definition>
 
 </tiles-definitions>

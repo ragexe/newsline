@@ -42,7 +42,7 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
     }
 
     public void deleteCategoryById(long id) throws DaoException {
-        try {
+        /*try {
             StatusEnum status = StatusEnum.DELETED;
             @Language("HQL") String hql = "UPDATE Category SET Category.status=:status WHERE Category.id=:id";
             Query query = getSession().createQuery(hql)
@@ -54,7 +54,13 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
         } catch (HibernateException e) {
             logger.error(e.getMessage());
 //            throw new PersistException(e);
-        }
+        }*/
+        Session session = getSession();
+        Category category = (Category) session.load(Category.class, id);
+        category.setStatus(StatusEnum.DELETED);
+        session.update(category);
+
+
     }
 
     @SuppressWarnings("unchecked")
