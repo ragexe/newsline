@@ -1,10 +1,11 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%--<html lang="ru">--%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Page Not Found</title>
+    <title>Error</title>
     <style type="text/css">
         * {
             margin:0;
@@ -85,10 +86,18 @@
 <div id="wrapper">
     <div id="container">
         <div class="navtop">
-            <h1>Page Not Found</h1>
+            <h1>Error 403</h1>
         </div>
         <div id="content">
-            <br>The page you have requested has flown the coop.<br>Perhaps you are here because:<br><br><ul><br>The page has moved<br>The page no longer exists<br>You were looking for your puppy and got lost<br>You like 404 pages</ul>
+            <br>Доступ закрыт
+            <br>Возможно вы здесь по следующим причинам:
+            <br>
+            <br>
+            <ul>
+                <br>Отсутсвие необходимого уровня доступа
+                <br>Страницы больше не существует
+                <br>You like 403 pages
+            </ul>
             <a href="/" title="Home" class="button">Go Home</a><br />
 
             <br>Powered by ragexe
