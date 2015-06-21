@@ -4,7 +4,7 @@
 <%--<div class="row-fluid">--%>
     <div class="col-lg-12">
         <div class="page-header">
-            <h1 id="type"><fmt:message key="News"/></h1>
+            <h1 id="type"><fmt:message key="News"/><h/></h1>
         </div>
     </div>
 <%--</div>--%>

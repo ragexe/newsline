@@ -102,6 +102,21 @@
                         </div>
                     </div>
                 </li>
+                <li>
+                    <div style="margin-bottom: -1px;">
+                        <div class="btn-toolbar bs-component" style="margin: 0;">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="lang-sm" lang="be"></span> <span class="caret"><g/></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="?lang=ru" class="lang-sm lang-lbl" lang="ru"></a></li>
+                                    <li><a href="?lang=en" class="lang-sm lang-lbl" lang="en"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
