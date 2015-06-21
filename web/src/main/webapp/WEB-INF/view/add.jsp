@@ -6,47 +6,64 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <form:form method="POST" action="/menu/save" modelAttribute="newPage" accept-charset="utf-8">
-    <table>
+    <table class="form-horizontal">
+        <fieldset>
+            <tr>
+                <td>
+                    <fmt:message key="category"/>
+                </td>
+                <td>
+                    <select name="categoryId" class="form-control">
+                        <c:forEach items="${categories}" var="category">
+                            <option value="${category.id}">${category.title4menu}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <fmt:message key="category"/>:
-            </td>
-            <td>
-                <select name="categoryId">
-                    <c:forEach items="${categories}" var="category">
-                        <option value="${category.id}">${category.title4menu}</option>
-                    </c:forEach>
-                </select>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <fmt:message key="title"/>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-lg-10">
+                            <form:input path="title" type="text" name="title" required="required" title="Title"/>
+                        </div>
+                    </div>
+                        <%--<form:input path="title" type="text" name="title" required="required" title="Title"/>--%>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <fmt:message key="title"/>:
-            </td>
-            <td>
-                <form:input path="title" type="text" name="title" required="required" title="Title" />
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <fmt:message key="title4menu"/>:
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-lg-10">
+                            <form:input path="title4menu" type="text" name="title4menu" required="required"
+                                        title="Title for menu"/>
+                        </div>
+                    </div>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <fmt:message key="title4menu"/>:
-            </td>
-            <td>
-                <form:input path="title4menu" type="text" name="title4menu" required="required" title="Title for menu" />
-            </td>
-        </tr>
+            <tr>
+                <td valign="top">
+                    <fmt:message key="maintext"/>:
+                </td>
+                <td><div class="form-group">
+                    <div class="col-lg-10">
+                    <form:input path="maintext" type="textarea" name="maintext" required="required"
+                                title="Title for menu"/>
 
-        <tr>
-            <td valign="top">
-                <fmt:message key="maintext"/>:
-            </td>
-            <td>
-                <form:input path="maintext" type="textarea" name="maintext" required="required" title="Title for menu" />
-            </td>
-        </tr>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </fieldset>
     </table>
-    <input type="submit" align="middle" value="<fmt:message key="submit"/>">
+    <input class="btn btn-default" type="submit" align="middle" value="<fmt:message key="submit"/>">
+    <button type="reset" align="middle" class="btn btn-default">Cancel</button>
 </form:form>

@@ -22,11 +22,17 @@
 
 <div class="col-lg-7">
     <core:forEach var="page" items="${pages}">
-        <h1><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h1>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h3>
+            </div>
+        <%--<h1><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h1>--%>
         <small><cite><core:out value="${page.author.name}"/></cite> <fmt:message key="addedOn"/>написал <core:out value="${page.date}"/></small>
-        <blockquote>
+        <div class="jumbotron">
             <p><core:out value="${page.maintext}"/><br></p>
-        </blockquote>
+        </div>
+            </div>
+
     </core:forEach>
 
 

@@ -3,12 +3,9 @@ package by.newsline.dao;
 import by.newsline.dao.util.exception.DaoException;
 import data.Category;
 import data.util.StatusEnum;
-
 import org.apache.log4j.Logger;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -31,30 +28,11 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
     private SessionFactory sessionFactory;
 
     public void saveCategory(Category category) throws DaoException {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = getSession();
         session.save(category);
-        /*try{
-            Session session = sessionFactory.getCurrentSession();
-            session.save(category);
-        }catch (HibernateException e) {
-            logger.error(e.getMessage());
-        }*/
     }
 
     public void deleteCategoryById(long id) throws DaoException {
-        /*try {
-            StatusEnum status = StatusEnum.DELETED;
-            @Language("HQL") String hql = "UPDATE Category SET Category.status=:status WHERE Category.id=:id";
-            Query query = getSession().createQuery(hql)
-                    .setParameter("status", status);
-            int res = query.executeUpdate();
-            if (res > 1){
-                logger.warn("delete more than one line at deleteCategoryById-method");
-            }
-        } catch (HibernateException e) {
-            logger.error(e.getMessage());
-//            throw new PersistException(e);
-        }*/
         Session session = getSession();
         Category category = (Category) session.load(Category.class, id);
         category.setStatus(StatusEnum.DELETED);
@@ -77,6 +55,12 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
             throw new DaoException(e);
         }
         return categories;
+        /*Session session = getSession();
+        StatusEnum status = StatusEnum.SAVED;
+        Criteria criteria = session.createCriteria(Category.class);
+        criteria.add(Restrictions.eq("SAVED", status));
+        List<Category> result = criteria.list();
+        return result;*/
     }
 
     public Category getById(long id) throws DaoException {
@@ -90,7 +74,6 @@ public class CategoryDaoImpl extends AbstractDao implements ICategoryDao{
             Category = (Category) query.uniqueResult();
         } catch (HibernateException e) {
             logger.error("Error get " + Category.getClass().getName() + " in Dao " + e);
-//            throw new PersistException(e);
         }
         return Category;
     }

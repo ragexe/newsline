@@ -61,6 +61,11 @@ public class Category extends CustomEntity implements Serializable {
         this.pages = pages;
     }
 
+   /* public Category(String title, StatusEnum status) {
+        super(status);
+        this.title = title;
+    }*/
+
     @Override
     public String toString() {
         return this.getTitle();

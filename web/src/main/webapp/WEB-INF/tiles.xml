@@ -34,5 +34,8 @@
     <definition name="adminController" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/adminController.jsp"/>
     </definition>
+    <definition name="saveCategory" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/admin/saveCategory.jsp"/>
+    </definition>
 
 </tiles-definitions>

@@ -5,7 +5,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="/WEB-INF/view/test/main.jsp" class="navbar-brand"><fmt:message key="newslineBrand" /></a>
+            <a href="/menu" class="navbar-brand"><fmt:message key="newslineBrand" /></a>
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -17,7 +17,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><fmt:message key="themes" /><span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="themes">
-                        <li><a href="../default/"><fmt:message key="default" /></a></li>
+                        <li><a href="../menu/ " target="_blank"><fmt:message key="default" /></a></li><%--
                         <li class="divider"></li>
                         <li><a href="../cerulean/">Cerulean</a></li>
                         <li><a href="../cosmo/">Cosmo</a></li>
@@ -35,21 +35,23 @@
                         <li><a href="../superhero/">Superhero</a></li>
                         <li><a href="../united/">United</a></li>
                         <li><a href="../yeti/">Yeti</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/WEB-INF/view/test/new.jsp"><fmt:message key="example" /></a> </li>
+                        <li class="divider"></li>--%>
+                        <%--<li><a href="/WEB-INF/view/test/new.jsp"><fmt:message key="example" /></a> </li>--%>
                     </ul>
                 </li>
                 <li>
-                    <a href="https://github.com/ragexe/newsline/"><fmt:message key="git" /></a>
+                    <a href="https://github.com/ragexe/newsline/"  target="_blank"><fmt:message key="git" /></a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="blog"><fmt:message key="authors" /><span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="blog">
-                        <li><a href="https://vk.com/ragexe"><fmt:message key="ragexe" /></a></li>
-                        <li><a href="https://vk.com/followhappyq"><fmt:message key="happyQ" /></a></li>
+                        <li><a href="https://vk.com/ragexe" target="_blank"><fmt:message key="ragexe" /></a></li>
+                        <li><a href="https://vk.com/followhappyq" target="_blank"><fmt:message key="happyQ" /></a></li>
                     </ul>
                 </li>
                 <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank"><fmt:message key="wapBootstrap"/></a></li>
+                <li><a href="/menu/adminController" target="_blank"><fmt:message key="admcontroller"/></a></li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

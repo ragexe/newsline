@@ -14,19 +14,24 @@
     <title></title>
 </head>
 <body>
-<h5><fmt:message key="category" /></h5>
-<div class="col-lg-7">
-  <table border="3" rules="rows">
-  <core:forEach var="category" items="${categories}">
-    <tr>
-      <td>
-  <h5>${category.title}</h5>
-      </td>
-      <td><a href="/menu/adminController/${category.id}" class="btn btn-danger"><fmt:message key="delcategory"/></a></td>
-    </tr>
 
-  </core:forEach>
+
+<h5><fmt:message key="category"/></h5>
+<div class="col-lg-7" align="center">
+    <table border="3" rules="rows">
+        <core:forEach var="category" items="${categories}">
+            <tr>
+                <td>
+                    <h5>${category.title}</h5>
+                </td>
+                <td><a href="/menu/adminController/${category.id}" class="btn btn-danger"><fmt:message
+                        key="delcategory"/></a>
+                </td>
+            </tr>
+        </core:forEach>
     </table>
+    <a href="/menu/addCategory/" class="btn btn-danger"><fmt:message key="addcategory"/></a>
+</div>
 
 
 </body>

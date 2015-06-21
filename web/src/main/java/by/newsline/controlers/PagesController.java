@@ -115,7 +115,7 @@ public class PagesController {
             throw new WebException(e);
         }
         modelMap.addAttribute("addCategory",category);
-        return "saveCategory";
+        return "redirect:/menu/adminController";
     }
 
 
