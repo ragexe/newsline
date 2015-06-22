@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page session="true"%>
 
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -60,7 +61,7 @@
                     <div style="margin-bottom: -1px;">
                         <div class="btn-toolbar bs-component" style="margin: 0;">
                             <core:choose>
-                                <core:when test="${sessionScope.login == null}">
+                                <core:when test="${empty pageContext.request.userPrincipal.name}">
                                     <a href="/menu/add" class="btn btn-success " title="Авторизуйтесь"><fmt:message key="addNews"/></a>
                                 </core:when>
                                 <core:otherwise>
@@ -109,7 +110,18 @@
                                             <%--<li class="divider"></li>--%>
 
                                                 <%--logout--%>
-                                            <core:url value="/j_spring_security_logout" var="logoutUrl" />
+                                            <%--<core:url value="/j_spring_security_logout" var="logoutUrl" />--%>
+                                            <%--<form action="${logoutUrl}" method="post" id="logoutForm">--%>
+                                                <%--<input type="hidden" name="${_csrf.parameterName}"--%>
+                                                       <%--value="${_csrf.token}" />--%>
+                                            <%--</form>--%>
+                                            <%--<script>--%>
+                                                <%--function formSubmit() {--%>
+                                                    <%--document.getElementById("logoutForm").submit();--%>
+                                                <%--}--%>
+                                            <%--</script>--%>
+                                            <%--<core:url value="/j_spring_security_logout" var="logoutUrl" />--%>
+                                            <core:url value="/logout" var="logoutUrl" />
                                             <form action="${logoutUrl}" method="post" id="logoutForm">
                                                 <input type="hidden" name="${_csrf.parameterName}"
                                                        value="${_csrf.token}" />

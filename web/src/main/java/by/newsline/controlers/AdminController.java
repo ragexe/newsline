@@ -84,26 +84,33 @@ public class AdminController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
-                              @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
-
-        ModelAndView model = new ModelAndView();
+//    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+//                              @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+    public String login(@RequestParam(value = "error", required = false) String error,
+                              @RequestParam(value = "logout", required = false) String logout,
+                              ModelMap modelMap,
+                              HttpServletRequest request) {
+//        ModelAndView model = new ModelAndView();
         if (error != null) {
-            model.addObject("error", "Invalid username and password!");
+//            model.addObject("error", "Invalid username and password!");
+            modelMap.addAttribute("error","Invalid username and password!");
             //login form for update, if login error, get the targetUrl from session again.
             String targetUrl = getRememberMeTargetUrlFromSession(request);
             System.out.println(targetUrl);
             if(StringUtils.hasText(targetUrl)){
-                model.addObject("targetUrl", targetUrl);
-                model.addObject("loginUpdate", true);
+//                model.addObject("targetUrl", targetUrl);
+//                model.addObject("loginUpdate", true);
+                modelMap.addAttribute("targetUrl", targetUrl);
+                modelMap.addAttribute("loginUpdate", true);
             }
         }
 
         if (logout != null) {
-            model.addObject("msg", "You've been logged out successfully.");
+//            model.addObject("msg", "You've been logged out successfully.");
+            modelMap.addAttribute("msg", "You've been logged out successfully.");
         }
-        model.setViewName("login");
-        return model;
+//        model.setViewName("login");
+        return "login";
     }
 
     /**
