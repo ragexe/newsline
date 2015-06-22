@@ -13,6 +13,7 @@ import by.newsline.service.IUserService;
 import by.newsline.service.util.exception.ServiceException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-
-public class Controller {
-    private static final Logger logger = Logger.getLogger(Controller.class);
+@Controller
+public class UserController {
+    private static final Logger logger = Logger.getLogger(UserController.class);
 
 
     @Autowired
@@ -34,9 +35,9 @@ public class Controller {
     @Autowired
     IUserService userService;
 
-    @RequestMapping(value = "/menu/adminController/users", method = RequestMethod.GET)
-    public String allPage(ModelMap modelMap) throws WebException {
-        List<User> users = null;
+    @RequestMapping(value="/menu/adminController/users",method = RequestMethod.GET)
+    public String banUsers(ModelMap modelMap) throws WebException{
+        List<User> users;
         try {
             users = userService.getAllUser();
         } catch (ServiceException e) {
@@ -45,11 +46,11 @@ public class Controller {
         }
         modelMap.addAttribute("users", users);
 
-        return "adminController";
+        return "users";
     }
 
     @RequestMapping(value = "/menu/adminController/users/{id}", method = RequestMethod.GET)
-    public String delCategory(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException {
+    public String delUser(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException {
         User delUser = null;
         try {
             userService.deleteUserById(id);
@@ -58,7 +59,6 @@ public class Controller {
             throw new WebException(e);
         }
         modelMap.addAttribute("delUser",delUser);
-        return "redirect:/menu/adminController/users";
+        return "redirect:/menu/adminController/user";
     }
-
 }

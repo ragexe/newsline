@@ -6,6 +6,7 @@ import by.newsline.data.util.StatusEnum;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.intellij.lang.annotations.Language;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -24,7 +25,7 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
     }
 
     public void deleteUserById(long id)  throws DaoException {
-        try {
+        /*try {
             StatusEnum status = StatusEnum.DELETED;
             @Language("HQL") String hql = "UPDATE User SET User.status=:status WHERE User.id=:id";
             Query query = getSession().createQuery(hql)
@@ -36,7 +37,11 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
         } catch (HibernateException e) {
             logger.error(e.getMessage());
             throw new DaoException(e);
-        }
+        }*/
+        Session session = getSession();
+        User user = (User) session.load(User.class, id);
+        user.setStatus(StatusEnum.DELETED);
+        session.update(user);
     }
 
     @SuppressWarnings("unchecked")

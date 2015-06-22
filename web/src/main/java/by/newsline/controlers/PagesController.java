@@ -92,7 +92,7 @@ public class PagesController {
         return "add";
     }
 
-    @RequestMapping(value = "/menu/addCategory", method = RequestMethod.GET)
+    @RequestMapping(value = "/menu/adminController/category", method = RequestMethod.GET)
     public String addCategory(ModelMap model) {
         model.addAttribute("newCategory", new Category());
         return "addCategory";
