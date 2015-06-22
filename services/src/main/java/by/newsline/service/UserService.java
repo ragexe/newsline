@@ -33,7 +33,7 @@ public class UserService implements IUserService {
         if (!(StringUtils.isNullOrEmpty(email)) && !(StringUtils.isNullOrEmpty(password))) {
             try {
                 List<User> userList = userDao.getAllUsers();
-                for (User userElement : userList) {//
+                for (User userElement : userList) {
                     if ((userElement.getEmail().equals(email))
                             && (userElement.getPassword().equals(password))) {
                         return true;
@@ -52,7 +52,8 @@ public class UserService implements IUserService {
             try {
                 List<User> users = userDao.getAllUsers();
                 for (User element : users) {
-                    if (element.getEmail().equals(user.getEmail())) {
+                    if (element.getEmail().equals(user.getEmail())||
+                                                    element.getName().equals(user.getName()))  {
                         return false;
                     }
                 }
