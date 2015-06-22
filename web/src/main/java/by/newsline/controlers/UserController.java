@@ -45,7 +45,6 @@ public class UserController {
             throw new WebException(e);
         }
         modelMap.addAttribute("users", users);
-
         return "users";
     }
 
@@ -59,6 +58,32 @@ public class UserController {
             throw new WebException(e);
         }
         modelMap.addAttribute("delUser",delUser);
-        return "redirect:/menu/adminController/user";
+        return "redirect:/menu/adminController/users";
     }
+    @RequestMapping(value = "/menu/adminController/banUsers", method = RequestMethod.GET)
+    public String getAllBannedUsers(ModelMap modelMap) throws WebException {
+        List<User> banUsers;
+        try {
+            banUsers = userService.getAllBannedUsers();
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
+        modelMap.addAttribute("banUsers",banUsers);
+        return "banUsers";
+    }
+
+    @RequestMapping(value = "/menu/adminController/banUsers/{id}", method = RequestMethod.GET)
+    public String unbanUser(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException {
+        User unbanUser = null;
+        try {
+            userService.unBannedUser(id);
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
+        modelMap.addAttribute("unbanUser",unbanUser);
+        return "redirect:/menu/adminController/banUsers";
+    }
+
 }

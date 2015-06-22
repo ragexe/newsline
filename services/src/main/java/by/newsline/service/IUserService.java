@@ -15,4 +15,7 @@ public interface IUserService {
     void deleteUserById(long id) throws ServiceException;
     User getById(long id) throws ServiceException;
     List<User> getAllUser() throws ServiceException;
+    List<User> getAllBannedUsers() throws ServiceException;
+
+    void unBannedUser(long id) throws ServiceException;
 }

@@ -17,7 +17,8 @@
                 <div class="panel-body">
                     <a href="/menu/adminController/category"><fmt:message key="addcategory"/></a><br>
                     <a href="/menu/add/"><fmt:message key="addnews"/></a><br>
-                    <a href="/menu/adminController/users"><fmt:message key="users"/></a>
+                    <a href="/menu/adminController/users"><fmt:message key="users"/></a><br>
+                    <a href="/menu/adminController/banUsers"><fmt:message key="bannedusers"/></a>
                 </div>
             </div>
         </div>

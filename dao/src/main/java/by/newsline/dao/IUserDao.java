@@ -11,4 +11,6 @@ public interface IUserDao {
     User getById(long id) throws DaoException;
     User getByEmail(String email) throws DaoException;
     List<User> getAllUsers() throws DaoException;
+    List<User> getAllBannedUsers() throws DaoException;
+    void unBannedUser(long id) throws DaoException;
 }

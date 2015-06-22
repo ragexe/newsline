@@ -14,19 +14,31 @@
 </head>
 <body>
 <h5><fmt:message key="users"/></h5>
-<div class="col-lg-7" align="center">
+<div class="col-lg-7">
   <table border="3" rules="rows">
-    <core:forEach var="user" items="${users}">
+  <core:forEach var="user" items="${users}">
+    <tr>
+      <td>
+        <h5>${user.name}</h5>
+      </td>
+      <td><a href="/menu/adminController/users/${user.id}" class="btn btn-danger"><fmt:message
+              key="deluser"/></a>
+      </td>
+    </tr>
+  </core:forEach>
+</table>
+  <%--<table border="3" rules="rows">
+    <core:forEach var="banUser" items="${banUsers}">
       <tr>
         <td>
-          <h5>${user.name}</h5>
+          <h5>${banUser.name}</h5>
         </td>
-        <td><a href="/menu/adminController/users/${user.id}" class="btn btn-danger"><fmt:message
+        <td><a href="/menu/adminController/users/${banUser.id}" class="btn btn-danger"><fmt:message
                 key="deluser"/></a>
         </td>
       </tr>
     </core:forEach>
-  </table>
+  </table>--%>
 </div>
 </body>
 </html>

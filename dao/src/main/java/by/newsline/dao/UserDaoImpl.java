@@ -25,6 +25,10 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
     }
 
     public void deleteUserById(long id)  throws DaoException {
+        Session session = getSession();
+        User user = (User) session.load(User.class, id);
+        user.setStatus(StatusEnum.DELETED);
+        session.update(user);
         /*try {
             StatusEnum status = StatusEnum.DELETED;
             @Language("HQL") String hql = "UPDATE User SET User.status=:status WHERE User.id=:id";
@@ -38,10 +42,6 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
             logger.error(e.getMessage());
             throw new DaoException(e);
         }*/
-        Session session = getSession();
-        User user = (User) session.load(User.class, id);
-        user.setStatus(StatusEnum.DELETED);
-        session.update(user);
     }
 
     @SuppressWarnings("unchecked")
@@ -58,6 +58,31 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
             throw new DaoException(e);
         }
         return users;
+    }
+
+    @Override
+    public List<User> getAllBannedUsers() throws DaoException {
+        List<User> users = null;
+        try {
+            StatusEnum status = StatusEnum.DELETED;
+            @Language("HQL") String hql = "SELECT U FROM User U WHERE U.status=:status";
+            Query query = getSession().createQuery(hql)
+                    .setParameter("status", status);
+            users = query.list();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+            throw new DaoException(e);
+        }
+        return users;
+
+    }
+
+
+    public void unBannedUser(long id) throws DaoException {
+        Session session = getSession();
+        User user = (User) session.load(User.class, id);
+        user.setStatus(StatusEnum.SAVED);
+        session.update(user);
     }
 
     public User getById(long id)  throws DaoException {

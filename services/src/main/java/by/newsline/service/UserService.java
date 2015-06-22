@@ -27,7 +27,7 @@ public class UserService implements IUserService {
     @Autowired
     private IUserDao userDao;
 
-    public boolean checkUser(String email, String password) throws ServiceException{
+    public boolean checkUser(String email, String password) throws ServiceException {
         if (!(StringUtils.isNullOrEmpty(email)) && !(StringUtils.isNullOrEmpty(password))) {
             try {
                 List<User> userList = userDao.getAllUsers();
@@ -45,7 +45,7 @@ public class UserService implements IUserService {
         return false;
     }
 
-    public boolean registerNewUser(User user) throws ServiceException{
+    public boolean registerNewUser(User user) throws ServiceException {
         if (user != null) {
             try {
                 List<User> users = userDao.getAllUsers();
@@ -64,7 +64,7 @@ public class UserService implements IUserService {
         return false;
     }
 
-    public User getByEmail(String email) throws ServiceException{
+    public User getByEmail(String email) throws ServiceException {
         try {
             return userDao.getByEmail(email);
         } catch (DaoException e) {
@@ -73,7 +73,7 @@ public class UserService implements IUserService {
         }
     }
 
-    public void saveUser(User user) throws ServiceException{
+    public void saveUser(User user) throws ServiceException {
         try {
             userDao.saveUser(user);
         } catch (DaoException e) {
@@ -82,7 +82,7 @@ public class UserService implements IUserService {
         }
     }
 
-    public void deleteUserById(long id) throws ServiceException{
+    public void deleteUserById(long id) throws ServiceException {
         try {
             userDao.deleteUserById(id);
         } catch (DaoException e) {
@@ -91,7 +91,7 @@ public class UserService implements IUserService {
         }
     }
 
-    public User getById(long id) throws ServiceException{
+    public User getById(long id) throws ServiceException {
         try {
             return userDao.getById(id);
         } catch (DaoException e) {
@@ -112,4 +112,21 @@ public class UserService implements IUserService {
     }
 
 
+    public List<User> getAllBannedUsers() throws ServiceException {
+        try {
+            return userDao.getAllBannedUsers();
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException();
+        }
+    }
+
+    public void unBannedUser(long id) throws ServiceException{
+        try {
+            userDao.unBannedUser(id);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
+    }
 }

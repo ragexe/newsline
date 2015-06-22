@@ -38,6 +38,9 @@
     <definition name="users" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/controller/users.jsp"/>
     </definition>
+    <definition name="banUsers" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/admin/controller/banUsers.jsp"/>
+    </definition>
 
     <definition name="saveCategory" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/saveCategory.jsp"/>
