@@ -129,7 +129,7 @@ CREATE TABLE `t_user` (
   PRIMARY KEY (`F_USER_ID`),
   UNIQUE KEY `unique_F_ID` (`F_USER_ID`),
   UNIQUE KEY `unique_F_EMAIL` (`F_EMAIL`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +138,7 @@ CREATE TABLE `t_user` (
 
 LOCK TABLES `t_user` WRITE;
 /*!40000 ALTER TABLE `t_user` DISABLE KEYS */;
-INSERT INTO `t_user` VALUES (1,'ragexe','ragexe','ragexe','1234','SAVED','ADMIN',0),(2,'1234','1234','1234','1234','SAVED','USER',0),(3,'123','123','123','123','SAVED','USER',0),(4,'ro','ro','ro','ro','SAVED','USER',0),(5,'happyq','ivan','ivan','1234','SAVED','ADMIN',0),(6,'roma','roma','roma','roma','SAVED','USER',0);
+INSERT INTO `t_user` VALUES (1,'ragexe','ragexe','ragexe','1234','SAVED','ROLE_ADMIN',0),(2,'1234','1234','1234','1234','SAVED','ROLE_USER',0),(3,'123','123','123','123','SAVED','ROLE_USER',0),(4,'ro','ro','ro','ro','SAVED','ROLE_USER',0),(5,'happyq','ivan','ivan','1234','SAVED','ROLE_ADMIN',0),(6,'roma','roma','roma','roma','SAVED','ROLE_USER',0),(7,'krabbi','ichigo','krabbi','1234','SAVED','ROLE_ADMIN',0);
 /*!40000 ALTER TABLE `t_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -151,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-22  1:34:29
+-- Dump completed on 2015-06-22  4:21:36
