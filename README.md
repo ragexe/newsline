@@ -34,3 +34,5 @@ mysqldump -u USER -pPASSWORD DATABASE > /path/to/file/dump.sql
 <core:if test="${fn:length(comments)==0}">
 
     </core:if>
+
+    http://www.mkyong.com/spring-security/spring-security-remember-me-example/

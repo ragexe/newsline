@@ -58,6 +58,8 @@
     </bean>
 
 
+
+
     <!-- Настраивает управление транзакциями с помощью аннотации @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager" />
 

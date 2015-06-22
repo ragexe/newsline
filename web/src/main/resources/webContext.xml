@@ -10,6 +10,9 @@
     <import resource="classpath*:serviceContext.xml"/>
     <import resource="classpath*:entityContext.xml"/>
 
-
+    <bean id="savedRequestAwareAuthenticationSuccessHandler"
+          class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <property name="targetUrlParameter" value="targetUrl" />
+    </bean>
 
 </beans>
