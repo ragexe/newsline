@@ -3,9 +3,11 @@ package by.newsline.service;
 
 import by.newsline.dao.IUserDao;
 import by.newsline.dao.util.exception.DaoException;
+import by.newsline.data.User;
+import by.newsline.data.util.RoleEnum;
+import by.newsline.data.util.StatusEnum;
 import by.newsline.service.util.exception.ServiceException;
 import com.mysql.jdbc.StringUtils;
-import by.newsline.data.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -74,6 +76,8 @@ public class UserService implements IUserService {
     }
 
     public void saveUser(User user) throws ServiceException {
+        user.setStatus(StatusEnum.SAVED);
+        user.setAccess(RoleEnum.ROLE_USER);
         try {
             userDao.saveUser(user);
         } catch (DaoException e) {

@@ -19,7 +19,7 @@
                     <a href="/menu/adminController/category"><fmt:message key="addcategory"/></a><br>
                     <a href="/menu/add/"><fmt:message key="addnews"/></a><br>
                     <a href="/menu/adminController/users"><fmt:message key="users"/></a><br>
-                    <a href="/menu/adminController/banUsers"><fmt:message key="bannedusers"/></a>
+                    <a href="/menu/adminController/banUsers"><fmt:message key="deluser"/></a>
                 </div>
             </div>
         </div>

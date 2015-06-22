@@ -92,7 +92,7 @@
 
                             <button type="reset" class="btn btn-default"><fmt:message key="cancel"/></button>
                             <button type="submit" class="btn btn-primary"><fmt:message key="submit"/></button>
-                            <a href="#" class="btn btn-default btm-xs"><fmt:message key="signin"/></a>
+                            <a href="/reg" class="btn btn-default btm-xs"><fmt:message key="signin"/></a>
                         </div>
                     </div>
                 </fieldset>

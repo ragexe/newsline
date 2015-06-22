@@ -48,5 +48,11 @@
     <definition name="login" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/login.jsp"/>
     </definition>
+    <definition name="addUser" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/reg.jsp"/>
+    </definition>
+    <definition name="saveUser" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/saveUser.jsp"/>
+    </definition>
 
 </tiles-definitions>

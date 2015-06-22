@@ -47,7 +47,7 @@ public class ShowController {
         return "menu";
     }
     @RequestMapping(value = "/post", method = RequestMethod.GET)
-    public String categorypost(ModelMap model) throws WebException{
+    public String categories(ModelMap model) throws WebException{
         List<Category> categories = null;
         try {
             categories = categoryService.getAllCategories();
@@ -58,6 +58,7 @@ public class ShowController {
         model.addAttribute("category",categories);
         return "post";
     }
+
 
 
 

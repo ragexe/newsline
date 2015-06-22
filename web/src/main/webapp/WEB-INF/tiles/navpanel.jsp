@@ -84,7 +84,7 @@
                                                 <%--<li><a href="#">Another action</a></li>--%>
                                                 <%--<li><a href="#">Something else here</a></li>--%>
                                             <li class="divider"></li>
-                                            <li><a href="#"><fmt:message key="signin"/></a></li>
+                                            <li><a href="/reg"><fmt:message key="signin"/></a></li>
                                         </ul>
                                     </core:when>
                                     <core:otherwise>

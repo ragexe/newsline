@@ -15,10 +15,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -85,5 +84,32 @@ public class UserController {
         modelMap.addAttribute("unbanUser",unbanUser);
         return "redirect:/menu/adminController/banUsers";
     }
+
+    @RequestMapping(value = "/reg", method = RequestMethod.GET)
+    public String addUser(ModelMap model) {
+        model.addAttribute("newUser", new User());
+        return "addUser";
+    }
+
+    @RequestMapping(value = "/saveUser",method = RequestMethod.POST)
+    public String saveUser(@RequestParam(value = "error", required = false) String error,
+                           ModelMap modelMap,
+                           HttpServletRequest request, @ModelAttribute("newUser") User user)
+            throws WebException{
+        try {
+            if (userService.registerNewUser(user)) {
+                userService.saveUser(user);
+            }else{
+                modelMap.addAttribute("error","Invalid username and password!");
+            }
+
+        }catch (ServiceException e){
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
+        modelMap.addAttribute("addUser",user);
+        return "redirect:/reg";
+    }
+
 
 }
