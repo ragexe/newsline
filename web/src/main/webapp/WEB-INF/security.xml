@@ -11,7 +11,7 @@
     <global-method-security secured-annotations="enabled" />
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/view/admin/**" access="hasRole('ADMIN')"/>
-        <intercept-url pattern="/menu/adminController/**" access="hasRole('ADMIN')"/>
+        <!--<intercept-url pattern="/menu/adminController/**" access="hasRole('ADMIN')"/>-->
 
         <intercept-url pattern="/add/*" access="hasRole('USER')"/>
         <intercept-url pattern="/delete/*" access="hasRole('ADMIN')"/>

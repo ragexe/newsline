@@ -41,18 +41,18 @@ public class UserDaoImpl extends AbstractDao implements IUserDao{
 
     @SuppressWarnings("unchecked")
     public List<User> getAllUsers()  throws DaoException {
-        List<User> categories = null;
+        List<User> users = null;
         try {
             StatusEnum status = StatusEnum.SAVED;
-            @Language("HQL") String hql = "SELECT C FROM User C WHERE C.status=:status";
+            @Language("HQL") String hql = "SELECT U FROM User U WHERE U.status=:status";
             Query query = getSession().createQuery(hql)
                     .setParameter("status", status);
-            categories = query.list();
+            users = query.list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
             throw new DaoException(e);
         }
-        return categories;
+        return users;
     }
 
     public User getById(long id)  throws DaoException {

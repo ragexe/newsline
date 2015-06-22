@@ -17,7 +17,7 @@
 
 
 <h5><fmt:message key="category"/></h5>
-<div class="col-lg-7" align="center">
+<div class="col-lg-7">
     <table border="3" rules="rows">
         <core:forEach var="category" items="${categories}">
             <tr>
@@ -32,6 +32,42 @@
     </table>
     <a href="/menu/addCategory/" class="btn btn-danger"><fmt:message key="addcategory"/></a>
 </div>
+
+<h5><fmt:message key="users"/></h5>
+<div class="col-lg-3">
+    <table border="3" rules="rows">
+        <core:forEach var="user" items="${users}">
+            <tr>
+                <td>
+                    <h5>${user.name}</h5>
+                </td>
+                <td><a href="/menu/adminController/${user.id}" class="btn btn-danger"><fmt:message
+                        key="users"/></a>
+                </td>
+            </tr>
+        </core:forEach>
+    </table>
+    <a href="/menu/addCategory/" class="btn btn-danger"><fmt:message key="addcategory"/></a>
+</div>
+
+
+
+<%--<h5><fmt:message key="users"/></h5>
+<div class="col-lg-7" align="center">
+    <table border="3" rules="rows">
+        <core:forEach var="users" items="${users}">
+            <tr>
+                <td>
+                    <h5>${users.name}</h5>
+                </td>
+                <td><a href="/menu/adminController/${delUsers.id}" class="btn btn-danger"><fmt:message
+                        key="deluser"/></a>
+                </td>
+            </tr>
+        </core:forEach>
+    </table>
+</div>--%>
+
 
 
 </body>

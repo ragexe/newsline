@@ -1,8 +1,10 @@
 package by.newsline.service;
 
 
-import by.newsline.service.util.exception.ServiceException;
 import by.newsline.data.User;
+import by.newsline.service.util.exception.ServiceException;
+
+import java.util.List;
 
 
 public interface IUserService {
@@ -12,4 +14,5 @@ public interface IUserService {
     void saveUser(User user) throws ServiceException;
     void deleteUserById(long id) throws ServiceException;
     User getById(long id) throws ServiceException;
+    List<User> getAllUser() throws ServiceException;
 }

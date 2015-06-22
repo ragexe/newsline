@@ -99,4 +99,17 @@ public class UserService implements IUserService {
             throw new ServiceException(e);
         }
     }
+
+
+    public List<User> getAllUser() throws ServiceException {
+        try {
+            return userDao.getAllUsers();
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException();
+        }
+
+    }
+
+
 }

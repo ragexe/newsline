@@ -1,11 +1,13 @@
 package by.newsline.controlers;
 
+import by.newsline.data.Category;
+import by.newsline.data.User;
 import by.newsline.exceptons.WebException;
 import by.newsline.service.ICategoryService;
 import by.newsline.service.ICommentService;
 import by.newsline.service.IPageService;
+import by.newsline.service.IUserService;
 import by.newsline.service.util.exception.ServiceException;
-import by.newsline.data.Category;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,8 @@ public class AdminController {
     ICategoryService categoryService;
     @Autowired
     ICommentService commentService;
+    @Autowired
+    IUserService userService;
 
 
     @RequestMapping(value = "/menu/adminController", method = RequestMethod.GET)
@@ -56,6 +60,27 @@ public class AdminController {
         modelMap.addAttribute("delCategory",delCat);
         return "redirect:/menu/adminController";
     }
+
+    @RequestMapping(value = "/menu/adminConroller",method = RequestMethod.GET)
+    public String getAllUser(ModelMap modelMap) throws WebException {
+        List<User> users = null;
+        try {
+            users = userService.getAllUser();
+
+        } catch (ServiceException e) {
+            logger.error(e.getMessage());
+            throw new WebException(e);
+        }
+        modelMap.addAttribute("users", users);
+        return "adminController";
+    }
+
+
+
+
+
+
+
 
 
 
