@@ -8,26 +8,48 @@
       http://www.springframework.org/schema/security/spring-security-4.0.xsd
       http://www.springframework.org/schema/beans
       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-    <global-method-security secured-annotations="enabled" />
-    <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/view/admin/**" access="hasRole('ADMIN')"/>
-        <!--<intercept-url pattern="/menu/adminController/**" access="hasRole('ADMIN')"/>-->
 
-        <intercept-url pattern="/add/*" access="hasRole('USER')"/>
+    <global-method-security secured-annotations="enabled" />
+
+    <http auto-config="true" use-expressions="true">
+        <!--<intercept-url pattern="/view/admin/**" access="hasRole('ADMIN')"/>-->
+        <intercept-url pattern="/menu/adminController/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/menu/add*" access="hasAnyRole('USER', 'ADMIN')"/>
         <intercept-url pattern="/delete/*" access="hasRole('ADMIN')"/>
         <access-denied-handler error-page="/error403.jsp"/>
-        <form-login
-                login-processing-url="/j_spring_security_check"
-                login-page="/login.jsp"
-                authentication-failure-url="/login?error=e"
-                username-parameter="j_username"
-                password-parameter="j_password"/>
-        <logout logout-success-url="/menu"/>
-        <!--Реализация ф-ции "Запомнить меня"-->
+
+        <!--<form-login-->
+                <!--login-processing-url="/j_spring_security_check"-->
+                <!--login-page="/login.jsp"-->
+                <!--authentication-failure-url="/login?error=e"-->
+                <!--username-parameter="j_username"-->
+                <!--password-parameter="j_password"/>-->
+
+        <form-login login-page="/login"
+                    default-target-url="/welcome"
+                    authentication-failure-url="/login?error"
+                    username-parameter="username"
+                    password-parameter="password"
+                    login-processing-url="/auth/login_check"
+                    authentication-success-handler-ref="savedRequestAwareAuthenticationSuccessHandler" />
+
+        <!--<logout logout-success-url="/menu"/>-->
+        <!--&lt;!&ndash;Реализация ф-ции "Запомнить меня"&ndash;&gt;-->
+
+        <logout logout-success-url="/login?logout" delete-cookies="JSESSIONID" />
+        <!-- enable csrf protection -->
+        <csrf />
+
+        <!--<remember-me-->
+                <!--data-source-ref="dataSource"-->
+                <!--key="crypt"-->
+                <!--token-validity-seconds="604800"/>-->
+
         <remember-me
-                data-source-ref="dataSource"
-                key="crypt"
-                token-validity-seconds="604800"/>
+                token-validity-seconds="18000"
+                remember-me-parameter="remember-me"
+                data-source-ref="dataSource" />
+
     </http>
 
     <authentication-manager>

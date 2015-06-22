@@ -37,5 +37,8 @@
     <definition name="saveCategory" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/saveCategory.jsp"/>
     </definition>
+    <definition name="login" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/login.jsp"/>
+    </definition>
 
 </tiles-definitions>
