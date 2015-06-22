@@ -30,7 +30,7 @@
         <core:if test="${fn:length(comments)==0}">
             <div class="alert alert-dismissible alert-info">
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <fmt:message key="noNews"/>
+                <fmt:message key="noComments"/>
             </div>
         </core:if>
 
