@@ -24,17 +24,5 @@
             </div>
         </div>
     </sec:authorize>
-    <div class="col-lg-2">
-        <div class="panel panel-success">
-            <div class="panel-heading"><fmt:message key="categories"/></div>
-            <div class="panel-body">
-                <ul>
-                    <core:forEach var="categ" items="${category}">
-                        <li><a href="../menu/${categ.id}">${categ.title}</a></li>
-                    </core:forEach>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
 </div>

@@ -6,7 +6,7 @@
     <title><core:out value="${page.title4menu}"/></title>
 </head>
 <body>
-<%--<div class="col-lg-2">
+<div class="col-lg-2">
     <div class="panel panel-success">
         <div class="panel-heading"><fmt:message key="categories"/></div>
         <div class="panel-body">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-</div>--%>
+</div>
 
 <div class="col-lg-7">
     <core:forEach var="page" items="${pages}">
