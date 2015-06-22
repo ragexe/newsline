@@ -6,7 +6,7 @@
     <title><core:out value="${page.title4menu}"/></title>
 </head>
 <body>
-<div class="col-lg-2">
+<%--<div class="col-lg-2">
     <div class="panel panel-success">
         <div class="panel-heading"><fmt:message key="categories"/></div>
         <div class="panel-body">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-</div>
+</div>--%>
 
 <div class="col-lg-7">
     <core:forEach var="page" items="${pages}">
@@ -26,24 +26,15 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h3>
             </div>
-        <%--<h1><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h1>--%>
-        <small><cite><core:out value="${page.author.name}"/></cite> <fmt:message key="addedOn"/>написал <core:out value="${page.date}"/></small>
-        <div class="jumbotron">
-            <p><core:out value="${page.maintext}"/><br></p>
-        </div>
+                <%--<h1><a href="../post/${page.id}"><core:out value="${page.title}"/></a></h1>--%>
+            <small><cite><core:out value="${page.author.name}"/></cite> <fmt:message key="addedOn"/>написал <core:out
+                    value="${page.date}"/></small>
+            <div class="jumbotron">
+                <p><core:out value="${page.maintext}"/><br></p>
             </div>
+        </div>
 
     </core:forEach>
-
-
-
-
-
-
-
-
-
-
 
 
 </div>

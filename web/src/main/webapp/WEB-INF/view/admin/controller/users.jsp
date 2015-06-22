@@ -27,18 +27,6 @@
     </tr>
   </core:forEach>
 </table>
-  <%--<table border="3" rules="rows">
-    <core:forEach var="banUser" items="${banUsers}">
-      <tr>
-        <td>
-          <h5>${banUser.name}</h5>
-        </td>
-        <td><a href="/menu/adminController/users/${banUser.id}" class="btn btn-danger"><fmt:message
-                key="deluser"/></a>
-        </td>
-      </tr>
-    </core:forEach>
-  </table>--%>
 </div>
 </body>
 </html>
