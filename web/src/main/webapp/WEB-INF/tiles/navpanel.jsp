@@ -19,7 +19,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><fmt:message key="themes" /><span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="themes">
-                        <li><a href="../menu/ " target="_blank"><fmt:message key="default" /></a></li><%--
+                        <li><a href="../menu/" target="_blank"><fmt:message key="default" /></a></li><%--
                         <li class="divider"></li>
                         <li><a href="../cerulean/">Cerulean</a></li>
                         <li><a href="../cosmo/">Cosmo</a></li>
@@ -52,7 +52,7 @@
                     </ul>
                 </li>
                 <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank"><fmt:message key="wapBootstrap"/></a></li>
-                <li><a href="/menu/adminController" target="_blank"><fmt:message key="admcontroller"/></a></li>
+                <%--<li><a href="/menu/adminController" target="_blank"><fmt:message key="admcontroller"/></a></li>--%>
 
             </ul>
 
@@ -84,7 +84,7 @@
                                                 <%--<li><a href="#">Another action</a></li>--%>
                                                 <%--<li><a href="#">Something else here</a></li>--%>
                                             <li class="divider"></li>
-                                            <li><a href="reg.jsp"><fmt:message key="signin"/></a></li>
+                                            <li><a href="#"><fmt:message key="signin"/></a></li>
                                         </ul>
                                     </core:when>
                                     <core:otherwise>
@@ -94,9 +94,10 @@
                                             <li><a href="#"><fmt:message key="myNews"/></a></li>
                                             <li><a href="#"><fmt:message key="profile"/></a></li>
                                             <li class="divider"></li>
-                                                <%--<core:if test="${user.role == 1}">--%>
-                                            <li><a href="admpanel.jsp"><fmt:message key="adminPanel"/></a></li>
+                                            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                            <li><a href="/menu/adminController"><fmt:message key="adminPanel"/></a></li>
                                             <li class="divider"></li>
+                                            </sec:authorize>
                                                 <%--</core:if>--%>
 
                                                 <%--проверка на тип аутентификации Remember или Авторизация . Удалить--%>
