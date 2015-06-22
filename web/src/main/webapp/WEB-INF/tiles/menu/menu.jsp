@@ -12,7 +12,7 @@
 <div class="private-info">
     <sec:authorize access="hasRole('ROLE_ADMIN')">
         <div class="col-lg-2">
-            <div class="panel panel-success">
+            <div class="panel panel-warning">
                 <div class="panel-heading"><fmt:message key="adminPanel"/></div>
                 <div class="panel-body">
                     <a href="/menu/adminController/category"><fmt:message key="addcategory"/></a><br>
