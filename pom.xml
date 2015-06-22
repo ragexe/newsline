@@ -37,7 +37,7 @@
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <org.hibernate.javax.persistence.version>1.0.1.Final</org.hibernate.javax.persistence.version>
         <spring.security.version>4.0.1.RELEASE</spring.security.version>
-        <!--<spring.security.version>3.1.4.RELEASE</spring.security.version>-->
+        <!--<spring.security.version>3.2.3.RELEASE</spring.security.version>-->
 
 
     </properties>
