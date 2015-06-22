@@ -11,6 +11,7 @@
 <body>
 <s:insertAttribute name="navpanel"/>
 <s:insertAttribute name="header"/>
+<s:insertAttribute name="menu"/>
 <s:insertAttribute name="content"/>
 <s:insertAttribute name="footer"/>
 </body>

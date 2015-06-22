@@ -46,13 +46,17 @@ public class AdminController {
     @RequestMapping(value = "/menu/adminController", method = RequestMethod.GET)
     public String allPage(ModelMap modelMap) throws WebException {
         List<Category> categories = null;
+        List<User> users = null;
         try {
             categories = categoryService.getAllCategories();
+            users = userService.getAllUser();
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             throw new WebException(e);
         }
         modelMap.addAttribute("categories",categories);
+        modelMap.addAttribute("users", users);
+
         return "adminController";
     }
 
@@ -69,19 +73,6 @@ public class AdminController {
         return "redirect:/menu/adminController";
     }
 
-    @RequestMapping(value = "/menu/adminConroller",method = RequestMethod.GET)
-    public String getAllUser(ModelMap modelMap) throws WebException {
-        List<User> users = null;
-        try {
-            users = userService.getAllUser();
-
-        } catch (ServiceException e) {
-            logger.error(e.getMessage());
-            throw new WebException(e);
-        }
-        modelMap.addAttribute("users", users);
-        return "adminController";
-    }
 
 
 

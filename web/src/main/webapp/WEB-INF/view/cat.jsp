@@ -12,11 +12,11 @@
     <title></title>
 </head>
 <body>
-<ul>
-<core:forEach var="categ" items="${category}">
-  <li><a href="${categ.title}">${categ.title}</a></li>
+<core:forEach var="user" items="${users}">
+  <tr>
+    <td>${user.email}</td>
+  </tr>
 </core:forEach>
-</ul>
 
 </body>
 </html>

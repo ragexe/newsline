@@ -94,12 +94,6 @@ public class PagesController {
 
     @RequestMapping(value = "/menu/addCategory", method = RequestMethod.GET)
     public String addCategory(ModelMap model) {
-        /*Category category = null;
-        try {
-           category = categoryService.saveCategory(category);
-        } catch (ServiceException e) {
-            e.printStackTrace();
-        }*/
         model.addAttribute("newCategory", new Category());
         return "addCategory";
     }

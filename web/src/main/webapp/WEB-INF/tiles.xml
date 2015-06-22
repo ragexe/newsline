@@ -8,6 +8,7 @@
         <put-attribute name="head" value="/WEB-INF/tiles/head.jsp"/>
         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
         <put-attribute name="navpanel" value="/WEB-INF/tiles/navpanel.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/tiles/menu/menu.jsp"/>
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"/>
     </definition>
@@ -29,11 +30,15 @@
     </definition>
 
     <definition name="addCategory" extends="base.definition">
-        <put-attribute name="content" value="/WEB-INF/view/admin/addCategory.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/view/admin/controller/category.jsp"/>
     </definition>
     <definition name="adminController" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/adminController.jsp"/>
     </definition>
+    <definition name="users" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/admin/controller/users.jsp"/>
+    </definition>
+
     <definition name="saveCategory" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/admin/saveCategory.jsp"/>
     </definition>

@@ -63,7 +63,10 @@
                 </td>
             </tr>
         </fieldset>
+        <input class="btn btn-default" type="submit" align="middle" value="<fmt:message key="submit"/>">
+        <button type="reset" align="middle" class="btn btn-default">Cancel</button>
     </table>
-    <input class="btn btn-default" type="submit" align="middle" value="<fmt:message key="submit"/>">
-    <button type="reset" align="middle" class="btn btn-default">Cancel</button>
+    <%--<input class="btn btn-default" type="submit" align="middle" value="<fmt:message key="submit"/>">
+    <button type="reset" align="middle" class="btn btn-default">Cancel</button>--%>
+
 </form:form>
