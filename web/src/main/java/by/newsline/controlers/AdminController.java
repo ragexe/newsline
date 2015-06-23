@@ -54,14 +54,14 @@ public class AdminController {
             logger.error(e.getMessage());
             throw new WebException(e);
         }
-        modelMap.addAttribute("categories",categories);
+        modelMap.addAttribute("categories", categories);
         modelMap.addAttribute("users", users);
 
         return "adminController";
     }
 
     @RequestMapping(value = "/menu/adminController/{id}", method = RequestMethod.GET)
-    public String delCategory(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException {
+    public String delCategory(@PathVariable(value = "id") Long id, ModelMap modelMap) throws WebException {
         Category delCat = null;
         try {
             categoryService.deleteCategoryById(id);
@@ -69,37 +69,25 @@ public class AdminController {
             logger.error(e.getMessage());
             throw new WebException(e);
         }
-        modelMap.addAttribute("delCategory",delCat);
+        modelMap.addAttribute("delCategory", delCat);
         return "redirect:/menu/adminController";
     }
 
 
-
-
-
-
-
-
-
-
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-//    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
-//                              @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
     public String login(@RequestParam(value = "error", required = false) String error,
-                              @RequestParam(value = "logout", required = false) String logout,
-                              ModelMap modelMap,
-                              HttpServletRequest request) {
-//        ModelAndView model = new ModelAndView();
+                        @RequestParam(value = "logout", required = false) String logout,
+                        ModelMap modelMap,
+                        HttpServletRequest request) {
+
         if (error != null) {
-//            model.addObject("error", "Invalid username and password!");
-            modelMap.addAttribute("error","Invalid username and password!");
-            //login form for update, if login error, get the targetUrl from session again.
+
+            modelMap.addAttribute("error", "Invalid username and password!");
+
             String targetUrl = getRememberMeTargetUrlFromSession(request);
             System.out.println(targetUrl);
-            if(StringUtils.hasText(targetUrl)){
-//                model.addObject("targetUrl", targetUrl);
-//                model.addObject("loginUpdate", true);
+            if (StringUtils.hasText(targetUrl)) {
+
                 modelMap.addAttribute("targetUrl", targetUrl);
                 modelMap.addAttribute("loginUpdate", true);
             }
@@ -128,9 +116,9 @@ public class AdminController {
     /**
      * save targetURL in session
      */
-    private void setRememberMeTargetUrlToSession(HttpServletRequest request){
+    private void setRememberMeTargetUrlToSession(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
-        if(session!=null){
+        if (session != null) {
             session.setAttribute("targetUrl", "/admin/update");
         }
     }
@@ -138,23 +126,15 @@ public class AdminController {
     /**
      * get targetURL from session
      */
-    private String getRememberMeTargetUrlFromSession(HttpServletRequest request){
+    private String getRememberMeTargetUrlFromSession(HttpServletRequest request) {
         String targetUrl = "";
         HttpSession session = request.getSession(false);
-        if(session!=null){
-            targetUrl = session.getAttribute("targetUrl")==null?"":session.getAttribute("targetUrl").toString();
+        if (session != null) {
+            targetUrl = session.getAttribute("targetUrl") == null ? "" : session.getAttribute("targetUrl").toString();
         }
         return targetUrl;
     }
-//
-//    @RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
-//    public ModelAndView defaultPage() {
-//        ModelAndView model = new ModelAndView();
-//        model.addObject("title", "Spring Security Remember Me");
-//        model.addObject("message", "This is default page!");
-//        model.setViewName("hello");
-//        return model;
-//    }
+
 
     @RequestMapping(value = "/admin**", method = RequestMethod.GET)
     public ModelAndView adminPage() {
@@ -174,7 +154,6 @@ public class AdminController {
     public ModelAndView updatePage(HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
         if (isRememberMeAuthenticated()) {
-            //send login for update
             setRememberMeTargetUrlToSession(request);
             model.addObject("loginUpdate", true);
             model.setViewName("/login");

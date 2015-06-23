@@ -32,7 +32,7 @@
     </table>
 </div>
 
-<h5><fmt:message key="users"/></h5>
+<%--<h5><fmt:message key="users"/></h5>
 <div class="col-lg-7" align="center">
     <table border="3" rules="rows">
         <core:forEach var="users" items="${users}">
@@ -46,6 +46,6 @@
             </tr>
         </core:forEach>
     </table>
-</div>
+</div>--%>
 </body>
 </html>

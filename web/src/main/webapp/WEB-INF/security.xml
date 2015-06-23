@@ -8,14 +8,9 @@
       http://www.springframework.org/schema/security/spring-security-4.0.xsd
       http://www.springframework.org/schema/beans
       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-<!--<beans:beans xmlns="http://www.springframework.org/schema/security"-->
-             <!--xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-             <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
-	<!--http://www.springframework.org/schema/beans/spring-beans-3.0.xsd-->
-	<!--http://www.springframework.org/schema/security-->
-	<!--http://www.springframework.org/schema/security/spring-security-3.2.xsd">-->
 
-    <global-method-security secured-annotations="enabled" />
+
+    <global-method-security secured-annotations="enabled"/>
 
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/view/admin/**" access="hasRole('ROLE_ADMIN')"/>
@@ -23,15 +18,10 @@
         <!--Menu-->
         <intercept-url pattern="tiles/menu/**" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/menu/add*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/menu/save*" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/delete/*" access="hasRole('ROLE_ADMIN')"/>
         <access-denied-handler error-page="/error403.jsp"/>
 
-        <!--<form-login-->
-                <!--login-processing-url="/j_spring_security_check"-->
-                <!--login-page="/login.jsp"-->
-                <!--authentication-failure-url="/login?error=e"-->
-                <!--username-parameter="j_username"-->
-                <!--password-parameter="j_password"/>-->
 
         <form-login login-page="/login"
                     default-target-url="/welcome"
@@ -39,28 +29,19 @@
                     username-parameter="username"
                     password-parameter="password"
                     login-processing-url="/auth/login_check"
-                    authentication-success-handler-ref="savedRequestAwareAuthenticationSuccessHandler" />
+                    authentication-success-handler-ref="savedRequestAwareAuthenticationSuccessHandler"/>
 
-        <!--<logout logout-success-url="/menu"/>-->
-        <!--&lt;!&ndash;Реализация ф-ции "Запомнить меня"&ndash;&gt;-->
 
-        <logout logout-success-url="/login?logout" logout-url="/logout" delete-cookies="JSESSIONID" />
+        <logout logout-success-url="/login?logout" logout-url="/logout" delete-cookies="JSESSIONID"/>
         <!-- enable csrf protection -->
-        <csrf />
+        <csrf/>
 
-        <!--<remember-me-->
-                <!--data-source-ref="dataSource"-->
-                <!--key="crypt"-->
-                <!--token-validity-seconds="604800"/>-->
 
         <remember-me
                 token-validity-seconds="18000"
                 remember-me-parameter="remember-me"
-                data-source-ref="dataSource" />
+                data-source-ref="dataSource"/>
 
-        <!--<session-management invalid-session-url="/WEB-INF/timeout.jsp">-->
-            <!--<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />-->
-        <!--</session-management>-->
 
     </http>
 

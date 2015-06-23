@@ -49,5 +49,8 @@
     <definition name="saveUser" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/view/saveUser.jsp"/>
     </definition>
+    <definition name="save" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/view/save.jsp"/>
+    </definition>
 
 </tiles-definitions>

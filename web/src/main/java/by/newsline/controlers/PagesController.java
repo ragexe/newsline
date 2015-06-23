@@ -85,7 +85,7 @@ public class PagesController {
             throw new WebException(e);
         }
         modelMap.addAttribute("add",page);
-        return "save";
+        return "redirect:/menu";
     }
 
     @RequestMapping(value = "/menu/add", method = RequestMethod.GET)
@@ -120,10 +120,4 @@ public class PagesController {
         modelMap.addAttribute("addCategory",category);
         return "redirect:/menu/adminController";
     }
-
-
-
-
-
-
 }
