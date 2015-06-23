@@ -13,7 +13,7 @@
         <div class="panel-body">
             <ul>
                 <core:forEach var="categ" items="${category}">
-                    <li><a href="../menu/${categ.id}">${categ.title}</a></li>
+                    <li><a href="/menu/${categ.id}/1">${categ.title}</a></li>
                 </core:forEach>
             </ul>
         </div>

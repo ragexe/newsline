@@ -86,7 +86,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/reg", method = RequestMethod.GET)
-    public String addUser(ModelMap model) {
+    public String addUser(ModelMap model, @RequestParam(value = "error", required = false) String error) {
+        model.addAttribute("error",error);
         model.addAttribute("newUser", new User());
         return "addUser";
     }
@@ -100,7 +101,7 @@ public class UserController {
             if (userService.registerNewUser(user)) {
                 userService.saveUser(user);
             }else{
-                modelMap.addAttribute("error","Invalid username and password!");
+                modelMap.addAttribute("error","Invalid username or password!");
             }
 
         }catch (ServiceException e){

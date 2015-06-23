@@ -12,4 +12,5 @@ public interface IPageDao {
     Page getById(long id) throws DaoException;
     List<Page> getAllPages() throws DaoException;
     List<Page> getAllPagesByCategoryId(long id) throws DaoException;
+    List<Page> getPagesByCriteria(int pageNumber, int pageSize, long categoryId) throws DaoException;
 }

@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `persistent_logins`
+--
+
+DROP TABLE IF EXISTS `persistent_logins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `persistent_logins` (
+  `username` varchar(64) NOT NULL,
+  `series` varchar(64) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `last_used` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`series`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `persistent_logins`
+--
+
+LOCK TABLES `persistent_logins` WRITE;
+/*!40000 ALTER TABLE `persistent_logins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `persistent_logins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `t_category`
 --
 
@@ -29,7 +54,7 @@ CREATE TABLE `t_category` (
   `F_STATUS` varchar(8) NOT NULL,
   PRIMARY KEY (`F_CATEGORY_ID`),
   UNIQUE KEY `unique_F_ID` (`F_CATEGORY_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +63,7 @@ CREATE TABLE `t_category` (
 
 LOCK TABLES `t_category` WRITE;
 /*!40000 ALTER TABLE `t_category` DISABLE KEYS */;
-INSERT INTO `t_category` VALUES (0,'main','main','SAVED'),(1,'Экономика','Экономика','SAVED'),(2,'Финансы','Финансы','SAVED'),(3,'Политика','Политика','SAVED'),(4,'Туризм','Туризм','SAVED');
+INSERT INTO `t_category` VALUES (0,'main','main','SAVED'),(1,'Экономика и бизнес','Экономика','SAVED'),(2,'Финансы','Финансы','SAVED'),(3,'Политика','Политика','SAVED'),(4,'Туризм','Туризм','SAVED'),(5,'Общество','Общество','SAVED'),(6,'В мире','В мире','SAVED'),(7,'Спорт','Спорт','SAVED'),(8,'Культура','Культура','SAVED'),(9,'Происшествия','Происшествия','SAVED');
 /*!40000 ALTER TABLE `t_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +96,7 @@ CREATE TABLE `t_comment` (
 
 LOCK TABLES `t_comment` WRITE;
 /*!40000 ALTER TABLE `t_comment` DISABLE KEYS */;
-INSERT INTO `t_comment` VALUES (1,19,1,'ебанырот!','0001-10-04','SAVED'),(2,19,2,'хуй','2015-06-18','SAVED');
+INSERT INTO `t_comment` VALUES (1,19,1,'коментарий 1','0001-10-04','SAVED'),(2,19,2,'коментарий автора новости','2015-06-18','SAVED');
 /*!40000 ALTER TABLE `t_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-22  4:21:36
+-- Dump completed on 2015-06-23  3:07:17

@@ -30,17 +30,22 @@ public class PagesController {
     @Autowired
     ICommentService commentService;
 
-    @RequestMapping(value = "/menu/{id}", method = RequestMethod.GET)
-    public String allPage(@PathVariable(value = "id")Long id,ModelMap modelMap) throws WebException{
+    @RequestMapping(value = "/menu/{id}/{pN}", method = RequestMethod.GET)
+    public String allPage(@PathVariable(value = "id") long id,
+                          @PathVariable(value = "pN") int pN,
+                          ModelMap modelMap) throws WebException{
         List<Page> pages = null;
         List<Category> categories = null;
+        System.out.println(pN);
         try {
             categories = categoryService.getAllCategories();
-            pages = pageService.getAllPagesByCategoryId(id);
+            pages = pageService.getPagesByCriteria(pN, 5, id);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             throw new WebException(e);
         }
+        modelMap.addAttribute("counter", pN);
+        modelMap.addAttribute("categoryId", id);
         modelMap.addAttribute("pages",pages);
         modelMap.addAttribute("category",categories);
         return "menu";

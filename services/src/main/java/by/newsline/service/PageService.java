@@ -79,6 +79,15 @@ public class PageService implements IPageService {
         }
     }
 
+    public List<Page> getPagesByCriteria(int pageNumber, int pageSize, long categoryId) throws ServiceException{
+        try {
+            return pageDao.getPagesByCriteria(pageNumber, pageSize, categoryId);
+        } catch (DaoException e) {
+            logger.error(e.getMessage());
+            throw new ServiceException(e);
+        }
+    }
+
     @Override
     public void savePage(long categoryId, Page page) throws ServiceException {
         try{

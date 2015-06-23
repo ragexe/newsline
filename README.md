@@ -36,3 +36,4 @@ mysqldump -u USER -pPASSWORD DATABASE > /path/to/file/dump.sql
     </core:if>
 
     http://www.mkyong.com/spring-security/spring-security-remember-me-example/
+    https://bootswatch.com/superhero/

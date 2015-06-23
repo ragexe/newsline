@@ -85,4 +85,22 @@ public class PageDaoImpl extends AbstractDao implements IPageDao {
         }
         return pages;
     }
+
+    public List<Page> getPagesByCriteria(int pageNumber, int pageSize, long categoryId) throws DaoException{
+        List<Page> pages = null;
+        try {
+            StatusEnum status = StatusEnum.SAVED;
+            @Language("HQL") String hql = "SELECT p FROM Page p WHERE p.status=:status and p.category.id=:categoryId ORDER BY p.date DESC";
+            Query query = getSession().createQuery(hql)
+                    .setParameter("status", status)
+                    .setParameter("categoryId", categoryId)
+                    .setFirstResult((pageNumber - 1) * pageSize)
+                    .setMaxResults(pageSize);
+            pages = query.list();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+            throw new DaoException(e);
+        }
+        return pages;
+    }
 }
