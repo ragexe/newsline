@@ -3,5 +3,5 @@
 <div class="custom_footer">
   <hr>
   <div class="custom_left"><fmt:message key="powered"/></div>
-  <div class="custom_right"><a href="#"><fmt:message key="year"/></a></div>
+  <div class="custom_right"><a href="http://www.it-academy.by"><fmt:message key="year"/></a></div>
 </div>
